@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Solving Systems of Inequalities with Two Variables</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-06-determinants-and-cramer-s-rule.html"><img src="shared/images/batch-left.png"></a> <a href="s06-06-determinants-and-cramer-s-rule.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-08-review-exercises-and-sample-ex.html">Next Section</a> <a href="s06-08-review-exercises-and-sample-ex.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-redden-ch03_s07" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">3.7</span> Solving Systems of Inequalities with Two Variables</h2>
+    <div class="learning_objectives editable block" id="fwk-redden-ch03_s07_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-redden-ch03_s07_o01" numeration="arabic">
+            <li>Check solutions to systems of inequalities with two variables.</li>
+            <li>Graph solution sets of systems of inequalities.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-redden-ch03_s07_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Solutions to Systems of Inequalities</h2>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p01">A <span class="margin_term"><a class="glossterm">system of inequalities</a><span class="glossdef">A set of two or more inequalities with the same variables.</span></span> consists of a set of two or more inequalities with the same variables. The inequalities define the conditions that are to be considered simultaneously. For example,</p>
+        <p class="para block" id="fwk-redden-ch03_s07_s01_p02"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0936" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>y</mi><mo>&gt;</mo><mi>x</mi><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p03">We know that each inequality in the set contains infinitely many ordered pair solutions defined by a region in a rectangular coordinate plane. When considering two of these inequalities together, the intersection of these sets will define the set of simultaneous ordered pair solutions. When we graph each of the above inequalities separately we have:</p>
+        <div class="informalfigure large block">
+            <img src="section_06/39339dc174d251b4a24618b8472b6556.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p05">And when graphed on the same set of axes, the intersection can be determined.</p>
+        <div class="informalfigure large block">
+            <img src="section_06/84a446b513683b620bb90e8d8248e74c.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p07">The intersection is shaded darker and the final graph of the solution set will be presented as follows:</p>
+        <div class="informalfigure large block">
+            <img src="section_06/47565cb2a79e6b946bac644d970ac382.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p09">The graph suggests that (3, 2) is a solution because it is in the intersection. To verify this, we can show that it solves both of the original inequalities as follows:</p>
+        <p class="para block" id="fwk-redden-ch03_s07_s01_p11"></p>
+<div class="informaltable">                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th align="center"><p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0937" display="block"><mrow><mstyle color="#007fbf"><mi>C</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>k</mi><mo>:</mo></mstyle><mtext> </mtext><mo stretchy="false">(</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></math></span></p></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0938" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>1</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mi>x</mi><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>2</mn></mstyle></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mstyle color="#007fbf"><mn>3</mn></mstyle><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mn>1</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0939" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>2</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>2</mn></mstyle></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>2</mn><mrow><mo>(</mo><mstyle color="#007fbf"><mn>3</mn></mstyle><mo>)</mo></mrow><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>8</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
+        <p class="para block" id="fwk-redden-ch03_s07_s01_p12">Points on the solid boundary are included in the set of simultaneous solutions and points on the dashed boundary are not. Consider the point (−1, 0) on the solid boundary defined by <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0940" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow></math></span> and verify that it solves the original system:</p>
+        <p class="para block" id="fwk-redden-ch03_s07_s01_p14"></p>
+<div class="informaltable">                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th align="center"><p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0941" display="block"><mrow><mstyle color="#007fbf"><mi>C</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>k</mi><mo>:</mo></mstyle><mtext> </mtext><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math></span></p></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0942" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>1</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mi>x</mi><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mstyle color="#007fbf"><mo>−</mo><mn>1</mn></mstyle><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0943" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>2</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>2</mn><mrow><mo>(</mo><mstyle color="#007fbf"><mo>−</mo><mn>1</mn></mstyle><mo>)</mo></mrow><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>0</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
+        <p class="para block" id="fwk-redden-ch03_s07_s01_p15">Notice that this point satisfies both inequalities and thus is included in the solution set. Now consider the point (2, 0) on the dashed boundary defined by <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0944" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow></math></span> and verify that it does not solve the original system:</p>
+        <p class="para block" id="fwk-redden-ch03_s07_s01_p17"></p>
+<div class="informaltable">                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th align="center"><p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0945" display="block"><mrow><mstyle color="#007fbf"><mi>C</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>k</mi><mo>:</mo></mstyle><mtext> </mtext><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></math></span></p></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0946" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>1</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mi>x</mi><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mstyle color="#007fbf"><mn>2</mn></mstyle><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mn>0</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#ff0000"><mo>✗</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0947" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>2</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>2</mn><mrow><mo>(</mo><mstyle color="#007fbf"><mn>2</mn></mstyle><mo>)</mo></mrow><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>6</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p18">This point does not satisfy both inequalities and thus is not included in the solution set.</p>
+        <div class="callout block" id="fwk-redden-ch03-s07_s01_n01">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-redden-ch03_s07_s01_p19">Determine whether or not (−3, 3) is a solution to the following system:</p>
+            <p class="para" id="fwk-redden-ch03_s07_s01_p20"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0948" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span></p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s07_s01_p21">Substitute the coordinates of (<em class="emphasis">x</em>, <em class="emphasis">y</em>) = (−3, 3) into both inequalities.</p>
+            <p class="para" id="fwk-redden-ch03_s07_s01_p23"></p>
+<div class="informaltable">                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th align="center"><p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0949" display="block"><mrow><mstyle color="#007fbf"><mi>C</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>k</mi><mo>:</mo></mstyle><mtext> </mtext><mo stretchy="false">(</mo><mo>−</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></math></span></p></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0950" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>1</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>3</mn></mstyle></mrow><mo>)</mo></mrow><mo>+</mo><mn>6</mn><mrow><mo>(</mo><mstyle color="#007fbf"><mn>3</mn></mstyle><mo>)</mo></mrow></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>6</mn><mo>+</mo><mn>18</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>12</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>6</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#ff0000"><mo>✗</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                                <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0951" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>2</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>3</mn></mstyle></mrow><mo>)</mo></mrow><mo>−</mo><mrow><mo>(</mo><mstyle color="#007fbf"><mn>3</mn></mstyle><mo>)</mo></mrow></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>1</mn><mo>−</mo><mn>3</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>3</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                            </tr>
+                        </tbody>
+                    </table>
+</div>
+            <p class="para" id="fwk-redden-ch03_s07_s01_p24">Answer: (−3, 3) is not a solution; it does not satisfy both inequalities.</p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p25">We can graph the solutions of systems that contain nonlinear inequalities in a similar manner. For example, both solution sets of the following inequalities can be graphed on the same set of axes:</p>
+        <p class="para block" id="fwk-redden-ch03_s07_s01_p26"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0952" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>4</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><msup><mi>x</mi><mn>2</mn></msup></mtd></mtr></mtable></mrow></mrow></math></span></p>
+        <div class="informalfigure large block">
+            <img src="section_06/02cff5ff90cd08aa1717d8e8f6f1b2cd.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p28">And the intersection of both regions contains the region of simultaneous ordered pair solutions.</p>
+        <div class="informalfigure large block">
+            <img src="section_06/4d25116eb893d726af7f80bd3137a36e.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s01_p30">From the graph, we expect the ordered pair (1, 3) to solve both inequalities.</p>
+        <p class="para block" id="fwk-redden-ch03_s07_s01_p31"></p>
+<div class="informaltable">                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th align="center"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0953" display="inline"><mrow><mstyle color="#007fbf"><mi>C</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>k</mi><mo>:</mo></mstyle><mtext> </mtext><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></math></span></p></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0954" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>1</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>&lt;</mo></mtd><mtd columnalign="left"><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>3</mn></mstyle></mtd><mtd><mo>&lt;</mo></mtd><mtd columnalign="left"><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mstyle color="#007fbf"><mn>1</mn></mstyle><mo>)</mo></mrow><mo>+</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi> </mi></mtd><mtd><mo>&lt;</mo></mtd><mtd columnalign="left"><mn>4</mn><mfrac><mn>1</mn><mn>2</mn></mfrac><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0955" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>2</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>≥</mo></mtd><mtd columnalign="left"><msup><mi>x</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>3</mn></mstyle></mtd><mtd><mo>≥</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mstyle color="#007fbf"><mn>1</mn></mstyle><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn></mtd><mtd><mo>≥</mo></mtd><mtd columnalign="left"><mn>1</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
+    </div>
+    <div class="section" id="fwk-redden-ch03_s07_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Graphing Solutions to Systems of Inequalities</h2>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s02_p01">Solutions to a system of inequalities are the ordered pairs that solve all the inequalities in the system. Therefore, to solve these systems we graph the solution sets of the inequalities on the same set of axes and determine where they intersect. This intersection, or overlap, will define the region of common ordered pair solutions.</p>
+        <div class="callout block" id="fwk-redden-ch03-s07_s02_n01">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p02">Graph the solution set: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0956" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi></mtd><mtd><mo>&gt;</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi></mtd><mtd><mo>≥</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr></mtable></mrow></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p03">To facilitate the graphing process, we first solve for <em class="emphasis">y</em>.</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p04"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0957" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>&gt;</mo><mo>−</mo><mn>4</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>≥</mo><mn>6</mn></mrow></mtd></mtr></mtable></mrow></mrow><mi> </mi><mi> </mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇒</mo><mrow>  </mrow></mover><mi> </mi><mi> </mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi> </mi><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mi>y</mi><mo>&gt;</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>y</mi><mo>≤</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p05">For the first inequality, we use a dashed boundary defined by <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0958" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn></mrow></math></span> and shade all points above the line. For the second inequality, we use a solid boundary defined by <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0959" display="inline"><mrow><mi>y</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>−</mo><mn>1</mn></mrow></math></span> and shade all points below. The intersection is darkened.</p>
+            <div class="informalfigure large">
+                <img src="section_06/1e345dc5e6d3613c331276587ebe345c.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p07">Now we present our solution with only the intersection shaded.</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p08">Answer:                 </p>
+<div class="informalfigure large">
+                    <img src="section_06/f78b4540cde6e88dd3f509f538b708f1.png">
+                </div>
+
+        </div>
+        <div class="callout block" id="fwk-redden-ch03-s07_s02_n02">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p09">Graph the solution set: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0960" display="inline"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>&gt;</mo><mn>6</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>6</mn><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>&gt;</mo><mn>8</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p10">We begin by solving both inequalities for <em class="emphasis">y</em>.</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p11"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0961" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>&gt;</mo><mn>6</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>6</mn><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>&gt;</mo><mn>8</mn></mrow></mtd></mtr></mtable></mrow></mrow><mi> </mi><mi> </mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇒</mo><mrow>  </mrow></mover><mi> </mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi> </mi><mi> </mi><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mi>y</mi><mo>&gt;</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>3</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>y</mi><mo>&lt;</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mi>x</mi><mo>−</mo><mn>2</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p12">Because of the strict inequalities, we will use a dashed line for each boundary. For the first inequality shade all points above the boundary and for the second inequality shade all points below the boundary.</p>
+            <div class="informalfigure large">
+                <img src="section_06/0b3f328e7ef8eb42e2abc3c8855b17ea.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p14">As we can see, there is no intersection of these two shaded regions. Therefore, there are no simultaneous solutions.</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p15">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0962" display="inline"><mo>Ø</mo></math></span></p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch03-s07_s02_n03">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p16">Graph the solution set: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0963" display="inline"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mrow><mi>y</mi><mo>≥</mo><mo>−</mo><mn>4</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi>y</mi><mo>&lt;</mo><mi>x</mi><mo>+</mo><mn>3</mn></mrow></mtd></mtr><mtr><mtd columnalign="left"><mrow><mi>y</mi><mo>≤</mo><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>3</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p17">Begin by graphing the solution sets to all three inequalities.</p>
+            <div class="informalfigure large">
+                <img src="section_06/9fe4aa3a78b7a9889bb5273079d91f26.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p19">After graphing all three inequalities on the same set of axes, we determine that the intersection lies in the triangular region pictured below.</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p20">Answer:                 </p>
+<div class="informalfigure large">
+                    <img src="section_06/f45683770f75ba64090316ac224dded5.png">
+                </div>
+
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s02_p21">The graph suggests that (−1, 1) is a simultaneous solution. As a check, we could substitute that point into the inequalities and verify that it solves all three conditions.</p>
+        <p class="para block" id="fwk-redden-ch03_s07_s02_p22"></p>
+<div class="informaltable">                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th align="center"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0964" display="inline"><mrow><mstyle color="#007fbf"><mi>C</mi><mi>h</mi><mi>e</mi><mi>c</mi><mi>k</mi><mo>:</mo></mstyle><mtext> </mtext><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></math></span></p></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0965" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>1</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>≥</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>1</mn></mstyle></mtd><mtd><mo>≥</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>4</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0966" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>2</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>&lt;</mo></mtd><mtd columnalign="left"><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>1</mn></mstyle></mtd><mtd><mo>&lt;</mo></mtd><mtd columnalign="left"><mstyle color="#007fbf"><mo>−</mo><mn>1</mn></mstyle><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>1</mn></mtd><mtd><mo>&lt;</mo></mtd><mtd columnalign="left"><mn>2</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                            <td align="left"><p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0967" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>I</mi><mi>n</mi><mi>e</mi><mi>q</mi><mi>u</mi><mi>a</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mtext> </mtext><mn>3</mn><mo>:</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>1</mn></mstyle></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn><mo stretchy="false">(</mo><mstyle color="#007fbf"><mo>−</mo><mn>1</mn></mstyle><mo stretchy="false">)</mo><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>1</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>3</mn><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>1</mn></mtd><mtd><mo>≤</mo></mtd><mtd columnalign="left"><mn>6</mn><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mi> </mi><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p></td>
+                        </tr>
+                    </tbody>
+                </table>
+</div>
+        <p class="para editable block" id="fwk-redden-ch03_s07_s02_p23">Use the same technique to graph the solution sets to systems of nonlinear inequalities.</p>
+        <div class="callout block" id="fwk-redden-ch03-s07_s02_n04">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p24">Graph the solution set: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0968" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p25">The first inequality has a parabolic boundary. This boundary is a horizontal translation of the basic function <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0969" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math></span> to the left 1 unit. Because of the strict inequality, the boundary is dashed, indicating that it is not included in the solution set. The second inequality is linear and will be graphed with a solid boundary. Solution sets to both are graphed below.</p>
+            <div class="informalfigure large">
+                <img src="section_06/a77d47a78c2d0c2f35d78f4a2904c206.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p27">After graphing the inequalities on the same set of axes, we determine that the intersection lies in the region pictured below.</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p28">Answer:                 </p>
+<div class="informalfigure large">
+                    <img src="section_06/c1ea1886c32af362fb3cddd88a45fe62.png">
+                </div>
+
+        </div>
+        <div class="callout block" id="fwk-redden-ch03-s07_s02_n04a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p29"><strong class="emphasis bold">Try this!</strong> Graph the solution set: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0970" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>|</mo></mrow><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>.</p>
+            <p class="para" id="fwk-redden-ch03_s07_s02_p30">Answer:                 </p>
+<div class="informalfigure large">
+                    <img src="section_06/5906eac1da9f9dd2ddcfa5b88d2fde17.png">
+                </div>
+
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/9z87e7Iw9JE" condition="http://img.youtube.com/vi/9z87e7Iw9JE/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/9z87e7Iw9JE" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-redden-ch03_s07_s02_n05">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-redden-ch03_s07_s02_l01" mark="bullet">
+                <li>To graph solutions to systems of inequalities, graph the solution sets of each inequality on the same set of axes and determine where they intersect.</li>
+                <li>You can check your answer by choosing a few values inside and out of the shaded region to see if they satisfy the inequalities or not. While this is not a proof, doing so will give a good indication that you have graphed the correct region.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch03_s07_qs01" defaultlabel="number">
+            <h3 class="title">Topic Exercises</h3>
+            <ol class="qandadiv" id="fwk-redden-ch03_s07_qs01_qd01">
+                <h3 class="title">Part A: Solutions to Systems of Inequalities</h3>
+                <ol class="qandadiv" id="fwk-redden-ch03_s07_qs01_qd01_qd01">
+                    <p class="para" id="fwk-redden-ch03_s07_qs01_p01"><strong class="emphasis bold">Determine whether or not the given point is a solution to the given system of inequalities.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa01">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p02">(−2, 1);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0971" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mi>y</mi><mo>&gt;</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>y</mi><mo>≤</mo><mo>−</mo><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa02">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p04">(−1, −3);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0972" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>2</mn><mi>x</mi></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa03">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p06">(−2, −1);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0973" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>&gt;</mo><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>3</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa04">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p08">(0, −5);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0974" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mn>5</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>≥</mo><mn>5</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa05">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p10"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0975" display="inline"><mrow><mo stretchy="false">(</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mtext> </mtext><mn>0</mn><mo stretchy="false">)</mo></mrow></math></span>;</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0976" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mo>−</mo><mn>8</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>≥</mo><mn>3</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa06">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p12"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0977" display="inline"><mrow><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><mo>,</mo><mtext> </mtext><mfrac><mn>1</mn><mn>3</mn></mfrac><mo stretchy="false">)</mo></mrow></math></span>;</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0978" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>9</mn><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>&gt;</mo><mo>−</mo><mn>2</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa07">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p14">(−1, −2);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0979" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>≥</mo><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>&lt;</mo><mn>6</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>&gt;</mo><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa08">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p16">(−5, 2);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0980" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mo>−</mo><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>&gt;</mo><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>&lt;</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>2</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa09">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p18">(0, 3);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0981" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>y</mi><mo>+</mo><mn>4</mn><mo>≥</mo><mn>0</mn></mtd></mtr><mtr><mtd><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>y</mi><mo>≤</mo><mn>1</mn></mtd></mtr><mtr><mtd><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>≤</mo><mn>6</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa10">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p20">(1, 1);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0982" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa11">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p22">(−1, 2);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0983" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa12">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p24">(4, 5);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0984" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa13">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p26">(−2, −3);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0985" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>+</mo><mn>4</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa14">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p28">(1, 2);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0986" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>|</mo></mrow><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa15">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p30"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0987" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow></math></span>;</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0988" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>10</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa16">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p32">(−4, 1);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0989" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>x</mi><mo>≥</mo><mo>−</mo><mn>5</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa17">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p34"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0990" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>,</mo><mtext> </mtext><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>;</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0991" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>≤</mo><mn>4</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mrow><mo>|</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>|</mo></mrow><mo>+</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa18">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p36"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0992" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>3</mn><mo>,</mo><mo>−</mo><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>;</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0993" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>3</mn><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>&lt;</mo><mn>24</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa19">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p38">(4, 2);</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0994" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mo>−</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mi>x</mi><mo>+</mo><mn>5</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa20">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p40"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0995" display="inline"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>5</mn><mn>2</mn></mfrac><mo>,</mo><mtext> </mtext><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>;</p>
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0996" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mo>−</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch03_s07_qs01_qd02">
+                <h3 class="title">Part B: Solving Systems of Inequalities</h3>
+                <ol class="qandadiv" id="fwk-redden-ch03_s07_qs01_qd02_qd01" start="21">
+                    <p class="para" id="fwk-redden-ch03_s07_qs01_p42"><strong class="emphasis bold">Graph the solution set.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa21">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0997" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa22">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0998" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mi>x</mi><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa23">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0999" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&gt;</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mi>x</mi><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mn>5</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa24">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1000" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>4</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa25">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1001" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>x</mi><mo>−</mo><mi>y</mi><mo>≥</mo><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>x</mi><mo>+</mo><mi>y</mi><mo>≥</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa26">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1002" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>3</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>&lt;</mo><mn>4</mn></mtd></mtr><mtr><mtd><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>≤</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa27">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1003" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mo>−</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>≤</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>&lt;</mo><mn>15</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa28">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1004" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>&lt;</mo><mn>6</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>≥</mo><mo>−</mo><mn>12</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa29">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1005" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>&gt;</mo><mn>1</mn></mtd></mtr><mtr><mtd><mn>4</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>&gt;</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa30">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1006" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>≥</mo><mn>2</mn></mtd></mtr><mtr><mtd><mn>8</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>≤</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa31">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1007" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>5</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>≤</mo><mn>6</mn></mtd></mtr><mtr><mtd><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>&lt;</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa32">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1008" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>12</mn><mi>x</mi><mo>+</mo><mn>10</mn><mi>y</mi><mo>&gt;</mo><mn>20</mn></mtd></mtr><mtr><mtd><mn>18</mn><mi>x</mi><mo>+</mo><mn>15</mn><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>15</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa33">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1010" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>x</mi><mo>+</mo><mi>y</mi><mo>&lt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>+</mo><mn>4</mn><mo>&gt;</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa34">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1011" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>x</mi><mo>&gt;</mo><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa35">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1012" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>2</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>&lt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mn>3</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>&gt;</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa36">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1014" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>+</mo><mn>1</mn><mo>≤</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>+</mo><mn>3</mn><mo>≥</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa37">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p75">Construct a system of linear inequalities that describes all points in the first quadrant.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa38">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p77">Construct a system of linear inequalities that describes all points in the second quadrant.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa39">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p79">Construct a system of linear inequalities that describes all points in the third quadrant.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa40">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s07_qs01_p81">Construct a system of linear inequalities that describes all points in the fourth quadrant.</p>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch03_s07_qs01_qd02_qd02" start="41">
+                    <p class="para" id="fwk-redden-ch03_s07_qs01_p83"><strong class="emphasis bold">Graph the solution set.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa41">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1019" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mi>x</mi><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa42">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1020" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa43">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1021" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>&gt;</mo><mn>6</mn></mtd></mtr><mtr><mtd><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>&gt;</mo><mn>8</mn></mtd></mtr><mtr><mtd><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>≤</mo><mn>4</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa44">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1022" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>&gt;</mo><mo>−</mo><mn>15</mn></mtd></mtr><mtr><mtd><mn>5</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>≤</mo><mn>8</mn></mtd></mtr><mtr><mtd><mi>x</mi><mo>+</mo><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa45">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1023" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>&gt;</mo><mn>7</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>+</mo><mn>1</mn><mo>&gt;</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa46">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1024" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>&lt;</mo><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>&lt;</mo><mn>7</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>+</mo><mn>1</mn><mo>&gt;</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa47">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1025" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mn>4</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>−</mo><mn>8</mn><mo>&lt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>x</mi><mo>+</mo><mn>3</mn><mo>&gt;</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa48">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1026" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>−</mo><mn>2</mn><mo>&lt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>+</mo><mn>2</mn><mo>&gt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>≥</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa49">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1027" display="block"><mrow><mrow><mo>{</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>y</mi><mo>&lt;</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>x</mi><mo>&lt;</mo><mn>3</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>y</mi><mo>≤</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa50">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1028" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>y</mi><mo>≤</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>+</mo><mn>4</mn><mo>≥</mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>y</mi><mo>≤</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa51">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1029" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><mi>x</mi><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa52">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1030" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><mo>−</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa53">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1031" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>+</mo><mn>4</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa54">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1032" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mo>−</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mi>x</mi><mo>+</mo><mn>5</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa55">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1033" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mo>−</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa56">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1034" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><mo>−</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mi>x</mi><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa57">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1035" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>|</mo></mrow><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa58">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1036" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><mi>x</mi><mo>+</mo><mn>5</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>|</mo></mrow><mo>+</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa59">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1037" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&gt;</mo><mo>−</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>|</mo></mrow><mo>+</mo><mn>5</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa60">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1038" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>+</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mi>x</mi></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa61">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1039" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&gt;</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mi>x</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa62">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1041" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><mi>x</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa63">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1042" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mtd></mtr><mtr><mtd><mi>x</mi><mo>≤</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa64">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1043" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&gt;</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>|</mo></mrow></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mi>x</mi><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa65">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1045" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>&lt;</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>2</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mi>x</mi><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa66">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1046" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mn>4</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mn>3</mn></msup><mo>+</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa67">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1047" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>6</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><msqrt><mi>x</mi></msqrt><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa68">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1048" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><msqrt><mrow><mi>x</mi><mo>+</mo><mn>4</mn></mrow></msqrt></mtd></mtr><mtr><mtd><mi>x</mi><mo>≤</mo><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa69">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1049" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≥</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa70">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m1050" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>y</mi><mo>≥</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>|</mo></mrow><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>≤</mo><mo>−</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>|</mo></mrow><mo>+</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch03_s07_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p03_ans">Yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p07_ans">Yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p11_ans">Yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p15_ans">Yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p19_ans">Yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p23_ans">Yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p27_ans">No</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p31_ans">Yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa17_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p35_ans">Yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa19_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p39_ans">No</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="21">
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa21_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/a3d39b3bc22bd7937852dc87ef7f5393.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa23_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/8d3a377309a1d5d1d1e4bde7b0151b33.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa25_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/8e86a19a39496a32d5b085ef1ac31ac6.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa27_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/4a18f657838a2472c287455fa4f0742f.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa29_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/acbdf0320a9567415f067717e7a2479a.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa30_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa31_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/07385b05e6250db2103755bbb884190d.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa32_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa33_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/f7f1f7ddfac743d04524d8dc7f1384b6.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa34_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa35_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p72_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m1013" display="inline"><mo>Ø</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa36_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa37_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m1015" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>x</mi><mo>&gt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&gt;</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa38_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa39_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m1017" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mi>x</mi><mo>&lt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mi>y</mi><mo>&lt;</mo><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa40_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa41_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/4ba0469110372d99eb1b2725d6daea30.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa42_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa43_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/ca191aa9ea593dda4dc7a8988de99be0.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa44_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa45_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/fd18b81f5cc287c8d46796a0d92de904.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa46_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa47_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/1f5bd9b5c77554df8d725aa0b471a19e.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa48_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa49_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/508e6d1b6e68d86dce98a72e5f821d77.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa50_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa51_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/beab4bfaaffe83ce8a601b8cc8577fc2.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa52_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa53_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/95448f24b2721225012f320b99b63163.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa54_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa55_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/ccb1759299e7f477ceab223e2443d2fb.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa56_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa57_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/19d5f56de2976fb91c538a03db850ee5.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa58_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa59_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/34c33f5df8f5967f106d89e55d4d99e3.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa60_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa61_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s07_qs01_p125_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m1040" display="inline"><mo>Ø</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa62_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa63_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/60d61f885868e71dc08882facdf107e9.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa64_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa65_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/653a6146a691ea18320fe29c5b676b98.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa66_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa67_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/19b9bf7f98f3ded63ccca26f07a7b3f0.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa68_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa69_ans">
+                    <div class="answer">
+                        <div class="informalfigure large">
+                            <img src="section_06/4e70957694628c926daa37513b9daf0e.png">
+                        </div>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s07_qs01_qa70_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-06-determinants-and-cramer-s-rule.html"><img src="shared/images/batch-left.png"></a> <a href="s06-06-determinants-and-cramer-s-rule.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-08-review-exercises-and-sample-ex.html">Next Section</a> <a href="s06-08-review-exercises-and-sample-ex.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

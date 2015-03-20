@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Applications</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s10-05-solving-exponential-and-logari.html"><img src="shared/images/batch-left.png"></a> <a href="s10-05-solving-exponential-and-logari.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s10-07-review-exercises-and-sample-ex.html">Next Section</a> <a href="s10-07-review-exercises-and-sample-ex.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-redden-ch07_s06" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">7.6</span> Applications</h2>
+    <div class="learning_objectives editable block" id="fwk-redden-ch07_s06_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-redden-ch07_s06_o01" numeration="arabic">
+            <li>Use the compound and continuous interest formulas.</li>
+            <li>Calculate doubling time.</li>
+            <li>Use the exponential growth/decay model.</li>
+            <li>Calculate the rate of decay given half-life.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-redden-ch07_s06_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Compound and Continuous Interest Formulas</h2>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s01_p01">Recall that compound interest occurs when interest accumulated for one period is added to the principal investment before calculating interest for the next period. The amount <em class="emphasis">A</em> accrued in this manner over time <em class="emphasis">t</em> is modeled by the compound interest formula:</p>
+        <p class="para block" id="fwk-redden-ch07_s06_s01_p02"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1684" display="block"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mi>P</mi><msup><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mi>r</mi><mi>n</mi></mfrac></mrow><mo>)</mo></mrow></mrow><mrow><mi>n</mi><mi>t</mi></mrow></msup></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s01_p03">Here the initial principal <em class="emphasis">P</em> is accumulating compound interest at an annual rate <em class="emphasis">r</em> where the value <em class="emphasis">n</em> represents the number of times the interest is compounded in a year.</p>
+        <div class="callout block" id="fwk-redden-ch07_s06_s01_n01">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p04">Susan invested $500 in an account earning <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1685" display="inline"><mrow><mn>4</mn><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math></span>% annual interest that is compounded monthly.</p>
+            <ol class="orderedlist" id="fwk-redden-ch07_s06_s01_o01" numeration="loweralpha">
+                <li>How much will be in the account after 3 years?</li>
+                <li>How long will it take for the amount to grow to $750?</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p05">In this example, the principal <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1686" display="inline"><mrow><mi>P</mi><mo>=</mo><mi>$</mi><mn>500</mn></mrow></math></span>, the interest rate <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1687" display="inline"><mrow><mi>r</mi><mo>=</mo><mn>4</mn><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>%</mi><mo>=</mo><mn>0.045</mn></mrow></math></span>, and because the interest is compounded monthly, <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1688" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>12</mn></mrow><mo>.</mo></math></span> The investment can be modeled by the following function:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p06"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1689" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>500</mn><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>0.045</mn></mrow><mrow><mn>12</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mrow><mn>12</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>500</mn><msup><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow><mrow><mn>12</mn><mi>t</mi></mrow></msup></mtd></mtr></mtable></math></span></p>
+            <ol class="orderedlist" id="fwk-redden-ch07_s06_s01_o02" numeration="loweralpha">
+                <li>
+                    <p class="para">Use this model to calculate the amount in the account after <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1690" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>3</mn></mrow></math></span> years.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1691" display="block"><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mi>A</mi><mo stretchy="false">(</mo><mstyle color="#007fbf"><mn>3</mn></mstyle><mo stretchy="false">)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd><mrow><mn>500</mn><msup><mrow><mo stretchy="false">(</mo><mn>1.00375</mn><mo stretchy="false">)</mo></mrow><mrow><mn>12</mn><mo stretchy="false">(</mo><mstyle color="#007fbf"><mn>3</mn></mstyle><mo stretchy="false">)</mo></mrow></msup></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>500</mn><msup><mrow><mo stretchy="false">(</mo><mn>1.00375</mn><mo stretchy="false">)</mo></mrow><mrow><mn>36</mn></mrow></msup></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mo>≈</mo></mtd><mtd columnalign="left"><mrow><mn>572.12</mn></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                    <p class="para">Rounded off to the nearest cent, after 3 years, the amount accumulated will be $572.12.</p>
+                </li>
+                <li>
+                    <p class="para">To calculate the time it takes to accumulate $750, set <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1692" display="inline"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>750</mn></mrow></math></span> and solve for <em class="emphasis">t</em>.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1693" display="block"><mrow><mtable columnspacing="0.1em"><mtr columnalign="left"><mtd columnalign="left"><mrow><mi>A</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mn>500</mn><msup><mrow><mo stretchy="false">(</mo><mn>1.00375</mn><mo stretchy="false">)</mo></mrow><mrow><mn>12</mn><mi>t</mi></mrow></msup></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="left"><mrow><mstyle color="#007fbf"><mn>750</mn></mstyle><mo>=</mo><mn>500</mn><msup><mrow><mo stretchy="false">(</mo><mn>1.00375</mn><mo stretchy="false">)</mo></mrow><mrow><mn>12</mn><mi>t</mi></mrow></msup></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                    <p class="para">This results in an exponential equation that can be solved by first isolating the exponential expression.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1694" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>750</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>500</mn><msup><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow><mrow><mn>12</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>750</mn></mrow><mrow><mn>500</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow><mrow><mn>12</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mn>1.5</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow><mrow><mn>12</mn><mi>t</mi></mrow></msup></mtd></mtr></mtable></math></span></p>
+                    <p class="para">At this point take the common logarithm of both sides, apply the power rule for logarithms, and then solve for <em class="emphasis">t</em>.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1695" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>log</mi><mtext> </mtext><mo>(</mo><mn>1.5</mn><mo>)</mo></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>log</mi><mtext> </mtext><msup><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow><mrow><mn>12</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.5</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>12</mn><mi>t</mi><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mstyle color="#007fbf"><mn>12</mn><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow></mstyle></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><menclose notation="updiagonalstrike"><mrow><mn>12</mn></mrow></menclose><mi>t</mi><menclose notation="updiagonalstrike"><mrow><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow></mrow></menclose></mrow><mrow><mstyle color="#007fbf"><menclose notation="updiagonalstrike"><mrow><mn>12</mn></mrow></menclose><menclose notation="updiagonalstrike"><mrow><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow></mrow></menclose></mstyle></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>12</mn><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr></mtable></math></span></p>
+                    <p class="para">Using a calculator we can approximate the time it takes.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1696" display="block"><mrow><mi>t</mi><mo>=</mo><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.5</mn></mrow><mo>)</mo></mrow><mo>/</mo><mrow><mo>(</mo><mrow><mn>12</mn><mo>*</mo><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.00375</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>≈</mo><mn>9</mn><mtext>  </mtext><mi>y</mi><mi>e</mi><mi>a</mi><mi>r</mi><mi>s</mi></mrow></math></span></p>
+                </li>
+            </ol>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p07">Answer:</p>
+            <ol class="orderedlist" id="fwk-redden-ch07_s06_s01_o03" numeration="loweralpha">
+                <li>$572.12</li>
+                <li>Approximately 9 years.</li>
+            </ol>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s01_p08">The period of time it takes a quantity to double is called the <span class="margin_term"><a class="glossterm">doubling time</a><span class="glossdef">The period of time it takes a quantity to double.</span></span>. We next outline a technique for calculating the time it takes to double an initial investment earning compound interest.</p>
+        <div class="callout block" id="fwk-redden-ch07_s06_s01_n02">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p09">Mario invested $1,000 in an account earning 6.3% annual interest that is compounded semi-annually. How long will it take the investment to double?</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p10">Here the principal <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1697" display="inline"><mrow><mi>P</mi><mo>=</mo><mi>$</mi><mn>1,000</mn></mrow></math></span>, the interest rate <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1698" display="inline"><mrow><mi>r</mi><mo>=</mo><mn>6.3</mn><mi>%</mi><mo>=</mo><mn>0.063</mn></mrow></math></span>, and because the interest is compounded semi-annually <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1699" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow><mo>.</mo></math></span> This investment can be modeled as follows:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p11"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1700" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mrow><mn>0.063</mn></mrow><mn>2</mn></mfrac></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p12">Since we are looking for the time it takes to double $1,000, substitute $2,000 for the resulting amount <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1701" display="inline"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mrow></math></span> and then solve for <em class="emphasis">t</em>.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p13"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1702" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>2,000</mn></mstyle></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>2,000</mn></mrow><mrow><mn>1,000</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p14">At this point we take the common logarithm of both sides.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p15"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1703" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>log</mi><mtext> </mtext><mn>2</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>log</mi><mtext> </mtext><msup><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>log</mi><mtext> </mtext><mn>2</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn><mi>t</mi><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mi>log</mi><mtext> </mtext><mn>2</mn></mrow><mrow><mn>2</mn><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p16">Using a calculator we can approximate the time it takes:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p17"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1704" display="block"><mrow><mi>t</mi><mo>=</mo><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>/</mo><mrow><mo>(</mo><mrow><mn>2</mn><mo>*</mo><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow></mrow><mo>)</mo></mrow><mo>≈</mo><mn>11.17</mn><mtext>  </mtext><mtext>years</mtext></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p18">Answer: Approximately 11.17 years to double at 6.3%.</p>
+        </div>
+        <p class="para block" id="fwk-redden-ch07_s06_s01_p19">If the investment in the previous example was one million dollars, how long would it take to double? To answer this we would use <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1705" display="inline"><mrow><mi>P</mi><mo>=</mo><mi>$</mi><mn>1,000,000</mn></mrow></math></span> and <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1706" display="inline"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mi>$</mi><mn>2,000,000</mn></mrow></math></span>:</p>
+        <p class="para block" id="fwk-redden-ch07_s06_s01_p20"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1707" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>2,000,000</mn></mstyle></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000,000</mn><msup><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s01_p21">Dividing both sides by 1,000,000 we obtain the same exponential function as before.</p>
+        <p class="para block" id="fwk-redden-ch07_s06_s01_p22"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1708" display="block"><mrow><mn>2</mn><mo>=</mo><msup><mrow><mrow><mo>(</mo><mrow><mn>1.0315</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>2</mn><mi>t</mi></mrow></msup></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s01_p23">Hence, the result will be the same, about 11.17 years. In fact, doubling time is independent of the initial investment <em class="emphasis">P</em>.</p>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s01_p24">Interest is typically compounded semi-annually (<em class="emphasis">n</em> = 2), quarterly (<em class="emphasis">n</em> = 4), monthly (<em class="emphasis">n</em> = 12), or daily (<em class="emphasis">n</em> = 365). However if interest is compounded every instant we obtain a formula for continuously compounding interest:</p>
+        <p class="para block" id="fwk-redden-ch07_s06_s01_p25"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1709" display="block"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mi>P</mi><msup><mi>e</mi><mrow><mi>r</mi><mi>t</mi></mrow></msup></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s01_p26">Here <em class="emphasis">P</em> represents the initial principal amount invested, <em class="emphasis">r</em> represents the annual interest rate, and <em class="emphasis">t</em> represents the time in years the investment is allowed to accrue continuously compounded interest.</p>
+        <div class="callout block" id="fwk-redden-ch07_s06_s01_n03">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p27">Mary invested $200 in an account earning <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1710" display="inline"><mrow><mn>5</mn><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow></math></span>% annual interest that is compounded continuously. How long will it take the investment to grow to $350?</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p28">Here the principal <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1711" display="inline"><mrow><mi>P</mi><mo>=</mo><mi>$</mi><mn>200</mn></mrow></math></span> and the interest rate <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1712" display="inline"><mrow><mi>r</mi><mo>=</mo><mn>5</mn><mfrac><mn>3</mn><mn>4</mn></mfrac><mi>%</mi><mo>=</mo><mn>5.75</mn><mi>%</mi><mo>=</mo><mn>0.0575</mn></mrow><mo>.</mo></math></span> Since the interest is compounded continuously, use the formula <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1713" display="inline"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mi>P</mi><msup><mi>e</mi><mrow><mi>r</mi><mi>t</mi></mrow></msup></mrow><mo>.</mo></math></span> Hence, the investment can be modeled by the following,</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p29"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1714" display="block"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>200</mn><msup><mi>e</mi><mrow><mn>0.0575</mn><mi>t</mi></mrow></msup></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p30">To calculate the time it takes to accumulate to $350, set <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1715" display="inline"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>350</mn></mrow></math></span> and solve for <em class="emphasis">t</em>.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p31"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1716" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>200</mn><msup><mi>e</mi><mrow><mn>0.0575</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>350</mn></mstyle></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>200</mn><msup><mi>e</mi><mrow><mn>0.0575</mn><mi>t</mi></mrow></msup></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p32">Begin by isolating the exponential expression.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p33"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1717" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mfrac><mrow><mn>350</mn></mrow><mrow><mn>200</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mn>0.0575</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mn>7</mn><mn>4</mn></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mn>0.0575</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mn>1.75</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mn>0.0575</mn><mi>t</mi></mrow></msup></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p34">Because this exponential has base <em class="emphasis">e</em>, we choose to take the natural logarithm of both sides and then solve for <em class="emphasis">t</em>.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p35"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1718" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.75</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>ln</mi><mtext> </mtext><msup><mi>e</mi><mrow><mn>0.0575</mn><mi>t</mi></mrow></msup></mtd><mtd columnalign="left"><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mi>A</mi><mi>p</mi><mi>p</mi><mi>l</mi><mi>y</mi><mtext> </mtext><mi>t</mi><mi>h</mi><mi>e</mi><mtext> </mtext><mi>p</mi><mi>o</mi><mi>w</mi><mi>e</mi><mi>r</mi><mtext> </mtext><mi>r</mi><mi>u</mi><mi>l</mi><mi>e</mi><mtext> </mtext><mi>f</mi><mi>o</mi><mi>r</mi><mtext> </mtext><mi>l</mi><mi>o</mi><mi>g</mi><mi>a</mi><mi>r</mi><mi>i</mi><mi>t</mi><mi>h</mi><mi>m</mi><mi>s</mi><mo>.</mo></mstyle></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.75</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0.0575</mn><mi>t</mi><mi>ln</mi><mtext> </mtext><mi>e</mi></mtd><mtd columnalign="left"><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mi>R</mi><mi>e</mi><mi>c</mi><mi>a</mi><mi>l</mi><mi>l</mi><mtext> </mtext><mi>t</mi><mi>h</mi><mi>a</mi><mi>t</mi><mtext> </mtext><mi>ln</mi><mtext> </mtext><mi>e</mi><mo>=</mo><mn>1</mn><mo>.</mo></mstyle></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.75</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0.0575</mn><mi>t</mi><mo>⋅</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.75</mn></mrow><mo>)</mo></mrow></mrow><mrow><mn>0.0575</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p36">Using a calculator we can approximate the time it takes:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p37"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1719" display="block"><mrow><mi>t</mi><mo>=</mo><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>1.75</mn></mrow><mo>)</mo></mrow><mo>/</mo><mn>0.0575</mn><mo>≈</mo><mn>9.73</mn><mtext>  </mtext><mtext> </mtext><mtext> </mtext><mi>y</mi><mi>e</mi><mi>a</mi><mi>r</mi><mi>s</mi></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p38">Answer: It will take approximately 9.73 years.</p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s01_p39">When solving applications involving compound interest, look for the keyword “continuous,” or the keywords that indicate the number of annual compoundings. It is these keywords that determine which formula to choose.</p>
+        <div class="callout block" id="fwk-redden-ch07_s06_s01_n03a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p40"><strong class="emphasis bold">Try this!</strong> Mario invested $1,000 in an account earning 6.3% annual interest that is compounded continuously. How long will it take the investment to double?</p>
+            <p class="para" id="fwk-redden-ch07_s06_s01_p41">Answer: Approximately 11 years.</p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/Z_ilJHIQvWQ" condition="http://img.youtube.com/vi/Z_ilJHIQvWQ/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/Z_ilJHIQvWQ" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="fwk-redden-ch07_s06_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Modeling Exponential Growth and Decay</h2>
+        <p class="para block" id="fwk-redden-ch07_s06_s02_p01">In the sciences, when a quantity is said to grow or decay exponentially, it is specifically meant to be modeled using the <span class="margin_term"><a class="glossterm">exponential growth/decay formula</a><span class="glossdef">A formula that models exponential growth or decay: <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1720" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mrow><mo>.</mo></math></span></span></span>:</p>
+        <p class="para block" id="fwk-redden-ch07_s06_s02_p02"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1721" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mrow></math></span></p>
+        <p class="para block" id="fwk-redden-ch07_s06_s02_p03">Here <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1722" display="inline"><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></math></span>, read “<em class="emphasis">P</em> naught,” or “<em class="emphasis">P</em> zero,” represents the initial amount, <em class="emphasis">k</em> represents the growth rate, and <em class="emphasis">t</em> represents the time the initial amount grows or decays exponentially. If <em class="emphasis">k</em> is negative, then the function models exponential decay. Notice that the function looks very similar to that of continuously compounding interest formula. We can use this formula to model population growth when conditions are optimal.</p>
+        <div class="callout block" id="fwk-redden-ch07_s06_s02_n01">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p04">It is estimated that the population of a certain small town is 93,000 people with an annual growth rate of 2.6%. If the population continues to increase exponentially at this rate:</p>
+            <ol class="orderedlist" id="fwk-redden-ch07_s06_s02_o01" numeration="loweralpha">
+                <li>Estimate the population in 7 years’ time.</li>
+                <li>Estimate the time it will take for the population to reach 120,000 people.</li>
+            </ol>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p05">We begin by constructing a mathematical model based on the given information. Here the initial population <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1723" display="inline"><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><mn>93,000</mn></mrow></math></span> people and the growth rate <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1724" display="inline"><mrow><mi>r</mi><mo>=</mo><mn>2.6</mn><mi>%</mi><mo>=</mo><mn>0.026</mn></mrow><mo>.</mo></math></span> The following model gives population in terms of time measured in years:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p06"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1725" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>93,000</mn><msup><mi>e</mi><mrow><mn>0.026</mn><mi>t</mi></mrow></msup></mrow></math></span></p>
+            <ol class="orderedlist" id="fwk-redden-ch07_s06_s02_o02" numeration="loweralpha">
+                <li>
+                    <p class="para">Use this function to estimate the population in <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1726" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>7</mn></mrow></math></span> years.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1727" display="block"><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mi>P</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>93,000</mn><msup><mi>e</mi><mrow><mn>0.026</mn><mo stretchy="false">(</mo><mstyle color="#007fbf"><mn>7</mn></mstyle><mo stretchy="false">)</mo></mrow></msup></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>93,000</mn><msup><mi>e</mi><mrow><mn>0.182</mn></mrow></msup></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mo>≈</mo></mtd><mtd columnalign="left"><mrow><mn>111,564</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>p</mi><mi>e</mi><mi>o</mi><mi>p</mi><mi>l</mi><mi>e</mi></mrow></mtd></mtr></mtable></mrow></math></span></p>
+                </li>
+                <li>
+                    <p class="para">Use the model to determine the time it takes to reach <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1728" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>120,000</mn></mrow></math></span> people.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1729" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>93,000</mn><msup><mi>e</mi><mrow><mn>0.026</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>120,000</mn></mstyle></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>93,000</mn><msup><mi>e</mi><mrow><mn>0.026</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>120,000</mn></mrow><mrow><mn>93,000</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mn>0.026</mn><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>40</mn></mrow><mrow><mn>31</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mn>0.026</mn><mi>t</mi></mrow></msup></mtd></mtr></mtable></math></span></p>
+                    <p class="para">Take the natural logarithm of both sides and then solve for <em class="emphasis">t</em>.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1730" display="block"><mrow><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mrow><mn>40</mn></mrow><mrow><mn>31</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mi>ln</mi><mtext> </mtext><msup><mi>e</mi><mrow><mn>0.026</mn><mi>t</mi></mrow></msup></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mrow><mn>40</mn></mrow><mrow><mn>31</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>0.026</mn><mi>t</mi><mi>ln</mi><mtext> </mtext><mi>e</mi></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mrow><mn>40</mn></mrow><mrow><mn>31</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>0.026</mn><mi>t</mi><mo>⋅</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mfrac><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mrow><mn>40</mn></mrow><mrow><mn>31</mn></mrow></mfrac></mrow><mo>)</mo></mrow></mrow><mrow><mn>0.026</mn></mrow></mfrac></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr></mtable></mrow></math></span></p>
+                    <p class="para">Using a calculator,</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1731" display="block"><mrow><mi>t</mi><mo>=</mo><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>40</mn><mo>/</mo><mn>31</mn></mrow><mo>)</mo></mrow><mo>/</mo><mn>0.026</mn><mo>≈</mo><mn>9.8</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>y</mi><mi>e</mi><mi>a</mi><mi>r</mi><mi>s</mi></mrow></math></span></p>
+                </li>
+            </ol>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p07">Answer:</p>
+            <ol class="orderedlist" id="fwk-redden-ch07_s06_s02_o03" numeration="loweralpha">
+                <li>111,564 people</li>
+                <li>9.8 years</li>
+            </ol>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s02_p08">Often the growth rate <em class="emphasis">k</em> is not given. In this case, we look for some other information so that we can determine it and then construct a mathematical model. The general steps are outlined in the following example.</p>
+        <div class="callout block" id="fwk-redden-ch07_s06_s02_n02">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p09">Under optimal conditions <em class="emphasis">Escherichia coli (E. coli)</em> bacteria will grow exponentially with a doubling time of 20 minutes. If 1,000 <em class="emphasis">E. coli</em> cells are placed in a Petri dish and maintained under optimal conditions, how many <em class="emphasis">E. coli</em> cells will be present in 2 hours?</p>
+            <div class="figure large" id="fwk-redden-ch07_s06_s02_f01">
+                <p class="title"><span class="title-prefix">Figure 7.3</span> </p>
+                <img src="section_10/e4aec56fc96a1ec3adc0a6334a6e301a.png">
+                <p class="para"><em class="emphasis">Escherichia coli (E. coli)</em> (Wikipedia)</p>
+            </div>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p10">The goal is to use the given information to construct a mathematical model based on the formula <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1732" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mrow><mo>.</mo></math></span></p>
+            <ul class="itemizedlist" id="fwk-redden-ch07_s06_s02_l01" mark="none">
+                <li>
+                    <p class="para"><strong class="emphasis bold">Step 1</strong>: Find the growth rate <em class="emphasis">k</em>. Use the fact that the initial amount, <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1733" display="inline"><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><mn>1,000</mn></mrow></math></span> cells, doubles in 20 minutes. That is, <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1734" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>2,000</mn></mrow></math></span> cells when <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1735" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>20</mn></mrow></math></span> minutes.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1736" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mn>2,000</mn></mstyle></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mi>e</mi><mrow><mi>k</mi><mstyle color="#007fbf"><mn>20</mn></mstyle></mrow></msup></mtd></mtr></mtable></math></span></p>
+                    <p class="para">Solve for the only variable <em class="emphasis">k</em>.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1737" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2,000</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mi>e</mi><mrow><mi>k</mi><mn>20</mn></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>2,000</mn></mrow><mrow><mn>1,000</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mi>k</mi><mn>20</mn></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mi>k</mi><mn>20</mn></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>ln</mi><mtext> </mtext><msup><mi>e</mi><mrow><mi>k</mi><mn>20</mn></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>k</mi><mn>20</mn><mi>ln</mi><mtext> </mtext><mi>e</mi></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>k</mi><mn>20</mn><mo>⋅</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow><mrow><mn>20</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>k</mi></mtd></mtr></mtable></math></span></p>
+                </li>
+                <li>
+                    <p class="para"><strong class="emphasis bold">Step 2</strong>: Write a mathematical model based on the given information. Here <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1738" display="inline"><mrow><mi>k</mi><mo>≈</mo><mn>0.0347</mn></mrow></math></span>, which is about 3.5% growth rate per minute. However, we will use the exact value for <em class="emphasis">k</em> in our model. This will allow us to avoid round-off error in the final result. Use <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1739" display="inline"><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><mn>1,000</mn></mrow></math></span> and <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1740" display="inline"><mrow><mi>k</mi><mo>=</mo><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>/</mo><mn>20</mn></mrow></math></span>:</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1741" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>1,000</mn><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>/</mo><mn>20</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mrow></math></span></p>
+                    <p class="para">This equation models the number of <em class="emphasis">E. coli</em> cells in terms of time in minutes.</p>
+                </li>
+                <li>
+                    <p class="para"><strong class="emphasis bold">Step 3</strong>: Use the function to answer the questions. In this case, we are asked to find the number of cells present in 2 hours. Because time is measured in minutes, use <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1742" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>120</mn></mrow></math></span> minutes to calculate the number of <em class="emphasis">E. coli</em> cells.</p>
+                    <p class="para"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1743" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mn>120</mn></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>/</mo><mn>20</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mn>120</mn></mstyle></mrow><mo>)</mo></mrow></mrow></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mi>e</mi><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>⋅</mo><mn>6</mn></mrow></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><msup><mi>e</mi><mrow><mi>ln</mi><mtext> </mtext><msup><mn>2</mn><mn>6</mn></msup></mrow></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1,000</mn><mo>⋅</mo><msup><mn>2</mn><mn>6</mn></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>64,000</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>c</mi><mi>e</mi><mi>l</mi><mi>l</mi><mi>s</mi></mtd></mtr></mtable></math></span></p>
+                </li>
+            </ul>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p11">Answer: In two hours 64,000 cells will be present.</p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s02_p12">When the growth rate is negative the function models exponential decay. We can describe decreasing quantities using a <span class="margin_term"><a class="glossterm">half-life</a><span class="glossdef">The period of time it takes a quantity to decay to one-half of the initial amount.</span></span>, or the time it takes to decay to one-half of a given quantity.</p>
+        <div class="callout block" id="fwk-redden-ch07_s06_s02_n03">
+            <h3 class="title">Example 6</h3>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p13">Due to radioactive decay, caesium-137 has a half-life of 30 years. How long will it take a 50-milligram sample to decay to 10 milligrams?</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p14">Use the half-life information to determine the rate of decay <em class="emphasis">k</em>. In <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1744" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>30</mn></mrow></math></span> years the initial amount <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1745" display="inline"><mrow><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><mn>50</mn></mrow></math></span> milligrams will decay to half <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1746" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mrow><mn>30</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>25</mn></mrow></math></span> milligrams.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p15"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1747" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mn>25</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>50</mn><msup><mi>e</mi><mrow><mi>k</mi><mn>30</mn></mrow></msup></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p16">Solve for the only variable, <em class="emphasis">k</em>.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p17"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1748" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>25</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>50</mn><msup><mi>e</mi><mrow><mi>k</mi><mn>30</mn></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>25</mn></mrow><mrow><mn>50</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mn>30</mn><mi>k</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>ln</mi><mtext> </mtext><msup><mi>e</mi><mrow><mn>30</mn><mi>k</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>30</mn><mi>k</mi><mi>ln</mi><mtext> </mtext><mi>e</mi></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mi>ln</mi><mtext> </mtext><mn>1</mn><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow><mrow><mn>30</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>k</mi></mtd><mtd><mtext>             </mtext><mstyle color="#007fbf"><mi>R</mi><mi>e</mi><mi>c</mi><mi>a</mi><mi>l</mi><mi>l</mi><mtext> </mtext><mi>t</mi><mi>h</mi><mi>a</mi><mi>t</mi><mtext> </mtext><mi>ln</mi><mtext> </mtext><mn>1</mn><mo>=</mo><mn>0</mn><mo>.</mo></mstyle></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mfrac><mrow><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow><mrow><mn>30</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>k</mi></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p18">Note that <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1749" display="inline"><mrow><mi>k</mi><mo>=</mo><mo>−</mo><mi>ln</mi><mtext> </mtext><mfrac><mn>2</mn><mn>30</mn></mfrac><mo>≈</mo><mo>−</mo><mn>0.0231</mn></mrow></math></span> is negative. However, we will use the exact value to construct a model that gives the amount of cesium-137 with respect to time in years.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p19"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1750" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>50</mn><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn><mo>/</mo><mn>30</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p20">Use this model to find <em class="emphasis">t</em> when <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1751" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow></math></span> milligrams.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p21"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1752" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>10</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>50</mn><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn><mo>/</mo><mn>30</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>10</mn></mrow><mrow><mn>50</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn><mo>/</mo><mn>30</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>5</mn></mfrac></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>ln</mi><mtext> </mtext><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn><mo>/</mo><mn>30</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mn>1</mn><mo>−</mo><mtext> </mtext><mi>ln</mi><mtext> </mtext><mn>5</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mrow><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow><mrow><mn>30</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mi>t</mi><mtext> </mtext><mi>ln</mi><mtext> </mtext><mi>e</mi></mtd><mtd><mtext>     </mtext><mstyle color="#007fbf"><mi>R</mi><mi>e</mi><mi>c</mi><mi>a</mi><mi>l</mi><mi>l</mi><mtext> </mtext><mi>t</mi><mi>h</mi><mi>a</mi><mi>t</mi><mtext> </mtext><mi>ln</mi><mtext> </mtext><mi>e</mi><mo>=</mo><mn>1</mn><mo>.</mo></mstyle></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mfrac><mrow><mn>30</mn><mrow><mo>(</mo><mrow><mi>ln</mi><mtext> </mtext><mn>1</mn><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mo>−</mo><mn>30</mn><mrow><mo>(</mo><mrow><mn>0</mn><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>30</mn><mi>ln</mi><mtext> </mtext><mn>5</mn></mrow><mrow><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p22">Answer: Using a calculator, it will take <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1753" display="inline"><mrow><mi>t</mi><mo>≈</mo><mn>69.66</mn></mrow></math></span> years to decay to 10 milligrams.</p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch07_s06_s02_p23">Radiocarbon dating is a method used to estimate the age of artifacts based on the relative amount of carbon-14 present in it. When an organism dies, it stops absorbing this naturally occurring radioactive isotope, and the carbon-14 begins to decay at a known rate. Therefore, the amount of carbon-14 present in an artifact can be used to estimate the age of the artifact.</p>
+        <div class="callout block" id="fwk-redden-ch07_s06_s02_n04">
+            <h3 class="title">Example 7</h3>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p24">An ancient bone tool is found to contain 25% of the carbon-14 normally found in bone. Given that carbon-14 has a half-life of 5,730 years, estimate the age of the tool.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p25">Begin by using the half-life information to find <em class="emphasis">k</em>. Here the initial amount <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1754" display="inline"><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></math></span> of carbon-14 is not given, however, we know that in <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1755" display="inline"><mrow><mi>t</mi><mo>=</mo><mn>5,730</mn></mrow></math></span> years, this amount decays to half, <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1756" display="inline"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>P</mi><mn>0</mn></msub></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p26"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1757" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>P</mi><mn>0</mn></msub></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mn>5,730</mn></mrow></msup></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p27">Dividing both sides by <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1758" display="inline"><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></math></span> leaves us with an exponential equation in terms of <em class="emphasis">k</em>. This shows that half-life is independent of the initial amount.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p28"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1759" display="block"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>=</mo><msup><mi>e</mi><mrow><mi>k</mi><mn>5,730</mn></mrow></msup></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p29">Solve for <em class="emphasis">k</em>.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p30"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1760" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>ln</mi><mtext> </mtext><msup><mi>e</mi><mrow><mi>k</mi><mn>5,730</mn></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mn>1</mn><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5,730</mn><mi>k</mi><mtext> </mtext><mi>ln</mi><mtext> </mtext><mi>e</mi></mtd></mtr><mtr><mtd columnalign="right"><mfrac><mrow><mn>0</mn><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow><mrow><mn>5,730</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>k</mi></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mfrac><mrow><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow><mrow><mn>5,730</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>k</mi></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p31">Therefore we have the model,</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p32"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1761" display="block"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn><mo>/</mo><mn>5,730</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p33">Next we wish to the find time it takes the carbon-14 to decay to 25% of the initial amount, or <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1762" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mn>0.25</mn><msub><mi>P</mi><mn>0</mn></msub></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p34"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1763" display="block"><mrow><mn>0.25</mn><msub><mi>P</mi><mn>0</mn></msub><mo>=</mo><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn><mo>/</mo><mn>5,730</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p35">Divide both sides by <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1764" display="inline"><mrow><msub><mi>P</mi><mn>0</mn></msub></mrow></math></span> and solve for <em class="emphasis">t</em>.</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p36"><span class="informalequation"><math xml:id="fwk-redden-ch07_m1765" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>0.25</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn><mo>/</mo><mn>5,730</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>0.25</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>ln</mi><mtext> </mtext><msup><mi>e</mi><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mn>2</mn><mo>/</mo><mn>5,730</mn></mrow><mo>)</mo></mrow><mi>t</mi></mrow></msup></mtd></mtr><mtr><mtd columnalign="right"><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>0.25</mn></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mrow><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow><mrow><mn>5,730</mn></mrow></mfrac></mrow><mo>)</mo></mrow><mi>t</mi><mi>ln</mi><mtext> </mtext><mi>e</mi></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mfrac><mrow><mn>5,730</mn><mtext> </mtext><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mn>0.25</mn></mrow><mo>)</mo></mrow></mrow><mrow><mi>ln</mi><mtext> </mtext><mn>2</mn></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr><mtr><mtd columnalign="right"><mn>11,460</mn></mtd><mtd><mo>≈</mo></mtd><mtd columnalign="left"><mi>t</mi></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p37">Answer: The tool is approximately 11,460 years old.</p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch07_s06_s02_n04a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p38"><strong class="emphasis bold">Try this!</strong> The half-life of strontium-90 is about 28 years. How long will it take a 36 milligram sample of strontium-90 to decay to 30 milligrams?</p>
+            <p class="para" id="fwk-redden-ch07_s06_s02_p39">Answer: 7.4 years</p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/Oto0ihiyvBc" condition="http://img.youtube.com/vi/Oto0ihiyvBc/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/Oto0ihiyvBc" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+        <div class="key_takeaways block" id="fwk-redden-ch07_s06_s02_n05">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-redden-ch07_s06_s02_l02" mark="bullet">
+                <li>When interest is compounded a given number of times per year use the formula <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1766" display="inline"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mi>P</mi><msup><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mfrac><mi>r</mi><mi>n</mi></mfrac></mrow><mo>)</mo></mrow></mrow><mrow><mi>n</mi><mi>t</mi></mrow></msup></mrow><mo>.</mo></math></span>
+</li>
+                <li>When interest is to be compounded continuously use the formula <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1767" display="inline"><mrow><mi>A</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mi>P</mi><msup><mi>e</mi><mrow><mi>r</mi><mi>t</mi></mrow></msup></mrow><mo>.</mo></math></span>
+</li>
+                <li>Doubling time is the period of time it takes a given amount to double. Doubling time is independent of the principal.</li>
+                <li>When amounts are said to be increasing or decaying exponentially, use the formula <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1768" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><msub><mi>P</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mi>k</mi><mi>t</mi></mrow></msup></mrow><mo>.</mo></math></span>
+</li>
+                <li>Half-life is the period of time it takes a given amount to decrease to one-half. Half-life is independent of the initial amount.</li>
+                <li>To model data using the exponential growth/decay formula, use the given information to determine the growth/decay rate <em class="emphasis">k</em>. Once <em class="emphasis">k</em> is determined, a formula can be written to model the problem. Use the formula to answer the questions.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch07_s06_qs01" defaultlabel="number">
+            <h3 class="title">Topic Exercises</h3>
+            <ol class="qandadiv" id="fwk-redden-ch07_s06_qs01_qd01">
+                <h3 class="title">Part A: Compound and Continuous Interest</h3>
+                <ol class="qandadiv" id="fwk-redden-ch07_s06_qs01_qd01_qd01">
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa01">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p01">Jill invested $1,450 in an account earning <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1769" display="inline"><mrow><mn>4</mn><mfrac><mn>5</mn><mn>8</mn></mfrac></mrow></math></span>% annual interest that is compounded monthly.</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o01" numeration="loweralpha">
+                                <li>How much will be in the account after 6 years?</li>
+                                <li>How long will it take the account to grow to $2,200?</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa02">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p02">James invested $825 in an account earning <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1770" display="inline"><mrow><mn>5</mn><mfrac><mn>2</mn><mn>5</mn></mfrac></mrow></math></span>% annual interest that is compounded monthly.</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o03" numeration="loweralpha">
+                                <li>How much will be in the account after 4 years?</li>
+                                <li>How long will it take the account to grow to $1,500?</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa03">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p03">Raul invested $8,500 in an online money market fund earning 4.8% annual interest that is compounded continuously.</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o05" numeration="loweralpha">
+                                <li>How much will be in the account after 2 years?</li>
+                                <li>How long will it take the account to grow to $10,000?</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa04">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p04">Ian deposited $500 in an account earning 3.9% annual interest that is compounded continuously.</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o07" numeration="loweralpha">
+                                <li>How much will be in the account after 3 years?</li>
+                                <li>How long will it take the account to grow to $1,500?</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa05">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p05">Bill wants to grow his $75,000 inheritance to $100,000 before spending any of it. How long will this take if the bank is offering 5.2% annual interest compounded quarterly?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa06">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p07">Mary needs $25,000 for a down payment on a new home. If she invests her savings of $21,350 in an account earning 4.6% annual interest that is compounded semi-annually, how long will it take to grow to the amount that she needs?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa07">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p09">Joe invested his $8,700 savings in an account earning <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1771" display="inline"><mrow><mn>6</mn><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow></math></span>% annual interest that is compounded continuously. How long will it take to earn $300 in interest?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa08">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p11">Miriam invested $12,800 in an account earning <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1773" display="inline"><mrow><mn>5</mn><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></math></span>% annual interest that is compounded monthly. How long will it take to earn $1,200 in interest?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa09">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p13">Given that the bank is offering 4.2% annual interest compounded monthly, what principal is needed to earn $25,000 in interest for one year?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa10">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p15">Given that the bank is offering 3.5% annual interest compounded continuously, what principal is needed to earn $12,000 in interest for one year?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa11">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p17">Jose invested his $3,500 bonus in an account earning <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1774" display="inline"><mrow><mn>5</mn><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math></span>% annual interest that is compounded quarterly. How long will it take to double his investment?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa12">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p19">Maria invested her $4,200 savings in an account earning <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1775" display="inline"><mrow><mn>6</mn><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow></math></span>% annual interest that is compounded semi-annually. How long will it take to double her savings?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa13">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p21">If money is invested in an account earning 3.85% annual interest that is compounded continuously, how long will it take the amount to double?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa14">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p23">If money is invested in an account earning 6.82% annual interest that is compounded continuously, how long will it take the amount to double?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa15">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p25">Find the annual interest rate at which an account earning continuously compounding interest has a doubling time of 9 years.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa16">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p27">Find the annual interest rate at which an account earning interest that is compounded monthly has a doubling time of 10 years.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa17">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p29">Alice invested her savings of $7,000 in an account earning 4.5% annual interest that is compounded monthly. How long will it take the account to triple in value?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa18">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p31">Mary invested her $42,000 bonus in an account earning 7.2% annual interest that is compounded continuously. How long will it take the account to triple in value?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa19">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p33">Calculate the doubling time of an investment made at 7% annual interest that is compounded:</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o09" numeration="loweralpha">
+                                <li>monthly</li>
+                                <li>continuously</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa20">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p34">Calculate the doubling time of an investment that is earning continuously compounding interest at an annual interest rate of:</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o11" numeration="loweralpha">
+                                <li>4%</li>
+                                <li>6%</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa21">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p35">Billy’s grandfather invested in a savings bond that earned 5.5% annual interest that was compounded annually. Currently, 30 years later, the savings bond is valued at $10,000. Determine what the initial investment was.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa22">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p37">In 1935 Frank opened an account earning 3.8% annual interest that was compounded quarterly. He rediscovered this account while cleaning out his garage in 2005. If the account is now worth $11,294.30, how much was his initial deposit in 1935?</p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch07_s06_qs01_qd02">
+                <h3 class="title">Part B: Modeling Exponential Growth and Decay</h3>
+                <ol class="qandadiv" id="fwk-redden-ch07_s06_qs01_qd02_qd01" start="23">
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa23">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p39">The population of a small town of 24,000 people is expected grow exponentially at a rate of 1.6% per year. Construct an exponential growth model and use it to:</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o13" numeration="loweralpha">
+                                <li>Estimate the population in 3 years’ time.</li>
+                                <li>Estimate the time it will take for the population to reach 30,000 people.</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa24">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p40">During the exponential growth phase, certain bacteria can grow at a rate of 4.1% per hour. If 10,000 cells are initially present in a sample, construct an exponential growth model and use it to:</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o15" numeration="loweralpha">
+                                <li>Estimate the population in 5 hours.</li>
+                                <li>Estimate the time it will take for the population to reach 25,000 cells.</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa25">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p41">In 2000, the world population was estimated to be 6.115 billion people and in 2010 the estimate was 6.909 billion people. If the world population continues to grow exponentially, estimate the total world population in 2020.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa26">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p43">In 2000, the population of the United States was estimated to be 282 million people and in 2010 the estimate was 309 million people. If the population of the United States grows exponentially, estimate the population in 2020.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa27">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p45">An automobile was purchased new for $42,500 and 2 years later it was valued at $33,400. Estimate the value of the automobile in 5 years if it continues to decrease exponentially.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa28">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p47">A new PC was purchased for $1,200 and in 1.5 years it was worth $520. Assume the value is decreasing exponentially and estimate the value of the PC four years after it is purchased.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa29">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p49">The population of the downtown area of a certain city decreased from 12,500 people to 10,200 people in two years. If the population continues to decrease exponentially at this rate, what would we expect the population to be in two more years?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa30">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p51">A new MP3 player was purchased for $320 and in 1 year it was selling used online for $210. If the value continues to decrease exponentially at this rate, determine the value of the MP3 player 3 years after it was purchased.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa31">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p53">The half-life of radium-226 is about 1,600 years. How long will a 5-milligram sample of radium-226 take to decay to 1 milligram?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa32">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p55">The half-life of plutonium-239 is about 24,000 years. How long will a 5-milligram sample of plutonium-239 take to decay to 1 milligram?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa33">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p57">The half-life of radioactive iodine-131 is about 8 days. How long will it take a 28-gram initial sample of iodine-131 to decay to 12 grams?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa34">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p59">The half-life of caesium-137 is about 30 years. How long will it take a 15-milligram sample of caesium-137 to decay to 5 milligrams?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa35">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p61">The Rhind Mathematical Papyrus is considered to be the best example of Egyptian mathematics found to date. This ancient papyrus was found to contain 64% of the carbon-14 normally found in papyrus. Given that carbon-14 has a half-life of 5,730 years, estimate the age of the papyrus.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa36">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p63">A wooden bowl artifact carved from oak was found to contain 55% of the carbon-14 normally found in oak. Given that carbon-14 has a half-life of 5,730 years, estimate the age of the bowl.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa37">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p65">The half-life of radioactive iodine-131 is about 8 days. How long will it take a sample of iodine-131 to decay to 10% of the original amount?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa38">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p67">The half-life of caesium-137 is about 30 years. How long will it take a sample of caesium-137 to decay to 25% of the original amount?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa39">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p69">The half-life of caesium-137 is about 30 years. What percent of an initial sample will remain in 100 years?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa40">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p71">The half-life of radioactive iodine-131 is about 8 days. What percent of an initial sample will remain in 30 days?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa41">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p73">If a bone is 100 years old, what percent of its original amount of carbon-14 do we expect to find in it?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa42">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p75">The half-life of plutonium-239 is about 24,000 years. What percent of an initial sample will remain in 1,000 years?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa43">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p77">Find the amount of time it will take for 10% of an initial sample of plutonium-239 to decay. (Hint: If 10% decays, then 90% will remain.)</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa44">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p79">Find the amount of time it will take for 10% of an initial sample of carbon-14 to decay.</p>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch07_s06_qs01_qd02_qd02" start="45">
+                    <p class="para" id="fwk-redden-ch07_s06_qs01_p81"><strong class="emphasis bold">Solve for the given variable:</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa45">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p82">Solve for <em class="emphasis">t</em>: <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1776" display="inline"><mrow><mi>A</mi><mo>=</mo><mi>P</mi><msup><mi>e</mi><mrow><mi>r</mi><mi>t</mi></mrow></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa46">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p84">Solve for <em class="emphasis">t</em>: <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1778" display="inline"><mrow><mi>A</mi><mo>=</mo><mi>P</mi><msup><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>+</mo><mi>r</mi></mrow><mo>)</mo></mrow></mrow><mi>t</mi></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa47">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p86">Solve for <em class="emphasis">I</em>: <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1780" display="inline"><mrow><mi>M</mi><mo>=</mo><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mi>I</mi><mrow><msub><mi>I</mi><mn>0</mn></msub></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa48">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p88">Solve for <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1782" display="inline"><mrow><msup><mi>H</mi><mo>+</mo></msup></mrow></math></span>: <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1783" display="inline"><mrow><mi>p</mi><mi>H</mi><mo>=</mo><mo>−</mo><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><msup><mi>H</mi><mo>+</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa49">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p90">Solve for <em class="emphasis">t</em>: <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1785" display="inline"><mrow><mi>P</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa50">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p92">Solve for <em class="emphasis">I</em>: <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1787" display="inline"><mrow><mi>L</mi><mo>=</mo><mn>10</mn><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mi>I</mi><mo>/</mo><msup><mrow><mn>10</mn></mrow><mrow><mo>−</mo><mn>12</mn></mrow></msup></mrow><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa51">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p94">The number of cells in a certain bacteria sample is approximated by the logistic growth model <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1789" display="inline"><mrow><mi>N</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>1.2</mn><mo>×</mo><msup><mrow><mn>10</mn></mrow><mn>5</mn></msup></mrow><mrow><mn>1</mn><mo>+</mo><mn>9</mn><msup><mi>e</mi><mrow><mo>−</mo><mn>0.32</mn><mi>t</mi></mrow></msup></mrow></mfrac></mrow></math></span>, where <em class="emphasis">t</em> represents time in hours. Determine the time it takes the sample to grow to 24,000 cells.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa52">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p96">The market share of a product, as a percentage, is approximated by the formula <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1790" display="inline"><mrow><mi>P</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mn>100</mn></mrow><mrow><mn>3</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>0.44</mn><mi>t</mi></mrow></msup></mrow></mfrac></mrow></math></span> where <em class="emphasis">t</em> represents the number of months after an aggressive advertising campaign is launched.</p>
+                            <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o17" numeration="loweralpha">
+                                <li>What was the initial market share?</li>
+                                <li>How long would we expect to see a 3.5% increase in market share?</li>
+                            </ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa53">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p97">In chemistry, pH is a measure of acidity and is given by the formula <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1791" display="inline"><mrow><mn>pH</mn><mo>=</mo><mo>−</mo><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><msup><mi>H</mi><mo>+</mo></msup></mrow><mo>)</mo></mrow></mrow></math></span>, where <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1792" display="inline"><mrow><msup><mi>H</mi><mo>+</mo></msup></mrow></math></span> is the hydrogen ion concentration (measured in moles of hydrogen per liter of solution.) What is the hydrogen ion concentration of seawater with a pH of 8?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa54">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p99">Determine the hydrogen ion concentration of milk with a pH of 6.6.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa55">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p101">The volume of sound, <em class="emphasis">L</em> in decibels (dB), is given by the formula <span class="inlineequation"><math xml:id="fwk-redden-ch07_m1795" display="inline"><mrow><mi>L</mi><mo>=</mo><mn>10</mn><mi>log</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mi>I</mi><mo>/</mo><msup><mrow><mn>10</mn></mrow><mrow><mo>−</mo><mn>12</mn></mrow></msup></mrow><mo>)</mo></mrow></mrow></math></span> where <em class="emphasis">I</em> represents the intensity of the sound in watts per square meter. Determine the sound intensity of a hair dryer that emits 70 dB of sound.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa56">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p103">The volume of a chainsaw measures 110 dB. Determine the intensity of this sound.</p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch07_s06_qs01_qd03">
+                <h3 class="title">Part C: Discussion Board</h3>
+                <ol class="qandadiv" id="fwk-redden-ch07_s06_qs01_qd03_qd01" start="57">
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa57">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p105">Which factor affects the doubling time the most, the annual compounding <em class="emphasis">n</em> or the interest rate <em class="emphasis">r</em>? Explain.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa58">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p106">Research and discuss radiocarbon dating. Post something interesting you have learned as well as a link to more information.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa59">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p107">Is exponential growth sustainable over an indefinite amount of time? Explain.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa60">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch07_s06_qs01_p108">Research and discuss the half-life of radioactive materials.</p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch07_s06_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa01_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o02_ans" numeration="loweralpha">
+                            <li>$1,912.73</li>
+                            <li>9 years</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa03_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o06_ans" numeration="loweralpha">
+                            <li>$9,356.45</li>
+                            <li>3.4 years</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p06_ans">5.6 years</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p10_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch07_m1772" display="inline"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math></span> year</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p14_ans">$583,867</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p18_ans">12.7 years</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p22_ans">18 years</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p26_ans">7.7%</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa17_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p30_ans">24.5 years</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa19_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o10_ans" numeration="loweralpha">
+                            <li>9.93 years</li>
+                            <li>9.90 years</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa21_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p36_ans">$2,006.44</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="23">
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa23_ans">
+                    <div class="answer">
+                        <ol class="orderedlist" id="fwk-redden-ch07_s06_qs01_o14_ans" numeration="loweralpha">
+                            <li>About 25,180 people</li>
+                            <li>About 14 years</li>
+                        </ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa25_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p42_ans">About 7.806 billion people</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa27_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p46_ans">About $23,269.27</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa29_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p50_ans">8,323 people</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa30_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa31_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p54_ans">3,715 years</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa32_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa33_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p58_ans">9.8 days</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa34_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa35_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p62_ans">About 3,689 years old</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa36_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa37_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p66_ans">26.6 days</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa38_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa39_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p70_ans">9.9%</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa40_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa41_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p74_ans">98.8%</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa42_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa43_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p78_ans">3,648 years</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa44_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa45_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch07_m1777" display="block"><mrow><mi>t</mi><mo>=</mo><mfrac><mrow><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mi>A</mi><mo>)</mo></mrow><mo>−</mo><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mi>P</mi><mo>)</mo></mrow></mrow><mi>r</mi></mfrac></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa46_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa47_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p87_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch07_m1781" display="inline"><mrow><mi>I</mi><mo>=</mo><msub><mi>I</mi><mn>0</mn></msub><mo>⋅</mo><msup><mrow><mn>10</mn></mrow><mi>M</mi></msup></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa48_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa49_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch07_m1786" display="block"><mrow><mi>t</mi><mo>=</mo><mi>ln</mi><mtext> </mtext><mrow><mo>(</mo><mrow><mfrac><mi>P</mi><mrow><mn>1</mn><mo>−</mo><mi>P</mi></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa50_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa51_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p95_ans">Approximately 2.5 hours</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa52_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa53_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p98_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch07_m1793" display="inline"><mrow><msup><mrow><mn>10</mn></mrow><mrow><mo>−</mo><mn>8</mn></mrow></msup></mrow></math></span> moles per liter</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa54_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa55_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch07_s06_qs01_p102_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch07_m1796" display="inline"><mrow><msup><mrow><mn>10</mn></mrow><mrow><mo>−</mo><mn>5</mn></mrow></msup></mrow></math></span> watts per square meter</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa56_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="57">
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa57_ans">
+                    <div class="answer">
+                        <p class="para">Answer may vary</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa58_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa59_ans">
+                    <div class="answer">
+                        <p class="para">Answer may vary</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch07_s06_qs01_qa60_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s10-05-solving-exponential-and-logari.html"><img src="shared/images/batch-left.png"></a> <a href="s10-05-solving-exponential-and-logari.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s10-07-review-exercises-and-sample-ex.html">Next Section</a> <a href="s10-07-review-exercises-and-sample-ex.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

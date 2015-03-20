@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Matrices and Gaussian Elimination</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-04-solving-linear-systems-with-th.html"><img src="shared/images/batch-left.png"></a> <a href="s06-04-solving-linear-systems-with-th.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-06-determinants-and-cramer-s-rule.html">Next Section</a> <a href="s06-06-determinants-and-cramer-s-rule.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-redden-ch03_s05" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">3.5</span> Matrices and Gaussian Elimination</h2>
+    <div class="learning_objectives editable block" id="fwk-redden-ch03_s05_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-redden-ch03_s05_o01" numeration="arabic">
+            <li>Use back substitution to solve linear systems in upper triangular form.</li>
+            <li>Convert linear systems to equivalent augmented matrices.</li>
+            <li>Use matrices and Gaussian elimination to solve linear systems.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-redden-ch03_s05_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Back Substitution</h2>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s01_p01">Recall that a linear system of equations consists of a set of two or more linear equations with the same variables. A linear system consisting of three equations in standard form arranged so that the variable <em class="emphasis">x</em> does not appear in any equation after the first and the variable <em class="emphasis">y</em> does not appear in any equation after the second is said to be in <span class="margin_term"><a class="glossterm">upper triangular form</a><span class="glossdef">A linear system consisting of equations with three variables in standard form arranged so that the variable <em class="emphasis">x</em> does not appear after the first equation and the variable <em class="emphasis">y</em> does not appear after the second equation.</span></span>. For example,</p>
+        <div class="informalfigure large block">
+            <img src="section_06/c6af84d2769d15fcf3896ff801ce703f.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s01_p03">Notice that the system forms a triangle where each successive equation contains one less variable. In general,</p>
+        <p class="para block" id="fwk-redden-ch03_s05_s01_p04"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0587" display="block"><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mstyle color="#007fbf"><mi>L</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>a</mi><mi>r</mi><mtext> </mtext><mi>S</mi><mi>y</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>m</mi><mi>s</mi><mtext> </mtext><mi>i</mi><mi>n</mi><mtext> </mtext><mi>U</mi><mi>p</mi><mi>p</mi><mi>e</mi><mi>r</mi><mtext> </mtext><mi>T</mi><mi>r</mi><mi>i</mi><mi>a</mi><mi>n</mi><mi>g</mi><mi>u</mi><mi>l</mi><mi>a</mi><mi>r</mi><mtext> </mtext><mi>F</mi><mi>o</mi><mi>r</mi><mi>m</mi></mstyle></mtd></mtr><mtr><mtd></mtd></mtr><mtr><mtd><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msub><mi>c</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="right"><msub><mi>b</mi><mn>2</mn></msub><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msub><mi>c</mi><mn>2</mn></msub></mtd></mtr></mtable></mrow><mtext>   </mtext><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>y</mi><mo>+</mo><msub><mi>c</mi><mn>1</mn></msub><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msub><mi>d</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd columnalign="right"><msub><mi>b</mi><mn>2</mn></msub><mi>y</mi><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="right"><msub><mi>d</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd columnalign="right"><msub><mi>c</mi><mn>3</mn></msub><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msub><mi>d</mi><mn>3</mn></msub></mtd></mtr></mtable></mrow></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s01_p05">If a linear system is in this form, we can easily solve for one of the variables and then back substitute to solve for the remaining variables.</p>
+        <div class="callout block" id="fwk-redden-ch03-s05_s01_n01">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p06">Solve: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0588" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p07">Recall that solutions to linear systems with two variables, if they exist, are ordered pairs (<em class="emphasis">x</em>, <em class="emphasis">y</em>). We can determine the <em class="emphasis">y</em>-value easily using the second equation.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p08"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0589" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p09">Next, use the first equation <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0590" display="inline"><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>=</mo><mn>7</mn></mrow></math></span> and the fact that <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0591" display="inline"><mrow><mi>y</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow></math></span> to find <em class="emphasis">x</em>.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p10"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0592" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>1</mn></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p11">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0593" display="inline"><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span></p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch03-s05_s01_n02">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p12">Solve: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0594" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi><mo>−</mo><mn>9</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p13">Recall that solutions to linear systems with three variables, if they exist, are ordered triples (<em class="emphasis">x</em>, <em class="emphasis">y</em>, <em class="emphasis">z</em>). Use the second equation <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0595" display="inline"><mrow><mn>3</mn><mi>y</mi><mo>−</mo><mn>9</mn><mi>z</mi><mo>=</mo><mn>5</mn></mrow></math></span> and the fact that <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0596" display="inline"><mrow><mi>z</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow></math></span> to find <em class="emphasis">y</em>.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p14"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0597" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi><mo>−</mo><mn>9</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi><mo>−</mo><mn>9</mn><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>1</mn></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi><mo>+</mo><mn>9</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mfrac><mn>4</mn><mn>3</mn></mfrac></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p15">Next substitute <em class="emphasis">y</em> and <em class="emphasis">z</em> into the first equation.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p16"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0598" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>6</mn><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mfrac><mn>4</mn><mn>3</mn></mfrac></mstyle></mrow><mo>)</mo></mrow><mo>+</mo><mn>2</mn><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>1</mn></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>8</mn><mo>−</mo><mn>2</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>6</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>10</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p17">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0599" display="inline"><mrow><mrow><mo>(</mo><mrow><mn>10</mn><mo>,</mo><mo>−</mo><mfrac><mn>4</mn><mn>3</mn></mfrac><mo>,</mo><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span></p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch03-s05_s01_n02a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p18"><strong class="emphasis bold">Try this!</strong> Solve: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0600" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi><mo>−</mo><mn>9</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s01_p19">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0601" display="inline"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>,</mo><mtext> </mtext><mn>2</mn><mo>,</mo><mtext> </mtext><mfrac><mn>2</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span></p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/RBUxjSq-bVU" condition="http://img.youtube.com/vi/RBUxjSq-bVU/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/RBUxjSq-bVU" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="fwk-redden-ch03_s05_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Matrices and Gaussian Elimination</h2>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p01">In this section the goal is to develop a technique that streamlines the process of solving linear systems. We begin by defining a <span class="margin_term"><a class="glossterm">matrix</a><span class="glossdef">A rectangular array of numbers consisting of rows and columns.</span></span>, which is a rectangular array of numbers consisting of rows and columns. Given a linear system in standard form, we create a <span class="margin_term"><a class="glossterm">coefficient matrix</a><span class="glossdef">The matrix of coefficients of a linear system in standard form written as they appear lined up without the variables or operations.</span></span> by writing the coefficients as they appear lined up without the variables or operations as follows.</p>
+        <p class="para block" id="fwk-redden-ch03_s05_s02_p02"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0602" display="block"><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mi>L</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>a</mi><mi>r</mi><mtext> </mtext><mi>S</mi><mi>y</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>m</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>C</mi><mi>o</mi><mi>e</mi><mi>f</mi><mi>f</mi><mi>i</mi><mi>c</mi><mi>i</mi><mi>e</mi><mi>n</mi><mi>t</mi><mtext> </mtext><mi>M</mi><mi>a</mi><mi>t</mi><mi>r</mi><mi>i</mi><mi>x</mi></mstyle></mtd></mtr><mtr><mtd><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>y</mi><mo>+</mo><msub><mi>c</mi><mn>1</mn></msub><mi>z</mi><mo>=</mo><msub><mi>d</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mn>2</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><mi>y</mi><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub><mi>z</mi><mo>=</mo><msub><mi>d</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mn>3</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>3</mn></msub><mi>y</mi><mo>+</mo><msub><mi>c</mi><mn>3</mn></msub><mi>z</mi><mo>=</mo><msub><mi>d</mi><mn>3</mn></msub></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇒</mo><mrow>  </mrow></mover><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>3</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>3</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>3</mn></msub></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mtd></mtr></mtable></math>
+</span></p>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p03">The rows represent the coefficients in the equations and the columns represent the coefficients of each variable. Furthermore, if we include a column that represents the constants we obtain what is called an <span class="margin_term"><a class="glossterm">augmented matrix</a><span class="glossdef">The coefficient matrix with the column of constants included.</span></span>. For a linear system with two variables,</p>
+        <p class="para block" id="fwk-redden-ch03_s05_s02_p04"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0603" display="block"><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mi>L</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>a</mi><mi>r</mi><mtext> </mtext><mi>S</mi><mi>y</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>m</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>A</mi><mi>u</mi><mi>g</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>d</mi><mtext> </mtext><mi>M</mi><mi>a</mi><mi>t</mi><mi>r</mi><mi>i</mi><mi>x</mi></mstyle></mtd></mtr><mtr><mtd><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>y</mi><mo>=</mo><msub><mi>c</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mn>2</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><mi>y</mi><mo>=</mo><msub><mi>c</mi><mn>2</mn></msub></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇔</mo><mrow>  </mrow></mover><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><mo>|</mo><msub><mi>c</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><mo>|</mo><msub><mi>c</mi><mn>2</mn></msub></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p05">And for a linear system with three variables we have</p>
+        <p class="para block" id="fwk-redden-ch03_s05_s02_p06"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0604" display="block"><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mi>L</mi><mi>i</mi><mi>n</mi><mi>e</mi><mi>a</mi><mi>r</mi><mtext> </mtext><mi>S</mi><mi>y</mi><mi>s</mi><mi>t</mi><mi>e</mi><mi>m</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>A</mi><mi>u</mi><mi>g</mi><mi>m</mi><mi>e</mi><mi>n</mi><mi>t</mi><mi>e</mi><mi>d</mi><mtext> </mtext><mi>M</mi><mi>a</mi><mi>t</mi><mi>r</mi><mi>i</mi><mi>x</mi></mstyle></mtd></mtr><mtr><mtd><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><msub><mi>a</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><mi>y</mi><mo>+</mo><msub><mi>c</mi><mn>1</mn></msub><mi>z</mi><mo>=</mo><msub><mi>d</mi><mn>1</mn></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mn>2</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><mi>y</mi><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub><mi>z</mi><mo>=</mo><msub><mi>d</mi><mn>2</mn></msub></mtd></mtr><mtr><mtd><msub><mi>a</mi><mn>3</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>3</mn></msub><mi>y</mi><mo>+</mo><msub><mi>c</mi><mn>3</mn></msub><mi>z</mi><mo>=</mo><msub><mi>d</mi><mn>3</mn></msub></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇔</mo><mrow>  </mrow></mover><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><mo>|</mo><msub><mi>d</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><mo>|</mo><msub><mi>d</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>3</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>3</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>3</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><mo>|</mo><msub><mi>d</mi><mn>3</mn></msub></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p07"><strong class="emphasis bold">Note</strong>: The dashed vertical line provides visual separation between the coefficient matrix and the column of constants. In other algebra resources that you may encounter, this is sometimes omitted.</p>
+        <div class="callout block" id="fwk-redden-ch03-s05_s02_n01">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p08">Construct the augmented matrix that corresponds to: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0605" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>−</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>1</mn></mtd></mtr></mtable></mrow><mtext> </mtext></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p09">This system consists of two linear equations in standard form; therefore, the coefficients in the matrix appear as they do in the system.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p10"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0606" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>−</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>1</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇔</mo><mrow>  </mrow></mover><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn></mtd><mtd><mrow><mo>−</mo><mn>6</mn></mrow></mtd><mtd><mo>|</mo><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd><mtd><mo>|</mo><mn>1</mn></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext><mtext> </mtext></mrow></math></span></p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch03-s05_s02_n02">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p11">Construct the augmented matrix that corresponds to: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0607" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi><mo>=</mo><mn>5</mn></mtd></mtr><mtr><mtd><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mn>6</mn><mi>z</mi><mo>=</mo><mn>8</mn></mtd></mtr><mtr><mtd><mn>4</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>−</mo><mn>12</mn><mi>z</mi><mo>=</mo><mn>13</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p12">Since the equations are given in standard form, the coefficients appear in the matrix as they do in the system.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p13"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0608" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi><mo>=</mo><mn>5</mn></mtd></mtr><mtr><mtd><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mn>6</mn><mi>z</mi><mo>=</mo><mn>8</mn></mtd></mtr><mtr><mtd><mn>4</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>−</mo><mn>12</mn><mi>z</mi><mo>=</mo><mn>13</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇔</mo><mrow>  </mrow></mover><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>6</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>8</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>12</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mn>13</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext></mrow></math></span></p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p14">A matrix is in upper triangular form if all elements below the leading nonzero element in each successive row are zero. For example,</p>
+        <div class="informalfigure large block">
+            <img src="section_06/bd01971c771219f10a0efadb8fc7c379.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p16">Notice that the elements below the main diagonal are zero and the coefficients above form a triangular shape. In general,</p>
+        <p class="para block" id="fwk-redden-ch03_s05_s02_p17"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0609" display="block"><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mi>U</mi><mi>p</mi><mi>p</mi><mi>e</mi><mi>r</mi><mtext> </mtext><mi>T</mi><mi>r</mi><mi>i</mi><mi>a</mi><mi>n</mi><mi>g</mi><mi>u</mi><mi>l</mi><mi>a</mi><mi>r</mi><mtext> </mtext><mi>F</mi><mi>o</mi><mi>r</mi><mi>m</mi></mstyle></mtd></mtr><mtr><mtd><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow></mtd><mtd><mrow><mi>b</mi><msub><malignmark></malignmark><mn>1</mn></msub></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><msub><mi>b</mi><mn>2</mn></msub></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>1</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>1</mn></msub></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><msub><mi>b</mi><mn>2</mn></msub></mrow></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>2</mn></msub></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><msub><mi>c</mi><mn>3</mn></msub></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p18">This is important because in this section we outline a process by which certain operations can be made to produce an equivalent linear system in upper triangular form so that it can be solved by using back substitution. An overview of the process is outlined below:</p>
+        <div class="informalfigure large block">
+            <img src="section_06/1fb9b601b9bb3e33e256d622c673f7b0.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p20">Once the system is in upper triangular form, we can use back substitution to easily solve it. It is important to note that the augmented matrices presented here represent linear systems of equations in standard form.</p>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p21">The following <span class="margin_term"><a class="glossterm">elementary row operations</a><span class="glossdef">Operations that can be performed to obtain equivalent linear systems.</span></span> result in augmented matrices that represent equivalent linear systems:</p>
+        <ol class="orderedlist editable block" id="fwk-redden-ch03_s05_s02_o01" numeration="arabic">
+            <li>Any two rows may be interchanged.</li>
+            <li>Each element in a row can be multiplied by a nonzero constant.</li>
+            <li>Any row can be replaced by the sum of that row and a multiple of another.</li>
+        </ol>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p22"><strong class="emphasis bold">Note:</strong> These operations are consistent with the properties used in the elimination method.</p>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p23">To efficiently solve a system of linear equations first construct an augmented matrix. Then apply the appropriate elementary row operations to obtain an augmented matrix in upper triangular form. In this form, the equivalent linear system can easily be solved using back substitution. This process is called <span class="margin_term"><a class="glossterm">Gaussian elimination</a><span class="glossdef">Steps used to obtain an equivalent linear system in upper triangular form so that it can be solved using back substitution.</span></span>, named in honor of Carl Friedrich Gauss (1777–1855).</p>
+        <div class="figure large editable block" id="fwk-redden-ch03_s05_s02_f01">
+            <p class="title"><span class="title-prefix">Figure 3.1</span> </p>
+            <img src="section_06/ec7ac4a7fc8f6e2b81852d96c636be9a.png">
+            <p class="para">Carl Friedrich Gauss (Wikipedia)</p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p24">The steps for solving a linear equation with two variables using Gaussian elimination are listed in the following example.</p>
+        <div class="callout block" id="fwk-redden-ch03-s05_s02_n03">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p25">Solve using matrices and Gaussian elimination: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0610" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>−</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>1</mn></mtd></mtr></mtable></mrow><mtext> </mtext></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p26">Ensure that the equations in the system are in standard form before beginning this process.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p27"><strong class="emphasis bold">Step 1</strong>: Construct the corresponding augmented matrix.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p28"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0611" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd><mo>−</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>1</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇔</mo><mrow>  </mrow></mover><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn></mtd><mtd><mrow><mo>−</mo><mn>6</mn></mrow></mtd><mtd><mo>|</mo><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd><mtd><mo>|</mo><mn>1</mn></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext><mtext> </mtext></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p29"><strong class="emphasis bold">Step 2</strong>: Apply the elementary row operations to obtain upper triangular form. In this case, we need only to eliminate the first element of the second row, −1. To do this, multiply the second row by 9 and add it to the first row.</p>
+            <div class="informalfigure large">
+                <img src="section_06/16e7b07db816b791de92742493d311f9.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p31">Now use this to replace the second row.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p32"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0612" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn></mtd><mtd><mrow><mo>−</mo><mn>6</mn></mrow></mtd><mtd><mo>|</mo><mn>0</mn></mtd></mtr><mtr><mtd><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd><mrow><mn>12</mn></mrow></mtd><mtd><mo>|</mo><mn>9</mn></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p33">This results in an augmented matrix in upper triangular form.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p34"><strong class="emphasis bold">Step 3</strong>: Convert back to a linear system and solve using back substitution. In this example, we have</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p35"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0613" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn></mtd><mtd><mrow><mo>−</mo><mn>6</mn></mrow></mtd><mtd><mo>|</mo><mn>0</mn></mtd></mtr><mtr><mtd><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd><mrow><mn>12</mn></mrow></mtd><mtd><mo>|</mo><mn>9</mn></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇒</mo><mrow>  </mrow></mover><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>9</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>12</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>9</mn></mtd></mtr></mtable></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p36">Solve the second equation for <em class="emphasis">y</em>,</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p37"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0614" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>12</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mn>9</mn><mrow><mn>12</mn></mrow></mfrac></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mn>3</mn><mn>4</mn></mfrac></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p38">Substitute this value for <em class="emphasis">y</em> into the first equation to find <em class="emphasis">x</em>,</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p39"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0615" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>9</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>9</mn><mi>x</mi><mo>−</mo><mn>6</mn><mrow><mo>(</mo><mrow><mstyle color="#007f3f"><mfrac><mn>3</mn><mn>4</mn></mfrac></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>9</mn><mi>x</mi><mo>−</mo><mfrac><mn>9</mn><mn>2</mn></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>9</mn><mi>x</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mn>9</mn><mn>2</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mn>1</mn><mn>2</mn></mfrac></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p40">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0616" display="inline"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mtext> </mtext><mfrac><mn>3</mn><mn>4</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span></p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p41">The steps for using Gaussian elimination to solve a linear equation with three variables are listed in the following example.</p>
+        <div class="callout block" id="fwk-redden-ch03-s05_s02_n04">
+            <h3 class="title">Example 6</h3>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p42">Solve using matrices and Gaussian elimination: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0617" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi><mo>=</mo><mn>5</mn></mtd></mtr><mtr><mtd><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mn>6</mn><mi>z</mi><mo>=</mo><mn>8</mn></mtd></mtr><mtr><mtd><mn>4</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>−</mo><mn>12</mn><mi>z</mi><mo>=</mo><mn>13</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p43">Ensure that the equations in the system are in standard form before beginning this process.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p44"><strong class="emphasis bold">Step 1</strong>: Construct the corresponding augmented matrix.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p45"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0618" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi><mo>=</mo><mn>5</mn></mtd></mtr><mtr><mtd><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mn>6</mn><mi>z</mi><mo>=</mo><mn>8</mn></mtd></mtr><mtr><mtd><mn>4</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>−</mo><mn>12</mn><mi>z</mi><mo>=</mo><mn>13</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mover><mo>⇒</mo><mrow>  </mrow></mover></mstyle><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>6</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>8</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>12</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mn>13</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p46"><strong class="emphasis bold">Step 2</strong>: Apply the elementary row operations to obtain upper triangular form. We begin by eliminating the first element of the second row, 2 in this case. To do this multiply the first row by −2 and then add it to the second row.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p47"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0619" display="block"><mrow><mtable columnspacing="0.1em"><mtr><mtd><mrow><mspace height="3em"></mspace><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn><mtext> </mtext><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><mstyle color="#ff0000"><mn>2</mn></mstyle></mrow></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>6</mn><mtext> </mtext><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>8</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>12</mn><mtext> </mtext><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mn>13</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></mtd><mtd rowalign="top"><mrow><mover><mo>⇒</mo><mrow><mo>×</mo><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></mover></mrow></mtd><mtd><mrow><mtable rowlines="none solid" columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mrow></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn></mrow></mtd><mtd columnalign="right"><mn>8</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>10</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mo>+</mo></mtd><mtd columnalign="right"><mrow><mstyle color="#ff0000"><mn>2</mn></mstyle></mrow></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>6</mn></mrow></mtd><mtd columnalign="right"><mn>8</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow></mrow></mtd><mtd columnalign="right"><mrow><mstyle color="#007fbf"><mn>0</mn></mstyle></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr></mtable></mrow></mtd></mtr></mtable></mrow></math>
+</span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p48">Use this to replace the second row.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p49"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0620" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>12</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mn>13</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p50">Next, eliminate the first element of the third row, 4 in this case, by multiplying the first row by −4 and adding it to the third row.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p51"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0621" display="block"><mrow><mtable columnspacing="0.1em"><mtr><mtd><mspace height="3em"></mspace><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn><mtext> </mtext><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><mstyle color="#ff0000"><mn>4</mn></mstyle></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>12</mn><mtext> </mtext><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mn>13</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></mtd><mtd rowalign="top"><mrow><mover><mo>⇒</mo><mrow><mo>×</mo><mrow><mo>(</mo><mrow><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow></mrow></mover></mrow></mtd><mtd><mrow><mtable rowlines="none solid" columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mrow></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>8</mn></mrow></mtd><mtd columnalign="right"><mrow><mn>16</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>20</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mo>+</mo></mtd><mtd columnalign="right"><mrow><mstyle color="#ff0000"><mn>4</mn></mstyle></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>12</mn></mrow></mtd><mtd columnalign="right"><mrow><mn>13</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow></mrow></mtd><mtd columnalign="right"><mrow><mstyle color="#007fbf"><mn>0</mn></mstyle></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>9</mn></mrow></mtd><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>7</mn></mrow></mtd></mtr></mtable></mrow></mtd></mtr></mtable></mrow></math>
+</span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p52">Use this to replace the third row.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p53"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0622" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>9</mn></mrow></mtd><mtd columnalign="right"><mn>4</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>7</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p54">This results in an augmented matrix where the elements below the first element of the first row are zero. Next eliminate the second element in the third row, in this case −9. Multiply the second row by −3 and add it to the third row.</p>
+            <div class="informalfigure large">
+                <img src="section_06/4a2c4cf735d791d9da12fa154dfae620.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p56">Use this to replace the third row and we can see that we have obtained a matrix in upper triangular form.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p57"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0623" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd columnalign="right"><mstyle color="#007fbf"><mn>0</mn></mstyle></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p58"><strong class="emphasis bold">Step 3</strong>: Convert back to a linear system and solve using back substitution. In this example, we have</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p59"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0624" display="block"><mrow><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>5</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mover><mo>⇒</mo><mrow>  </mrow></mover><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p60">Answer: It is left to the reader to verify that the solution is <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0625" display="inline"><mrow><mrow><mo>(</mo><mrow><mn>5</mn><mo>,</mo><mn>1</mn><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>.</p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p61"><strong class="emphasis bold">Note:</strong> Typically, the work involved in replacing a row by multiplying and adding is done on the side using scratch paper.</p>
+        <div class="callout block" id="fwk-redden-ch03-s05_s02_n05">
+            <h3 class="title">Example 7</h3>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p62">Solve using matrices and Gaussian elimination: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0626" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>9</mn><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>18</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>23</mn><mi>y</mi><mo>+</mo><mn>12</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>47</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p63">We begin by converting the system to an augmented coefficient matrix.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p64"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0627" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>9</mn><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>18</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>23</mn><mi>y</mi><mo>+</mo><mn>12</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>47</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007f3f"><mover><mo>⇒</mo><mrow>  </mrow></mover></mstyle><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>9</mn></mrow></mtd><mtd columnalign="right"><mn>3</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>18</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>8</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><mo>−</mo><mn>4</mn></mrow></mtd><mtd columnalign="right"><mrow><mn>23</mn></mrow></mtd><mtd columnalign="right"><mrow><mn>12</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mn>47</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p65">The elementary row operations are streamlined if the leading nonzero element in a row is 1. For this reason, begin by interchanging row one and two.</p>
+            <div class="informalfigure large">
+                <img src="section_06/186cf26a47bb175a11ad73b66215cb3d.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p67">Replace row two with the sum of −2 times row one and row two.</p>
+            <div class="informalfigure large">
+                <img src="section_06/b890073db272463f8a518b535a3b1e36.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p69">Replace row three with the sum of 4 times row one and row three.</p>
+            <div class="informalfigure large">
+                <img src="section_06/e69563d1bfa191670e651ba675e358c7.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p71">Next divide row 3 by 15.</p>
+            <div class="informalfigure large">
+                <img src="section_06/57d2a453dca4cb9f498244ef42bd9668.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p73">Interchange row three with row two.</p>
+            <div class="informalfigure large">
+                <img src="section_06/d380c5be26f3027d305ee034f4fdfb2b.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p75">Next replace row 3 with the sum of 5 times row two and row three.</p>
+            <div class="informalfigure large">
+                <img src="section_06/b94d5110f458c57879338ab450cc752b.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p77">This results in a matrix in upper triangular form. A matrix is in <span class="margin_term"><a class="glossterm">row echelon form</a><span class="glossdef">A matrix in triangular form where the leading nonzero element of each row is 1.</span></span> if it is in upper triangular form where the leading nonzero element of each row is 1. We can obtain this form by replacing row three with the results of dividing it by 9.</p>
+            <div class="informalfigure large">
+                <img src="section_06/e25b47104b47bde45d79e3d847334ea8.png">
+            </div>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p79">Convert to a system of linear equations and solve by back substitution.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p80"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0628" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>8</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>0</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mn>1</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>1</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext><mover><mo>⇒</mo><mrow>  </mrow></mover><mtext> </mtext><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mn>1</mn><mn>3</mn></mfrac></mtd></mtr></mtable></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p81">Here <em class="emphasis">y</em> = 1 and <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0629" display="inline"><mrow><mi>z</mi><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow></math></span>. Substitute into the first equation to find <em class="emphasis">x</em>.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p82"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0630" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mrow><mo>(</mo><mstyle color="#007fbf"><mn>1</mn></mstyle><mo>)</mo></mrow><mo>−</mo><mn>3</mn><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mfrac><mn>1</mn><mn>3</mn></mfrac></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mo>−</mo><mn>1</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>3</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>5</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p83">Answer: Therefore the solution is <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0631" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn><mo>,</mo><mtext> </mtext><mtext> </mtext><mn>1</mn><mo>,</mo><mtext> </mtext><mtext> </mtext><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>.</p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p84"><strong class="emphasis bold">Technology note</strong>: Many modern calculators and computer algebra systems can perform Gaussian elimination. First you will need to find out how to enter a matrix. Then use the calculator’s functions to find row echelon form. You are encouraged to conduct some web research on this topic for your particular calculator model.</p>
+        <div class="callout block" id="fwk-redden-ch03-s05_s02_n05a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p85"><strong class="emphasis bold">Try this!</strong> Solve using Gaussian elimination: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0632" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mn>11</mn><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>69</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>36</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext></mrow></math></span>.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p86">Answer: (6, −4, −1)</p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/8mavvyGOedM" condition="http://img.youtube.com/vi/8mavvyGOedM/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/8mavvyGOedM" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p88">Recall that some consistent linear systems are dependent, that is, they have infinitely many solutions. And some linear systems have no simultaneous solution; they are inconsistent systems.</p>
+        <div class="callout block" id="fwk-redden-ch03-s05_s02_n06">
+            <h3 class="title">Example 8</h3>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p89">Solve using matrices and Gaussian elimination: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0633" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mn>7</mn><mi>y</mi><mo>+</mo><mn>6</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>15</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p90">We begin by converting the system to an augmented coefficient matrix.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p91"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0634" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mn>7</mn><mi>y</mi><mo>+</mo><mn>6</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>15</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007f3f"><mover><mo>⇒</mo><mrow>  </mrow></mover></mstyle><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd columnalign="right"><mn>1</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>4</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mn>7</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>7</mn></mrow></mtd><mtd columnalign="right"><mn>6</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mn>15</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p92">Replace row two with <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0635" display="inline"><mrow><mo>−</mo><mn>2</mn><mrow><mo>(</mo><mrow><mtext>row</mtext><mtext> </mtext><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mtext>row</mtext><mtext> </mtext><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span> and replace row three with <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0636" display="inline"><mrow><mo>−</mo><mn>4</mn><mrow><mo>(</mo><mrow><mtext>row</mtext><mtext> </mtext><mn>1</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mtext>row</mtext><mtext> </mtext><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span>.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p93"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0637" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd columnalign="right"><mn>1</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p94">Replace row three with <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0638" display="inline"><mrow><mo>−</mo><mn>1</mn><mrow><mo>(</mo><mrow><mtext>row</mtext><mtext> </mtext><mn>2</mn></mrow><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mtext>row</mtext><mtext> </mtext><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span>.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p95"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0639" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd columnalign="right"><mn>1</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>0</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mn>0</mn></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p96">The last row indicates that this is a dependent system because converting the augmented matrix back to equations we have,</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p97"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0640" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn><mi>x</mi><mo>+</mo><mn>0</mn><mi>y</mi><mo>+</mo><mn>0</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p98">Note that the row of zeros corresponds to the following identity,</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p99"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0641" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>0</mn><mi>x</mi><mo>+</mo><mn>0</mn><mi>y</mi><mo>+</mo><mn>0</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mo>✓</mo></mstyle></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p100">In this case, we can express the infinitely many solutions in terms of <em class="emphasis">z</em>. From the second row we have the following:</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p101"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0642" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn><mi>z</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p102">And from the first equation,</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p103"><span class="informalequation"><math xml:id="fwk-redden-ch03_m0643" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>2</mn><mi>z</mi><mo>−</mo><mn>1</mn></mstyle></mrow><mo>)</mo></mrow><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>5</mn><mi>z</mi><mo>+</mo><mn>2</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>5</mn><mi>z</mi><mo>+</mo><mn>2</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p104">The solutions take the form <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0644" display="inline"><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>,</mo><mtext> </mtext><mtext> </mtext><mi>y</mi><mo>,</mo><mtext> </mtext><mtext> </mtext><mi>z</mi></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn><mi>z</mi><mo>+</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>2</mn><mi>z</mi><mo>−</mo><mn>1</mn><mo>,</mo><mtext> </mtext><mtext> </mtext><mi>z</mi></mrow><mo>)</mo></mrow></mrow></math></span> where <em class="emphasis">z</em> is any real number.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p105">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0645" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn><mi>z</mi><mo>+</mo><mn>2</mn><mo>,</mo><mo>−</mo><mn>2</mn><mi>z</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>z</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p106">Dependent and inconsistent systems can be identified in an augmented coefficient matrix when the coefficients in one row are all zero.</p>
+        <div class="informalfigure large block">
+            <img src="section_06/c825a3f13be37c54cbfa4aea338bb803.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch03_s05_s02_p108">If a row of zeros has a corresponding constant of zero then the matrix represents a dependent system. If the constant is nonzero then the matrix represents an inconsistent system.</p>
+        <div class="callout block" id="fwk-redden-ch03-s05_s02_n06a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p109"><strong class="emphasis bold">Try this!</strong> Solve using matrices and Gaussian elimination: <span class="inlineequation"><math xml:id="fwk-redden-ch03_m0646" display="inline"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>5</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>10</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>15</mn><mi>x</mi><mo>+</mo><mn>9</mn><mi>y</mi><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>17</mn></mtd></mtr></mtable></mrow><mtext> </mtext><mtext> </mtext></mrow></math></span>.</p>
+            <p class="para" id="fwk-redden-ch03_s05_s02_p110">Answer: Ø</p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/38W0EB5e0pY" condition="http://img.youtube.com/vi/38W0EB5e0pY/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/38W0EB5e0pY" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+        <div class="key_takeaways editable block" id="fwk-redden-ch03_s05_s02_n07">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-redden-ch03_s05_s02_l01" mark="bullet">
+                <li>A linear system in upper triangular form can easily be solved using back substitution.</li>
+                <li>The augmented coefficient matrix and Gaussian elimination can be used to streamline the process of solving linear systems.</li>
+                <li>To solve a system using matrices and Gaussian elimination, first use the coefficients to create an augmented matrix. Apply the elementary row operations as a means to obtain a matrix in upper triangular form. Convert the matrix back to an equivalent linear system and solve it using back substitution.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch03_s05_qs01" defaultlabel="number">
+            <h3 class="title">Topic Exercises</h3>
+            <ol class="qandadiv" id="fwk-redden-ch03_s05_qs01_qd01">
+                <h3 class="title">Part A: Back Substitution</h3>
+                <ol class="qandadiv" id="fwk-redden-ch03_s05_qs01_qd01_qd01">
+                    <p class="para" id="fwk-redden-ch03_s05_qs01_p01"><strong class="emphasis bold">Solve using back substitution.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa01">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0647" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>5</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa02">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0649" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa03">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0651" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa04">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0653" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>10</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>6</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa05">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0655" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>16</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>7</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa06">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0656" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>10</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>8</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa07">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0657" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa08">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0659" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>6</mn><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa09">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0661" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa10">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0662" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa11">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0663" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa12">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0664" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>+</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi><mo>−</mo><mn>7</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>10</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa13">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0665" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>8</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa14">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0667" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi><mo>+</mo><mn>6</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa15">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0669" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>10</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>13</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>11</mn><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>9</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>6</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa16">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0671" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>24</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>12</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa17">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0673" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa18">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0675" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>6</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa19">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0677" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>9</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>10</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>27</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa20">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0678" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mo>−</mo><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch03_s05_qs01_qd02">
+                <h3 class="title">Part B: Matrices and Gaussian Elimination</h3>
+                <ol class="qandadiv" id="fwk-redden-ch03_s05_qs01_qd02_qd01" start="21">
+                    <p class="para" id="fwk-redden-ch03_s05_qs01_p42"><strong class="emphasis bold">Construct the corresponding augmented matrix (do not solve).</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa21">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0680" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa22">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0682" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>6</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa23">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0684" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa24">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0686" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa25">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0688" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa26">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0690" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa27">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0692" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>7</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>−</mo><mn>10</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa28">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0694" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa29">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0696" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>9</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>10</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>27</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa30">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0698" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>y</mi><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>8</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa31">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0700" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>8</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>13</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>12</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>18</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa32">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0702" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi><mo>+</mo><mn>6</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>12</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch03_s05_qs01_qd02_qd02" start="33">
+                    <p class="para" id="fwk-redden-ch03_s05_qs01_p67"><strong class="emphasis bold">Solve using matrices and Gaussian elimination.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa33">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0704" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa34">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0706" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa35">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0708" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>10</mn><mi>x</mi><mo>−</mo><mn>7</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>15</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa36">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0710" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>9</mn><mi>x</mi><mo>−</mo><mn>10</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa37">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0712" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>8</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>18</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa38">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0713" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>5</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>14</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>7</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa39">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0714" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>9</mn><mi>x</mi><mo>+</mo><mn>15</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa40">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0715" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>6</mn><mi>x</mi><mo>−</mo><mn>8</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa41">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0716" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa42">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0717" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>7</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>7</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa43">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0718" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>10</mn><mi>x</mi><mo>+</mo><mn>15</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>20</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa44">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0720" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>6</mn><mi>x</mi><mo>−</mo><mn>10</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>20</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>10</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa45">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0722" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa46">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0723" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa47">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0724" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa48">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0725" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa49">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0726" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa50">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0727" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>12</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>16</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa51">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0728" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>+</mo><mn>6</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>5</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa52">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0730" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>9</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>18</mn><mi>y</mi><mo>−</mo><mn>12</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa53">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0732" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa54">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0733" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi><mo>+</mo><mn>13</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>21</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>+</mo><mn>8</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa55">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0734" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>−</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>−</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>4</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa56">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0735" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>5</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa57">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0736" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>12</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>−</mo><mn>10</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa58">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0738" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>10</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa59">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0740" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa60">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0742" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>7</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa61">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0744" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>10</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>5</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>4</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa62">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0746" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>9</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>5</mn><mi>x</mi><mo>−</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>15</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa63">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0748" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>8</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>13</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>2</mn><mi>y</mi><mo>+</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>12</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>18</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa64">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0750" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>x</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>y</mi><mo>+</mo><mn>6</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>12</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa65">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0752" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd columnalign="right"><mn>9</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>−</mo><mn>11</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>6</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>7</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>8</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa66">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0753" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" groupalign="decimalpoint"><mtr><mtd columnalign="right"><maligngroup></maligngroup><mn>3</mn><mi>x</mi><mo>−</mo><mi>y</mi><mo>−</mo><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><maligngroup></maligngroup><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><maligngroup></maligngroup><mn>6</mn><mi>x</mi><mo>−</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>8</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa67">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0755" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em" columnalign="left"><mtr><mtd columnalign="right"><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>+</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>15</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn><mi>y</mi><mo>+</mo><mn>2</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>18</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>6</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa68">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch03_m0756" display="block"><mrow><mrow><mo>{</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>3</mn><mi>x</mi><mo>−</mo><mn>4</mn><mi>y</mi><mo>−</mo><mn>3</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>14</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>12</mn></mtd></mtr><mtr><mtd columnalign="right"><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi><mo>−</mo><mn>4</mn><mi>z</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mo>−</mo><mn>3</mn></mtd></mtr></mtable></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch03_s05_qs01_qd03">
+                <h3 class="title">Part C: Discussion Board</h3>
+                <ol class="qandadiv" id="fwk-redden-ch03_s05_qs01_qd03_qd01" start="69">
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa69">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s05_qs01_p140">Research and discuss the history of Gaussian Elimination. Who is credited for first developing this process? Post something that you found interesting relating to this story.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa70">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch03_s05_qs01_p141">Research and discuss the history of modern matrix notation. Who is credited for the development? In what fields are they used today? Post your findings on the discussion board.</p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch03_s05_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa01_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0648" display="block"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>1</mn><mn>5</mn></mfrac><mo>,</mo><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa03_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0652" display="block"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn><mo>,</mo><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p11_ans">(−4, 0)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa07_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0658" display="block"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>2</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p19_ans">(0, 0)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p23_ans">(−8, 7, 3)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa13_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0666" display="block"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>6</mn><mo>,</mo><mo>−</mo><mn>2</mn><mo>,</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa15_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0670" display="block"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>8</mn><mn>5</mn></mfrac><mo>,</mo><mn>0</mn><mo>,</mo><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa17_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0674" display="block"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>7</mn><mn>3</mn></mfrac><mo>,</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mo>,</mo><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa19_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p39_ans">(−3, 5, 9)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="21">
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa21_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0681" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>1</mn></mtd><mtd><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn></mtd><mtd><mn>5</mn><mtext> </mtext><mo>|</mo></mtd><mtd><mn>6</mn></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa23_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0685" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>1</mn></mtd><mtd><mrow><mo>−</mo><mn>2</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd><mn>1</mn></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa25_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0689" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>8</mn><mtext> </mtext><mo>|</mo></mtd><mtd><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn></mtd><mtd><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd><mn>2</mn></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa27_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0693" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>3</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd columnalign="right"><mn>7</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mn>8</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>4</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>5</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>10</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mn>6</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd><mtd columnalign="right"><mn>2</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa29_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0697" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>1</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>9</mn></mrow></mtd><mtd columnalign="right"><mn>5</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>3</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>0</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mn>10</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mn>3</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mn>27</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa30_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa31_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0701" display="block"><mrow><mrow><mo>[</mo><mrow><mtable columnspacing="0.1em" columnalign="right"><mtr columnalign="right"><mtd columnalign="right"><mn>8</mn></mtd><mtd columnalign="right"><mn>2</mn></mtd><mtd columnalign="right"><mn>0</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>13</mn></mrow></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd columnalign="right"><mn>1</mn><mtext> </mtext><mo>|</mo></mtd><mtd columnalign="right"><mn>1</mn></mtd></mtr><mtr columnalign="right"><mtd columnalign="right"><mrow><mn>12</mn></mrow></mtd><mtd columnalign="right"><mn>0</mn></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>5</mn><mtext> </mtext><mo>|</mo></mrow></mtd><mtd columnalign="right"><mrow><mo>−</mo><mn>18</mn></mrow></mtd></mtr></mtable></mrow><mo>]</mo></mrow><mtext> </mtext></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa32_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa33_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0705" display="block"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>,</mo><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa34_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa35_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0709" display="block"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>,</mo><mn>0</mn></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa36_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa37_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p77_ans">(6, −2)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa38_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa39_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p81_ans">Ø</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa40_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa41_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p85_ans">(0, 0)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa42_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa43_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0719" display="block"><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>,</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mfrac><mn>4</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa44_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa45_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p93_ans">(2, 3, 3)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa46_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa47_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p97_ans">(0, 1, 3)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa48_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa49_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p101_ans">(1, −1, 2)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa50_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa51_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0729" display="block"><mrow><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa52_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa53_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p109_ans">Ø</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa54_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa55_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p113_ans">(−7, −13, 7)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa56_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa57_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0737" display="block"><mrow><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>0</mn><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa58_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa59_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0741" display="block"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>8</mn><mo>,</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>z</mi><mo>+</mo><mfrac><mn>5</mn><mn>2</mn></mfrac><mo>,</mo><mi>z</mi></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa60_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa61_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p125_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch03_m0745" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa62_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa63_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch03_m0749" display="block"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>,</mo><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mtext> </mtext><mn>0</mn></mrow><mo>)</mo></mrow></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa64_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa65_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p133_ans">Ø</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa66_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa67_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch03_s05_qs01_p137_ans">(2, −2, 1)</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa68_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="69">
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa69_ans">
+                    <div class="answer">
+                        <p class="para">Answer may vary</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch03_s05_qs01_qa70_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s06-04-solving-linear-systems-with-th.html"><img src="shared/images/batch-left.png"></a> <a href="s06-04-solving-linear-systems-with-th.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s06-06-determinants-and-cramer-s-rule.html">Next Section</a> <a href="s06-06-determinants-and-cramer-s-rule.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

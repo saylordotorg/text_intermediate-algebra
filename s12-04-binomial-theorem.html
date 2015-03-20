@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Binomial Theorem</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s12-03-geometric-sequences-and-series.html"><img src="shared/images/batch-left.png"></a> <a href="s12-03-geometric-sequences-and-series.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s12-05-review-exercises-and-sample-ex.html">Next Section</a> <a href="s12-05-review-exercises-and-sample-ex.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-redden-ch09_s04" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">9.4</span> Binomial Theorem</h2>
+    <div class="learning_objectives editable block" id="fwk-redden-ch09_s04_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-redden-ch09_s04_o01" numeration="arabic">
+            <li>Evaluate expressions involving factorials.</li>
+            <li>Calculate binomial coefficients.</li>
+            <li>Expand powers of binomials using the binomial theorem.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-redden-ch09_s04_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Factorials and the Binomial Coefficient</h2>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p01">We begin by defining the <span class="margin_term"><a class="glossterm">factorial</a><span class="glossdef">The product of all natural numbers less than or equal to a given natural number, denoted <em class="emphasis">n</em>!.</span></span> of a natural number <em class="emphasis">n</em>, denoted <em class="emphasis">n</em>!, as the product of all natural numbers less than or equal to <em class="emphasis">n</em>.</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p02"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0927" display="block"><mrow><mi>n</mi><mo>!</mo><mo>=</mo><mi>n</mi><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>⋯</mo><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>1</mn></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p03">For example,</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p04"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0928" display="block"><mrow><mtable columnspacing="0.1em"><mtr columnalign="left"><mtd columnalign="right"><mrow><mn>7</mn><mo>!</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>7</mn><mo>⋅</mo><mn>6</mn><mo>⋅</mo><mn>5</mn><mo>⋅</mo><mn>4</mn><mo>⋅</mo><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>5,040</mn></mrow></mtd><mtd columnalign="left"><mtext> </mtext><mtext> </mtext><mrow><mstyle color="#007fbf"><mi>S</mi><mi>e</mi><mi>v</mi><mi>e</mi><mi>n</mi><mtext> </mtext><mi>f</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>o</mi><mi>r</mi><mi>i</mi><mi>a</mi><mi>l</mi></mstyle></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="right"><mrow><mn>5</mn><mo>!</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>5</mn><mo>⋅</mo><mn>4</mn><mo>⋅</mo><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>120</mn></mrow></mtd><mtd columnalign="left"><mtext> </mtext><mtext> </mtext><mrow><mstyle color="#007fbf"><mi>F</mi><mi>i</mi><mi>v</mi><mi>e</mi><mtext> </mtext><mi>f</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>o</mi><mi>r</mi><mi>i</mi><mi>a</mi><mi>l</mi></mstyle></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="right"><mrow><mn>3</mn><mo>!</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>6</mn></mrow></mtd><mtd columnalign="left"><mtext> </mtext><mtext> </mtext><mrow><mstyle color="#007fbf"><mi>T</mi><mi>h</mi><mi>r</mi><mi>e</mi><mi>e</mi><mtext> </mtext><mi>f</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>o</mi><mi>r</mi><mi>i</mi><mi>a</mi><mi>l</mi></mstyle></mrow></mtd></mtr><mtr columnalign="left"><mtd columnalign="right"><mrow><mn>1</mn><mo>!</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mn>1</mn><mo>=</mo><mn>1</mn></mrow></mtd><mtd columnalign="left"><mtext> </mtext><mtext> </mtext><mrow><mstyle color="#007fbf"><mi>O</mi><mi>n</mi><mi>e</mi><mtext> </mtext><mi>f</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>o</mi><mi>r</mi><mi>i</mi><mi>a</mi><mi>l</mi></mstyle></mrow></mtd></mtr></mtable></mrow></math></span></p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p05">We define <span class="margin_term"><a class="glossterm">zero factorial</a><span class="glossdef">The factorial of zero is defined to be equal to 1; <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0929" display="inline"><mrow><mn>0</mn><mo>!</mo><mo>=</mo><mn>1</mn></mrow><mo>.</mo></math></span></span></span> to be equal to 1,</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p06"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0930" display="block"><mrow><mn>0</mn><mo>!</mo><mo>=</mo><mn>1</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mi>Z</mi><mi>e</mi><mi>r</mi><mi>o</mi><mtext> </mtext><mi>f</mi><mi>a</mi><mi>c</mi><mi>t</mi><mi>o</mi><mi>r</mi><mi>i</mi><mi>a</mi><mi>l</mi></mstyle></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p07">The factorial of a negative number is not defined.</p>
+        <p class="para block"> </p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p07a"><strong class="emphasis bold">Note</strong>: On most modern calculators you will find a factorial function. Some calculators do not provide a button dedicated to it. However, it usually can be found in the menu system if one is provided.</p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p08">The factorial can also be expressed using the following recurrence relation,</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p09"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0931" display="block"><mrow><mi>n</mi><mo>!</mo><mo>=</mo><mi>n</mi><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p10">For example, the factorial of 8 can be expressed as the product of 8 and 7!:</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p11"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0932" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>8</mn><mo>!</mo></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>8</mn><mo>⋅</mo><mstyle color="#007fbf"><mn>7</mn><mo>!</mo></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>8</mn><mo>⋅</mo><mstyle color="#007fbf"><mn>7</mn><mo>⋅</mo><mn>6</mn><mo>⋅</mo><mn>5</mn><mo>⋅</mo><mn>4</mn><mo>⋅</mo><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>1</mn></mstyle></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>40,320</mn></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p12">When working with ratios involving factorials, it is often the case that many of the factors cancel.</p>
+        <div class="callout block" id="fwk-redden-ch09_s04_s01_n01">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p13">Evaluate: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0933" display="inline"><mrow><mfrac><mrow><mn>12</mn><mo>!</mo></mrow><mrow><mn>6</mn><mo>!</mo></mrow></mfrac></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p14"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0934" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mfrac><mrow><mn>12</mn><mo>!</mo></mrow><mrow><mn>6</mn><mo>!</mo></mrow></mfrac></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>12</mn><mo>⋅</mo><mn>11</mn><mo>⋅</mo><mn>10</mn><mo>⋅</mo><mn>9</mn><mo>⋅</mo><mn>8</mn><mo>⋅</mo><mn>7</mn><mo>⋅</mo><mstyle color="#007fbf"><mn>6</mn><mo>⋅</mo><mn>5</mn><mo>⋅</mo><mn>4</mn><mo>⋅</mo><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>1</mn></mstyle></mrow><mrow><mstyle color="#007fbf"><mn>6</mn><mo>⋅</mo><mn>5</mn><mo>⋅</mo><mn>4</mn><mo>⋅</mo><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>1</mn></mstyle></mrow></mfrac></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>12</mn><mo>⋅</mo><mn>11</mn><mo>⋅</mo><mn>10</mn><mo>⋅</mo><mn>9</mn><mo>⋅</mo><mn>8</mn><mo>⋅</mo><mn>7</mn><mo>⋅</mo><menclose notation="updiagonalstrike"><mrow><mn>6</mn><mo>!</mo></mrow></menclose></mrow><mrow><menclose notation="updiagonalstrike"><mrow><mn>6</mn><mo>!</mo></mrow></menclose></mrow></mfrac></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>12</mn><mo>⋅</mo><mn>11</mn><mo>⋅</mo><mn>10</mn><mo>⋅</mo><mn>9</mn><mo>⋅</mo><mn>8</mn><mo>⋅</mo><mn>7</mn></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>665,280</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p15">Answer: 665,280</p>
+        </div>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p16">The <span class="margin_term"><a class="glossterm">binomial coefficient</a><span class="glossdef">An integer that is calculated using the formula: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0935" display="inline"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mi>k</mi><mo>!</mo><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac></mrow><mo>.</mo></math></span></span></span>, denoted <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0936" display="inline"><mrow><msub><mrow></mrow><mi>n</mi></msub><msub><mi>C</mi><mi>k</mi></msub><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>, is read “<em class="emphasis">n</em> choose <em class="emphasis">k</em>” and is given by the following formula:</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p17"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0937" display="block"><mrow><msub><mrow></mrow><mi>n</mi></msub><msub><mi>C</mi><mi>k</mi></msub><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mi>k</mi><mo>!</mo><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p18">This formula is very important in a branch of mathematics called combinatorics. It gives the number of ways <em class="emphasis">k</em> elements can be chosen from a set of <em class="emphasis">n</em> elements where order does not matter. In this section, we are concerned with the ability to calculate this quantity.</p>
+        <div class="callout block" id="fwk-redden-ch09_s04_s01_n02">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p19">Calculate: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0938" display="inline"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>7</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>.</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p20">Use the formula for the binomial coefficent,</p>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p21"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0939" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mi>k</mi><mo>!</mo><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p22">where <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0940" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>7</mn></mrow></math></span> and <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0941" display="inline"><mrow><mi>k</mi><mo>=</mo><mn>3</mn></mrow><mo>.</mo></math></span> After substituting, look for factors to cancel.</p>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p23"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0942" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>7</mn><mo>!</mo></mrow><mrow><mn>3</mn><mo>!</mo><mrow><mo>(</mo><mrow><mn>7</mn><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>7</mn><mo>!</mo></mrow><mrow><mn>3</mn><mo>!</mo><mtext> </mtext><mtext> </mtext><mn>4</mn><mo>!</mo></mrow></mfrac></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>7</mn><mo>⋅</mo><mn>6</mn><mo>⋅</mo><mn>5</mn><mo>⋅</mo><menclose notation="updiagonalstrike"><mrow><mstyle color="#007fbf"><mn>4</mn><mo>!</mo></mstyle></mrow></menclose></mrow><mrow><mn>3</mn><mo>!</mo><mtext> </mtext><mtext> </mtext><menclose notation="updiagonalstrike"><mrow><mstyle color="#007fbf"><mn>4</mn><mo>!</mo></mstyle></mrow></menclose></mrow></mfrac></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>210</mn></mrow><mn>6</mn></mfrac></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>35</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p24">Answer: 35</p>
+        </div>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p25"><strong class="emphasis bold">Note</strong>: Check the menu system of your calculator for a function that calculates this quantity. Look for the notation <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0943" display="inline"><mrow><msub><mrow></mrow><mi>n</mi></msub><msub><mi>C</mi><mi>k</mi></msub></mrow></math></span> in the probability subsection.</p>
+        <div class="callout block" id="fwk-redden-ch09_s04_s01_n02a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p26"><strong class="emphasis bold">Try this!</strong> Calculate: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0944" display="inline"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>8</mn></mtd></mtr><mtr><mtd><mn>5</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>.</p>
+            <p class="para" id="fwk-redden-ch09_s04_s01_p27">Answer: 56</p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/Rpb8KD1HQGc" condition="http://img.youtube.com/vi/Rpb8KD1HQGc/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/Rpb8KD1HQGc" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p29">Consider the following binomial raised to the 3<sup class="superscript">rd</sup> power in its expanded form:</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p30"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0945" display="block"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi><mo>+</mo><mn>3</mn><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>3</mn></msup></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p31">Compare it to the following calculations,</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s01_p32"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0946" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>3</mn><mo>!</mo></mrow><mrow><mn>0</mn><mo>!</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>−</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn><mo>!</mo></mrow><mrow><mn>1</mn><mo>⋅</mo><mn>3</mn><mo>!</mo></mrow></mfrac><mo>=</mo><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>3</mn><mo>!</mo></mrow><mrow><mn>1</mn><mo>!</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>!</mo></mrow><mrow><mn>1</mn><mo>⋅</mo><mn>2</mn><mo>!</mo></mrow></mfrac><mo>=</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>3</mn><mo>!</mo></mrow><mrow><mn>2</mn><mo>!</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>!</mo></mrow><mrow><mn>2</mn><mo>!</mo><mtext> </mtext><mtext> </mtext><mn>1</mn><mo>!</mo></mrow></mfrac><mo>=</mo><mn>3</mn></mtd></mtr><mtr><mtd columnalign="right"><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd></mtr></mtable><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mfrac><mrow><mn>3</mn><mo>!</mo></mrow><mrow><mn>3</mn><mo>!</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn><mo>!</mo></mrow><mrow><mn>3</mn><mo>!</mo><mtext> </mtext><mtext> </mtext><mn>0</mn><mo>!</mo></mrow></mfrac><mo>=</mo><mn>1</mn></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s01_p33">Notice that there appears to be a connection between these calculations and the coefficients of the expanded binomial. This observation is generalized in the next section.</p>
+    </div>
+    <div class="section" id="fwk-redden-ch09_s04_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Binomial Theorem</h2>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p01">Consider expanding <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0947" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow></math></span>:</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p02"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0948" display="block"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup><mo>=</mo><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span></p>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p03">One quickly realizes that this is a very tedious calculation involving multiple applications of the distributive property. The <span class="margin_term"><a class="glossterm">binomial theorem</a><span class="glossdef">Describes the algebraic expansion of binomials raised to powers: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0949" display="inline"><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mi>n</mi></msup></mrow></mtd></mtr><mtr><mtd><mo>=</mo><mtext> </mtext><mstyle displaystyle="true"><munderover><mo>Σ</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><mrow><mtext> </mtext><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></mstyle><mtext> </mtext><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup><msup><mi>y</mi><mi>k</mi></msup><mo>.</mo></mtd></mtr></mtable></math></span></span></span> provides a method of expanding binomials raised to powers without directly multiplying each factor:</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p04"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0950" display="block"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mi>n</mi></msup><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mi>n</mi></msup><msup><mi>y</mi><mn>0</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>y</mi><mn>1</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mn>2</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msup><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>…</mn><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>n</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>1</mn></msup><msup><mi>y</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>n</mi></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>0</mn></msup><msup><mi>y</mi><mi>n</mi></msup></mrow></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s02_p05">More compactly we can write,</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p06"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0951" display="block"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mi>n</mi></msup><mo>=</mo><mtext> </mtext><mstyle displaystyle="true"><munderover><mo>Σ</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><mrow><mtext> </mtext><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></mstyle><mtext> </mtext><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup><msup><mi>y</mi><mi>k</mi></msup><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mstyle color="#007fbf"><mi>B</mi><mi>i</mi><mi>n</mi><mi>o</mi><mi>m</mi><mi>i</mi><mi>a</mi><mi>l</mi><mtext> </mtext><mi>t</mi><mi>h</mi><mi>e</mi><mi>o</mi><mi>r</mi><mi>e</mi><mi>m</mi></mstyle></mrow></math></span></p>
+        <div class="callout block" id="fwk-redden-ch09_s04_s02_n01">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p07">Expand using the binomial theorem: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0952" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow><mo>.</mo></math></span></p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p08">Use the binomial theorem where <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0953" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow></math></span> and <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0954" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>2</mn></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p09"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0955" display="block"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup><mo>=</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>5</mn></msup><msup><mn>2</mn><mn>0</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>4</mn></msup><msup><mn>2</mn><mn>1</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>3</mn></msup><msup><mn>2</mn><mn>2</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>2</mn></msup><msup><mn>2</mn><mn>3</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>1</mn></msup><msup><mn>2</mn><mn>4</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mn>5</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>0</mn></msup><msup><mn>2</mn><mn>5</mn></msup></mrow></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p10">Sometimes it is helpful to identify the pattern that results from applying the binomial theorem. Notice that powers of the variable <em class="emphasis">x</em> start at 5 and decrease to zero. The powers of the constant term start at 0 and increase to 5. The binomial coefficents can be calculated off to the side and are left to the reader as an exercise.</p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p11"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0956" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mn>5</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>5</mn></msup><msup><mn>2</mn><mn>0</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>4</mn></msup><msup><mn>2</mn><mn>1</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>2</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>3</mn></msup><msup><mn>2</mn><mn>2</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>3</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>2</mn></msup><msup><mn>2</mn><mn>3</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>1</mn></msup><msup><mn>2</mn><mn>4</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr><mtr><mtd columnalign="left"><mn>5</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>x</mi><mn>0</mn></msup><msup><mn>2</mn><mn>5</mn></msup></mtd></mtr><mtr><mtd columnalign="left"></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mspace width="0.75em"></mspace><mn>1</mn><msup><mi>x</mi><mn>5</mn></msup><mo>×</mo><mn>1</mn><mspace width="0.25em"></mspace><mo>+</mo><mspace width="0.3em"></mspace><mn>5</mn><msup><mi>x</mi><mn>4</mn></msup><mspace width="0.35em"></mspace><mo>×</mo><mn>2</mn><mspace width="0.2em"></mspace><mo>+</mo><mspace width="0.15em"></mspace><mn>10</mn><msup><mi>x</mi><mn>3</mn></msup><mo>×</mo><mn>4</mn><mo>+</mo><mspace width="0.2em"></mspace><mn>10</mn><msup><mi>x</mi><mn>2</mn></msup><mo>×</mo><mn>8</mn><mspace width="0.1em"></mspace><mo>+</mo><mspace width="0.15em"></mspace><mn>5</mn><msup><mi>x</mi><mn>1</mn></msup><mo>×</mo><mn>16</mn><mspace width="0.15em"></mspace><mo>+</mo><mn>1</mn><mo>×</mo><mn>1</mn><mo>×</mo><mn>32</mn></mtd></mtr><mtr><mtd columnalign="left"></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>10</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>40</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>80</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>80</mn><mi>x</mi><mo>+</mo><mn>32</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p12">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0957" display="inline"><mrow><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>10</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>40</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>80</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>80</mn><mi>x</mi><mo>+</mo><mn>32</mn></mrow></math></span></p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s02_p13">The binomial may have negative terms, in which case we will obtain an alternating series.</p>
+        <div class="callout block" id="fwk-redden-ch09_s04_s02_n02">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p14">Expand using the binomial theorem: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0958" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>u</mi><mo>−</mo><mn>2</mn><mi>v</mi></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow><mo>.</mo></math></span></p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p15">Use the binomial theorem where <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0959" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0960" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>u</mi></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0961" display="inline"><mrow><mi>y</mi><mo>=</mo><mo>−</mo><mn>2</mn><mi>v</mi></mrow></math></span> and then simplify each term.</p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p16"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0962" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mi>u</mi><mo>−</mo><mn>2</mn><mi>v</mi></mrow><mo>)</mo></mrow><mn>4</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>u</mi><mn>4</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn><mi>v</mi></mrow><mo>)</mo></mrow><mn>0</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>u</mi><mn>3</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn><mi>v</mi></mrow><mo>)</mo></mrow><mn>1</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>2</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>u</mi><mn>2</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn><mi>v</mi></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>3</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>u</mi><mn>1</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn><mi>v</mi></mrow><mo>)</mo></mrow><mn>3</mn></msup><mo>+</mo><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow><msup><mi>u</mi><mn>0</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn><mi>v</mi></mrow><mo>)</mo></mrow><mn>4</mn></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mspace width="1.25em"></mspace><mn>1</mn><mo>×</mo><msup><mi>u</mi><mn>4</mn></msup><mo>×</mo><mn>1</mn><mspace width="1.15em"></mspace><mo>+</mo><mspace width="0.75em"></mspace><mn>4</mn><msup><mi>u</mi><mn>3</mn></msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn><mi>v</mi></mrow><mo>)</mo></mrow><mspace width="0.75em"></mspace><mo>+</mo><mspace width="0.75em"></mspace><mn>6</mn><msup><mi>u</mi><mn>2</mn></msup><mrow><mo>(</mo><mrow><mn>4</mn><msup><mi>v</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mspace width="0.9em"></mspace><mo>+</mo><mspace width="0.75em"></mspace><mn>4</mn><mi>u</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>8</mn><msup><mi>v</mi><mn>3</mn></msup></mrow><mo>)</mo></mrow><mspace width="0.5em"></mspace><mo>+</mo><mspace width="0.75em"></mspace><mn>1</mn><mo>×</mo><mn>1</mn><mrow><mo>(</mo><mrow><mn>16</mn><msup><mi>v</mi><mn>4</mn></msup></mrow><mo>)</mo></mrow></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>u</mi><mn>4</mn></msup><mo>−</mo><mn>8</mn><msup><mi>u</mi><mn>3</mn></msup><mi>v</mi><mo>+</mo><mn>24</mn><msup><mi>u</mi><mn>2</mn></msup><msup><mi>v</mi><mn>2</mn></msup><mo>−</mo><mn>32</mn><mi>u</mi><msup><mi>v</mi><mn>3</mn></msup><mo>+</mo><mn>16</mn><msup><mi>v</mi><mn>4</mn></msup></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p17">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0963" display="inline"><mrow><msup><mi>u</mi><mn>4</mn></msup><mo>−</mo><mn>8</mn><msup><mi>u</mi><mn>3</mn></msup><mi>v</mi><mo>+</mo><mn>24</mn><msup><mi>u</mi><mn>2</mn></msup><msup><mi>v</mi><mn>2</mn></msup><mo>−</mo><mn>32</mn><mi>u</mi><msup><mi>v</mi><mn>3</mn></msup><mo>+</mo><mn>16</mn><msup><mi>v</mi><mn>4</mn></msup></mrow></math></span></p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch09_s04_s02_n02a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p18"><strong class="emphasis bold">Try this!</strong> Expand using the binomial theorem: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0964" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p19">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0965" display="inline"><mrow><msup><mi>a</mi><mn>8</mn></msup><mo>−</mo><mn>12</mn><msup><mi>a</mi><mn>6</mn></msup><mo>+</mo><mn>54</mn><msup><mi>a</mi><mn>4</mn></msup><mo>−</mo><mn>108</mn><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>81</mn></mrow></math></span></p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/wICbqmoa4T4" condition="http://img.youtube.com/vi/wICbqmoa4T4/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/wICbqmoa4T4" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p21">Next we study the coefficients of the expansions of <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0966" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mi>n</mi></msup></mrow></math></span> starting with <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0967" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow></math></span>:</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p22"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0968" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow><mn>0</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>1</mn></mtd></mtr><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow><mn>1</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>x</mi><mo>+</mo><mi>y</mi></mtd></mtr><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mtd></mtr><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow><mn>3</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi><mo>+</mo><mn>3</mn><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>3</mn></msup></mtd></mtr><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow><mn>4</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>4</mn><msup><mi>x</mi><mn>3</mn></msup><mi>y</mi><mo>+</mo><mn>6</mn><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><msup><mi>y</mi><mn>3</mn></msup><mo>+</mo><msup><mi>y</mi><mn>4</mn></msup></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch09_s04_s02_p23">Write the coefficients in a triangular array and note that each number below is the sum of the two numbers above it, always leaving a 1 on either end.</p>
+        <div class="informalfigure large block">
+            <img src="section_12/a7c06107e83ade76db95e5d260093300.png">
+        </div>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p25">This is <span class="margin_term"><a class="glossterm">Pascal’s triangle</a><span class="glossdef">A triangular array of numbers that correspond to the binomial coefficients.</span></span>; it provides a quick method for calculating the binomial coefficients. Use this in conjunction with the binomial theorem to streamline the process of expanding binomials raised to powers. For example, to expand <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0969" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup></mrow></math></span> we would need two more rows of Pascal’s triangle,</p>
+        <div class="informalfigure large block">
+            <img src="section_12/b1c6d3d2f61e41f31b27656004aba809.png">
+        </div>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p27">The binomial coefficients that we need are in blue. Use these numbers and the binomial theorem to quickly expand <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0970" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup></mrow></math></span> as follows:</p>
+        <p class="para block" id="fwk-redden-ch09_s04_s02_p28"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0971" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>6</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mstyle color="#007fbf"><mn>1</mn></mstyle><msup><mi>x</mi><mn>6</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>0</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>6</mn></mstyle><msup><mi>x</mi><mn>5</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>1</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>15</mn></mstyle><msup><mi>x</mi><mn>4</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>20</mn></mstyle><msup><mi>x</mi><mn>3</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>3</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>15</mn></mstyle><msup><mi>x</mi><mn>2</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>4</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>6</mn></mstyle><mi>x</mi><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>5</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>1</mn></mstyle><msup><mi>x</mi><mn>0</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mn>6</mn></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mi>x</mi><mn>6</mn></msup><mo>−</mo><mn>6</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>15</mn><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>20</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>15</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>1</mn></mtd></mtr></mtable></math></span></p>
+        <div class="callout block" id="fwk-redden-ch09_s04_s02_n03">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p29">Expand using the binomial theorem and Pascal’s triangle: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0972" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow><mo>.</mo></math></span></p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p30">From Pascal’s triangle we can see that when <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0973" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow></math></span> the binomial coefficients are 1, 4, 6, 4, and 1. Use these numbers and the binomial theorem as follows:</p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p31"><span class="informalequation"><math xml:id="fwk-redden-ch09_m0974" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mn>4</mn></msup></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mstyle color="#007fbf"><mn>1</mn></mstyle><msup><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mn>4</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mn>0</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>4</mn></mstyle><msup><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mn>3</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mn>1</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>6</mn></mstyle><msup><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mn>2</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>4</mn></mstyle><msup><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mn>1</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mn>3</mn></msup><mo>+</mo><mstyle color="#007fbf"><mn>1</mn></mstyle><msup><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi></mrow><mo>)</mo></mrow><mn>0</mn></msup><msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mn>4</mn></msup></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn><msup><mi>x</mi><mn>4</mn></msup><mo>⋅</mo><mn>1</mn><mo>+</mo><mn>4</mn><mo>⋅</mo><mn>8</mn><msup><mi>x</mi><mn>3</mn></msup><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>+</mo><mn>6</mn><mo>⋅</mo><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>⋅</mo><mn>25</mn><mo>+</mo><mn>4</mn><mo>⋅</mo><mn>2</mn><mi>x</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>125</mn></mrow><mo>)</mo></mrow><mo>+</mo><mn>1</mn><mo>⋅</mo><mn>625</mn></mtd></mtr><mtr><mtd></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>16</mn><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>160</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>600</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1,000</mn><mi>x</mi><mo>+</mo><mn>625</mn></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch09_s04_s02_p32">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0975" display="inline"><mrow><mn>16</mn><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>160</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>600</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1,000</mn><mi>x</mi><mo>+</mo><mn>625</mn></mrow></math></span></p>
+        </div>
+        <div class="key_takeaways block" id="fwk-redden-ch09_s04_s02_n04">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-redden-ch09_s04_s02_l01" mark="bullet">
+                <li>To calculate the factorial of a natural number, multiply that number by all natural numbers less than it: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0976" display="inline"><mrow><mn>5</mn><mo>!</mo><mo>=</mo><mn>5</mn><mo>⋅</mo><mn>4</mn><mo>⋅</mo><mn>3</mn><mo>⋅</mo><mn>2</mn><mo>⋅</mo><mn>1</mn><mo>=</mo><mn>120</mn></mrow><mo>.</mo></math></span> Remember that we have defined <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0977" display="inline"><mrow><mn>0</mn><mo>!</mo><mo>=</mo><mn>1</mn></mrow><mo>.</mo></math></span>
+</li>
+                <li>The binomial coefficients are the integers calculated using the formula: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0978" display="inline"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable><mo>)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mi>k</mi><mo>!</mo><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></math></span>.</li>
+                <li>The binomial theorem provides a method for expanding binomials raised to powers without directly multiplying each factor: <span class="inlineequation"><math xml:id="fwk-redden-ch09_m0979" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mi>n</mi></msup><mo>=</mo><mtext> </mtext><mstyle displaystyle="true"><munderover><mo>Σ</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover><mrow><mtext> </mtext><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>k</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></mstyle><mtext> </mtext><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mi>k</mi></mrow></msup><msup><mi>y</mi><mi>k</mi></msup></mrow></math></span>.</li>
+                <li>Use Pascal’s triangle to quickly determine the binomial coefficients.</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch09_s04_qs01" defaultlabel="number">
+            <h3 class="title">Topic Exercises</h3>
+            <ol class="qandadiv" id="fwk-redden-ch09_s04_qs01_qd01">
+                <h3 class="title">Part A: Factorials and the Binomial Coefficient</h3>
+                <ol class="qandadiv" id="fwk-redden-ch09_s04_qs01_qd01_qd01">
+                    <p class="para" id="fwk-redden-ch09_s04_qs01_p01"><strong class="emphasis bold">Evaluate.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa01">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p02"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0980" display="inline"><mrow><mn>6</mn><mo>!</mo></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa02">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p04"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0981" display="inline"><mrow><mn>4</mn><mo>!</mo></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa03">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p06"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0982" display="inline"><mrow><mn>10</mn><mo>!</mo></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa04">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p08"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0983" display="inline"><mrow><mn>9</mn><mo>!</mo></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa05">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p10"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0984" display="inline"><mrow><mfrac><mrow><mn>6</mn><mo>!</mo></mrow><mrow><mn>3</mn><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa06">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p12"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0985" display="inline"><mrow><mfrac><mrow><mn>8</mn><mo>!</mo></mrow><mrow><mn>4</mn><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa07">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p14"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0986" display="inline"><mrow><mfrac><mrow><mn>13</mn><mo>!</mo></mrow><mrow><mn>9</mn><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa08">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p16"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0987" display="inline"><mrow><mfrac><mrow><mn>15</mn><mo>!</mo></mrow><mrow><mn>10</mn><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa09">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p18"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0988" display="inline"><mrow><mfrac><mrow><mn>12</mn><mo>!</mo></mrow><mrow><mn>3</mn><mo>!</mo><mtext> </mtext><mn>7</mn><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa10">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p20"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0989" display="inline"><mrow><mfrac><mrow><mn>10</mn><mo>!</mo></mrow><mrow><mn>2</mn><mo>!</mo><mtext> </mtext><mtext> </mtext><mn>5</mn><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa11">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p22"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0990" display="inline"><mrow><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa12">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p24"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0992" display="inline"><mrow><mfrac><mrow><mrow><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow><mrow><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa13">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p26">
+</p>
+<ol class="orderedlist" id="fwk-redden-ch09_s04_qs01_o01" numeration="loweralpha">                                    <li><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0994" display="inline"><mrow><mn>4</mn><mo>!</mo><mtext> </mtext><mo>+</mo><mn>3</mn><mo>!</mo></mrow></math></span></li>
+                                    <li><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0995" display="inline"><mrow><mrow><mo>(</mo><mrow><mn>4</mn><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></math></span></li>
+</ol>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa14">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p28">
+</p>
+<ol class="orderedlist" id="fwk-redden-ch09_s04_qs01_o03" numeration="loweralpha">                                    <li><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0996" display="inline"><mrow><mn>4</mn><mo>!</mo><mo>−</mo><mn>3</mn><mo>!</mo></mrow></math></span></li>
+                                    <li><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0997" display="inline"><mrow><mrow><mo>(</mo><mrow><mn>4</mn><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></math></span></li>
+</ol>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch09_s04_qs01_qd01_qd02" start="15">
+                    <p class="para" id="fwk-redden-ch09_s04_qs01_p30"><strong class="emphasis bold">Rewrite using factorial notation.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa15">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p31"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0998" display="inline"><mrow><mn>1</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>3</mn><mo>×</mo><mn>4</mn><mo>×</mo><mn>5</mn><mo>×</mo><mn>6</mn><mo>×</mo><mn>7</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa16">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p33"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1000" display="inline"><mrow><mn>1</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>3</mn><mo>×</mo><mn>4</mn><mo>×</mo><mn>5</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa17">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p35"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1002" display="inline"><mrow><mn>15</mn><mo>×</mo><mn>14</mn><mo>×</mo><mn>13</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa18">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p37"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1004" display="inline"><mrow><mn>10</mn><mo>×</mo><mn>9</mn><mo>×</mo><mn>8</mn><mo>×</mo><mn>7</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa19">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p39">13</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa20">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p41"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1007" display="inline"><mrow><mn>8</mn><mo>×</mo><mn>7</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa21">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p43"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1009" display="inline"><mrow><mi>n</mi><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa22">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p45"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1011" display="inline"><mrow><mn>1</mn><mo>×</mo><mn>2</mn><mo>×</mo><mn>3</mn><mo>×</mo><mo>⋯</mo><mo>×</mo><mi>n</mi><mo>×</mo><mrow><mo>(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch09_s04_qs01_qd01_qd03" start="23">
+                    <p class="para" id="fwk-redden-ch09_s04_qs01_p47"><strong class="emphasis bold">Calculate the indicated binomial coefficient.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa23">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1013" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>6</mn></mtd></mtr><mtr><mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa24">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1014" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>8</mn></mtd></mtr><mtr><mtd><mn>4</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa25">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1015" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>7</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa26">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1016" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mn>5</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa27">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1017" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa28">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1018" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mn>13</mn></mtd></mtr><mtr><mtd><mn>12</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa29">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1019" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa30">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1020" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>n</mi></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa31">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1021" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa32">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch09_m1023" display="block"><mrow><mrow><mo>(</mo><mtable columnspacing="0.1em"><mtr><mtd><mi>n</mi></mtd></mtr><mtr><mtd><mi>n</mi><mo>−</mo><mn>1</mn></mtd></mtr></mtable><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa33">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p68"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1025" display="inline"><mrow><msub><mrow></mrow><mrow><mn>10</mn></mrow></msub><msub><mi>C</mi><mn>8</mn></msub></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa34">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p70"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1026" display="inline"><mrow><msub><mrow></mrow><mn>5</mn></msub><msub><mi>C</mi><mn>1</mn></msub></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa35">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p72"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1027" display="inline"><mrow><msub><mrow></mrow><mrow><mn>12</mn></mrow></msub><msub><mi>C</mi><mrow><mn>12</mn></mrow></msub></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa36">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p74"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1028" display="inline"><mrow><msub><mrow></mrow><mrow><mn>10</mn></mrow></msub><msub><mi>C</mi><mn>5</mn></msub></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa37">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p76"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1029" display="inline"><mrow><msub><mrow></mrow><mi>n</mi></msub><msub><mi>C</mi><mrow><mi>n</mi><mo>−</mo><mn>2</mn></mrow></msub></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa38">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p78"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1031" display="inline"><mrow><msub><mrow></mrow><mi>n</mi></msub><msub><mi>C</mi><mrow><mi>n</mi><mo>−</mo><mn>3</mn></mrow></msub></mrow></math></span></p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch09_s04_qs01_qd02">
+                <h3 class="title">Part B: Binomial Theorem</h3>
+                <ol class="qandadiv" id="fwk-redden-ch09_s04_qs01_qd02_qd01" start="39">
+                    <p class="para" id="fwk-redden-ch09_s04_qs01_p80"><strong class="emphasis bold">Expand using the binomial theorem.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa39">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p81"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1033" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>4</mn><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa40">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p83"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1035" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa41">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p85"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1037" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mfrac><mi>x</mi><mn>2</mn></mfrac><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa42">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p87"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1039" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mi>y</mi></mfrac></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa43">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p89"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1041" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa44">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p91"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1043" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa45">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p93"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1045" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa46">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p95"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1047" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa47">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p97"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1049" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mfrac><mn>2</mn><mi>y</mi></mfrac></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa48">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p99"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1051" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mfrac><mi>x</mi><mn>3</mn></mfrac><mo>−</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa49">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p101"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1053" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa50">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p103"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1055" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa51">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p105"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1057" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa52">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p107"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1059" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa53">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p109"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1061" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>7</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa54">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p111"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1063" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>7</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa55">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p113"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1065" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>5</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa56">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p115"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1067" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa57">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p117"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1069" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>4</mn><mi>u</mi><mo>+</mo><mi>v</mi></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa58">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p119"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1071" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>3</mn><mi>u</mi><mo>−</mo><mi>v</mi></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa59">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p121"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1073" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>u</mi><mo>−</mo><mn>5</mn><mi>v</mi></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa60">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p123"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1075" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mn>2</mn><mi>u</mi><mo>+</mo><mn>3</mn><mi>v</mi></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa61">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p125"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1077" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>a</mi><mo>−</mo><msup><mi>b</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa62">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p127"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1079" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa63">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p129"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1081" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><msup><mi>b</mi><mn>4</mn></msup></mrow><mo>)</mo></mrow></mrow><mn>6</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa64">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p131"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1083" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><msup><mi>a</mi><mn>5</mn></msup><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa65">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p133"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1085" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><msqrt><mn>2</mn></msqrt></mrow><mo>)</mo></mrow></mrow><mn>3</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa66">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p135"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1087" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><msqrt><mn>2</mn></msqrt></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa67">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p137"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1089" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><msqrt><mi>x</mi></msqrt><mo>−</mo><msqrt><mi>y</mi></msqrt></mrow><mo>)</mo></mrow></mrow><mn>4</mn></msup></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch09_m1090" display="inline"><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>≥</mo><mn>0</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa68">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p139"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1092" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><msqrt><mi>x</mi></msqrt><mo>+</mo><mn>2</mn><msqrt><mi>y</mi></msqrt></mrow><mo>)</mo></mrow></mrow><mn>5</mn></msup></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch09_m1093" display="inline"><mrow><mi>x</mi><mo>,</mo><mi>y</mi><mo>≥</mo><mn>0</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa69">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p141"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1095" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>7</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa70">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p143"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1097" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>8</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa71">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p145"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1099" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>9</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa72">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p147"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1101" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>7</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa73">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p149"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1103" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>8</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa74">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p151"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1105" display="inline"><mrow><msup><mrow><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><mo>)</mo></mrow></mrow><mn>9</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch09_s04_qs01_qd03">
+                <h3 class="title">Part C: Discussion Board</h3>
+                <ol class="qandadiv" id="fwk-redden-ch09_s04_qs01_qd03_qd01" start="75">
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa75">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p153">Determine the factorials of the integers 5, 10, 15, 20, and 25. Which grows faster, the common exponential function <span class="inlineequation"><math xml:id="fwk-redden-ch09_m1107" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><msup><mrow><mn>10</mn></mrow><mi>n</mi></msup></mrow></math></span> or the factorial function <span class="inlineequation"><math xml:id="fwk-redden-ch09_m1108" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mi>n</mi><mo>!</mo></mrow></math></span>? Explain.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa76">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch09_s04_qs01_p154">Research and discuss the history of the binomial theorem.</p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch09_s04_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p03_ans">720</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p07_ans">3,628,800</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p11_ans">120</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p15_ans">17,160</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p19_ans">15,840</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p23_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0991" display="inline"><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>−</mo><mi>n</mi></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p27_ans">
+</p>
+<ol class="orderedlist" id="fwk-redden-ch09_s04_qs01_o02_ans" numeration="loweralpha">                                <li>30</li>
+                                <li>5,040</li>
+</ol>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p32_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m0999" display="inline"><mrow><mn>7</mn><mo>!</mo></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa17_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p36_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1003" display="inline"><mrow><mfrac><mrow><mn>15</mn><mo>!</mo></mrow><mrow><mn>12</mn><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa19_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p40_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1006" display="inline"><mrow><mfrac><mrow><mn>13</mn><mo>!</mo></mrow><mrow><mn>12</mn><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa21_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p44_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1010" display="inline"><mrow><mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow><mrow><mo>(</mo><mrow><mi>n</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>!</mo></mrow></mfrac></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa23_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p49_ans">15</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa25_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p53_ans">21</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa27_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p57_ans">1</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa29_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p61_ans">1</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa30_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa31_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p65_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1022" display="inline"><mi>n</mi></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa32_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa33_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p69_ans">45</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa34_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa35_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p73_ans">1</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa36_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa37_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p77_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1030" display="inline"><mrow><mfrac><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>−</mo><mi>n</mi></mrow><mn>2</mn></mfrac></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa38_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="39">
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa39_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p82_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1034" display="inline"><mrow><mn>64</mn><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>144</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>108</mn><mi>x</mi><mo>−</mo><mn>27</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa40_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa41_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p86_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1038" display="inline"><mrow><mfrac><mrow><msup><mi>x</mi><mn>3</mn></msup></mrow><mn>8</mn></mfrac><mo>+</mo><mfrac><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi></mrow><mn>4</mn></mfrac><mo>+</mo><mfrac><mrow><mn>3</mn><mi>x</mi><msup><mi>y</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac><mo>+</mo><msup><mi>y</mi><mn>3</mn></msup></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa42_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa43_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p90_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1042" display="inline"><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>12</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>54</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>108</mn><mi>x</mi><mo>+</mo><mn>81</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa44_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa45_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p94_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1046" display="inline"><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>16</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>96</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>256</mn><mi>x</mi><mo>+</mo><mn>256</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa46_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa47_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p98_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1050" display="inline"><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mfrac><mrow><mn>8</mn><msup><mi>x</mi><mn>3</mn></msup></mrow><mi>y</mi></mfrac><mo>+</mo><mfrac><mrow><mn>24</mn><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>32</mn><mi>x</mi></mrow><mrow><msup><mi>y</mi><mn>3</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>16</mn></mrow><mrow><msup><mi>y</mi><mn>4</mn></msup></mrow></mfrac></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa48_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa49_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p102_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1054" display="inline"><mrow><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>5</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>10</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>10</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa50_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa51_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p106_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1058" display="inline"><mrow><msup><mi>x</mi><mn>6</mn></msup><mo>−</mo><mn>12</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>60</mn><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>160</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>240</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>192</mn><mi>x</mi><mo>+</mo><mn>64</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa52_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa53_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p110_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1062" display="inline"><mrow><msup><mi>x</mi><mn>7</mn></msup><mo>−</mo><mn>7</mn><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><mn>21</mn><msup><mi>x</mi><mn>5</mn></msup><mo>−</mo><mn>35</mn><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mn>35</mn><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>21</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa54_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa55_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p114_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1066" display="inline"><mrow><mn>625</mn><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mn>500</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>150</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>20</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa56_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa57_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p118_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1070" display="inline"><mrow><mn>256</mn><msup><mi>u</mi><mn>4</mn></msup><mo>+</mo><mn>256</mn><msup><mi>u</mi><mn>3</mn></msup><mi>v</mi><mo>+</mo><mn>96</mn><msup><mi>u</mi><mn>2</mn></msup><msup><mi>v</mi><mn>2</mn></msup><mo>+</mo><mn>16</mn><mi>u</mi><msup><mi>v</mi><mn>3</mn></msup><mo>+</mo><msup><mi>v</mi><mn>4</mn></msup></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa58_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa59_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch09_m1074" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mrow><msup><mi>u</mi><mn>5</mn></msup><mo>−</mo><mn>25</mn><msup><mi>u</mi><mn>4</mn></msup><mi>v</mi><mo>+</mo><mn>250</mn><msup><mi>u</mi><mn>3</mn></msup><msup><mi>v</mi><mn>2</mn></msup><mo>−</mo><mn>1,250</mn><msup><mi>u</mi><mn>2</mn></msup><msup><mi>v</mi><mn>3</mn></msup></mrow></mtd></mtr><mtr><mtd columnalign="left"><mo>+</mo><mn>3,125</mn><mi>u</mi><msup><mi>v</mi><mn>4</mn></msup><mo>−</mo><mn>3,125</mn><msup><mi>v</mi><mn>5</mn></msup></mtd></mtr></mtable></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa60_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa61_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p126_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1078" display="inline"><mrow><msup><mi>a</mi><mn>5</mn></msup><mo>−</mo><mn>5</mn><msup><mi>a</mi><mn>4</mn></msup><msup><mi>b</mi><mn>2</mn></msup><mo>+</mo><mn>10</mn><msup><mi>a</mi><mn>3</mn></msup><msup><mi>b</mi><mn>4</mn></msup><mo>−</mo><mn>10</mn><msup><mi>a</mi><mn>2</mn></msup><msup><mi>b</mi><mn>6</mn></msup><mo>+</mo><mn>5</mn><mi>a</mi><msup><mi>b</mi><mn>8</mn></msup><mo>−</mo><msup><mi>b</mi><mrow><mn>10</mn></mrow></msup></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa62_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa63_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch09_m1082" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mrow><msup><mi>a</mi><mrow><mn>12</mn></mrow></msup><mo>+</mo><mn>6</mn><msup><mi>a</mi><mrow><mn>10</mn></mrow></msup><msup><mi>b</mi><mn>4</mn></msup><mo>+</mo><mn>15</mn><msup><mi>a</mi><mn>8</mn></msup><msup><mi>b</mi><mn>8</mn></msup><mo>+</mo><mn>20</mn><msup><mi>a</mi><mn>6</mn></msup><msup><mi>b</mi><mrow><mn>12</mn></mrow></msup></mrow></mtd></mtr><mtr><mtd columnalign="left"><mo>+</mo><mn>15</mn><msup><mi>a</mi><mn>4</mn></msup><msup><mi>b</mi><mrow><mn>16</mn></mrow></msup><mo>+</mo><mn>6</mn><msup><mi>a</mi><mn>2</mn></msup><msup><mi>b</mi><mrow><mn>20</mn></mrow></msup><mo>+</mo><msup><mi>b</mi><mrow><mn>24</mn></mrow></msup></mtd></mtr></mtable></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa64_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa65_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p134_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1086" display="inline"><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>3</mn><msqrt><mn>2</mn></msqrt><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>2</mn><msqrt><mn>2</mn></msqrt></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa66_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa67_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch09_s04_qs01_p138_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch09_m1091" display="inline"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>x</mi><msqrt><mrow><mi>x</mi><mi>y</mi></mrow></msqrt><mo>+</mo><mn>6</mn><mi>x</mi><mi>y</mi><mo>−</mo><mn>4</mn><mi>y</mi><msqrt><mrow><mi>x</mi><mi>y</mi></mrow></msqrt><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa68_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa69_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch09_m1096" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mrow><msup><mi>x</mi><mn>7</mn></msup><mo>+</mo><mn>7</mn><msup><mi>x</mi><mn>6</mn></msup><mi>y</mi><mo>+</mo><mn>21</mn><msup><mi>x</mi><mn>5</mn></msup><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>35</mn><msup><mi>x</mi><mn>4</mn></msup><msup><mi>y</mi><mn>3</mn></msup></mrow></mtd></mtr><mtr><mtd columnalign="left"><mo>+</mo><mn>35</mn><msup><mi>x</mi><mn>3</mn></msup><msup><mi>y</mi><mn>4</mn></msup><mo>+</mo><mn>21</mn><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mn>5</mn></msup><mo>+</mo><mn>7</mn><mi>x</mi><msup><mi>y</mi><mn>6</mn></msup><mo>+</mo><msup><mi>y</mi><mn>7</mn></msup></mtd></mtr></mtable></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa70_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa71_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch09_m1100" display="block"><mtable columnspacing="0.1em"><mtr><mtd><msup><mi>x</mi><mn>9</mn></msup><mo>+</mo><mn>9</mn><msup><mi>x</mi><mn>8</mn></msup><mi>y</mi><mo>+</mo><mn>36</mn><msup><mi>x</mi><mn>7</mn></msup><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>84</mn><msup><mi>x</mi><mn>6</mn></msup><msup><mi>y</mi><mn>3</mn></msup><mo>+</mo><mn>126</mn><msup><mi>x</mi><mn>5</mn></msup><msup><mi>y</mi><mn>4</mn></msup></mtd></mtr><mtr><mtd><mo>+</mo><mn>126</mn><msup><mi>x</mi><mn>4</mn></msup><msup><mi>y</mi><mn>5</mn></msup><mo>+</mo><mn>84</mn><msup><mi>x</mi><mn>3</mn></msup><msup><mi>y</mi><mn>6</mn></msup><mo>+</mo><mn>36</mn><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mn>7</mn></msup><mo>+</mo><mn>9</mn><mi>x</mi><msup><mi>y</mi><mn>8</mn></msup><mo>+</mo><msup><mi>y</mi><mn>9</mn></msup></mtd></mtr></mtable></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa72_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa73_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch09_m1104" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><msup><mi>x</mi><mn>8</mn></msup><mo>−</mo><mn>8</mn><msup><mi>x</mi><mn>7</mn></msup><mi>y</mi><mo>+</mo><mn>28</mn><msup><mi>x</mi><mn>6</mn></msup><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mn>56</mn><msup><mi>x</mi><mn>5</mn></msup><msup><mi>y</mi><mn>3</mn></msup><mo>+</mo><mn>70</mn><msup><mi>x</mi><mn>4</mn></msup><msup><mi>y</mi><mn>4</mn></msup></mtd></mtr><mtr><mtd columnalign="left"><mo>−</mo><mn>56</mn><msup><mi>x</mi><mn>3</mn></msup><msup><mi>y</mi><mn>5</mn></msup><mo>+</mo><mn>28</mn><msup><mi>x</mi><mn>2</mn></msup><msup><mi>y</mi><mn>6</mn></msup><mo>−</mo><mn>8</mn><mi>x</mi><msup><mi>y</mi><mn>7</mn></msup><mo>+</mo><msup><mi>y</mi><mn>8</mn></msup></mtd></mtr></mtable></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa74_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="75">
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa75_ans">
+                    <div class="answer">
+                        <p class="para">Answer may vary</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch09_s04_qs01_qa76_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s12-03-geometric-sequences-and-series.html"><img src="shared/images/batch-left.png"></a> <a href="s12-03-geometric-sequences-and-series.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s12-05-review-exercises-and-sample-ex.html">Next Section</a> <a href="s12-05-review-exercises-and-sample-ex.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>

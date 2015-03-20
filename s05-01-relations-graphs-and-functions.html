@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="shared/bookhub.css" rel="stylesheet" type="text/css">
+  <title>Relations, Graphs, and Functions</title>
+</head>
+<body>
+
+  
+  <div id=navbar-top class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s04-09-review-exercises-and-sample-ex.html"><img src="shared/images/batch-left.png"></a> <a href="s04-09-review-exercises-and-sample-ex.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s05-02-linear-functions-and-their-gra.html">Next Section</a> <a href="s05-02-linear-functions-and-their-gra.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  <div id="book-content">
+    <div class="section" id="fwk-redden-ch02_s01" condition="start-of-chunk" version="5.0" lang="en">
+    <h2 class="title editable block">
+<span class="title-prefix">2.1</span> Relations, Graphs, and Functions</h2>
+    <div class="learning_objectives editable block" id="fwk-redden-ch02_s01_n01">
+        <h3 class="title">Learning Objectives</h3>
+        <ol class="orderedlist" id="fwk-redden-ch02_s01_o01" numeration="arabic">
+            <li>State the domain and range of a relation.</li>
+            <li>Identify a function.</li>
+            <li>Use function notation.</li>
+        </ol>
+    </div>
+    <div class="section" id="fwk-redden-ch02_s01_s01" version="5.0" lang="en">
+        <h2 class="title editable block">Graphs, Relations, Domain, and Range</h2>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s01_p01">The <span class="margin_term"><a class="glossterm">rectangular coordinate system</a><span class="glossdef">A system with two number lines at right angles specifying points in a plane using ordered pairs (<em class="emphasis">x</em>, <em class="emphasis">y</em>).</span></span> consists of two real number lines that intersect at a right angle. The horizontal number line is called the <span class="margin_term"><a class="glossterm"><em class="emphasis">x</em>-axis</a><span class="glossdef">The horizontal number line used as reference in a rectangular coordinate system.</span></span>, and the vertical number line is called the <span class="margin_term"><a class="glossterm"><em class="emphasis">y</em>-axis</a><span class="glossdef">The vertical number line used as reference in a rectangular coordinate system.</span></span>. These two number lines define a flat surface called a <span class="margin_term"><a class="glossterm">plane</a><span class="glossdef">The flat surface defined by <em class="emphasis">x</em>- and <em class="emphasis">y</em>-axes.</span></span>, and each point on this plane is associated with an <span class="margin_term"><a class="glossterm">ordered pair</a><span class="glossdef">Pairs (<em class="emphasis">x</em>, <em class="emphasis">y</em>) that identify position relative to the origin on a rectangular coordinate plane.</span></span> of real numbers (<em class="emphasis">x</em>, <em class="emphasis">y</em>). The first number is called the <em class="emphasis">x</em>-coordinate, and the second number is called the <em class="emphasis">y</em>-coordinate. The intersection of the two axes is known as the <span class="margin_term"><a class="glossterm">origin</a><span class="glossdef">The point where the <em class="emphasis">x</em>- and <em class="emphasis">y</em>-axes cross, denoted by (0, 0).</span></span>, which corresponds to the point (0, 0).</p>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s01_p02">The <em class="emphasis">x</em>- and <em class="emphasis">y</em>-axes break the plane into four regions called <span class="margin_term"><a class="glossterm">quadrants</a><span class="glossdef">The four regions of a rectangular coordinate plane partly bounded by the <em class="emphasis">x</em>- and <em class="emphasis">y</em>-axes and numbered using the Roman numerals I, II, III, and IV.</span></span>, named using roman numerals I, II, III, and IV, as pictured. The ordered pair (<em class="emphasis">x</em>, <em class="emphasis">y</em>) represents the position of points relative to the origin. For example, the ordered pair (−4, 3) represents the position 4 units to the left of the origin, and 3 units above in the second quadrant.</p>
+        <div class="informalfigure large block">
+            <img src="section_05/0ef85e2386362f67ce44e0f871bd4a6a.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s01_p04">This system is often called the <span class="margin_term"><a class="glossterm">Cartesian coordinate system</a><span class="glossdef">Term used in honor of René Descartes when referring to the rectangular coordinate system.</span></span>, named after the French mathematician René Descartes (1596–1650).</p>
+        <div class="figure large editable block" id="fwk-redden-ch02_s01_s01_f01">
+            <p class="title"><span class="title-prefix">Figure 2.1</span> </p>
+            <img src="section_05/b96e934e2d57d39b896dc35077fb4f66.png">
+            <p class="para">Rene Descartes Wikipedia</p>
+        </div>
+        <p class="para block" id="fwk-redden-ch02_s01_s01_p05">Next, we define a <span class="margin_term"><a class="glossterm">relation</a><span class="glossdef">Any set of ordered pairs.</span></span> as any set of ordered pairs. In the context of algebra, the relations of interest are sets of ordered pairs (<em class="emphasis">x</em>, <em class="emphasis">y</em>) in the rectangular coordinate plane. Typically, the coordinates are related by a rule expressed using an algebraic equation. For example, both the algebraic equations <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0001" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>2</mn></mrow></math></span> and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0002" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>|</mo><mi>y</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mrow></math></span> define relationsips between <em class="emphasis">x</em> and <em class="emphasis">y</em>. Following are some integers that satisfy both equations:</p>
+        <div class="informalfigure large block">
+            <img src="section_05/f0f80432cf5e496a04ecfd8ce9423065.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s01_p07">Here two relations consisting of seven ordered pair solutions are obtained:</p>
+        <p class="para block" id="fwk-redden-ch02_s01_s01_p08"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0003" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="left"><mi>y</mi><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>2</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>h</mi><mi>a</mi><mi>s</mi><mtext> </mtext><mi>s</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>s</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>{</mo><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mn>3</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn><mo>,</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>0</mn><mo>,</mo><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mtd></mtr><mtr><mtd><mi>a</mi><mi>n</mi><mi>d</mi></mtd></mtr><mtr><mtd columnalign="left"><mi>x</mi><mo>=</mo><mrow><mo>|</mo><mi>y</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>h</mi><mi>a</mi><mi>s</mi><mtext> </mtext><mi>s</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi>t</mi><mi>i</mi><mi>o</mi><mi>n</mi><mi>s</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mrow><mo>{</mo><mrow><mrow><mo>(</mo><mrow><mn>4</mn><mo>,</mo><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>,</mo><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>1</mn><mo>,</mo><mn>0</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>2</mn><mo>,</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>,</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>,</mo><mrow><mo>(</mo><mrow><mn>4</mn><mo>,</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mo>}</mo></mrow></mtd></mtr></mtable></math></span></p>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s01_p09">We can visually display any relation of this type on a coordinate plane by plotting the points.</p>
+        <div class="informalfigure large block">
+            <img src="section_05/75e7c0d4a43891b5034d1ae802ec4d4d.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s01_p11">The solution sets of each equation will form a relation consisting of infinitely many ordered pairs. We can use the given ordered pair solutions to estimate all of the other ordered pairs by drawing a line through the given points. Here we put an arrow on the ends of our lines to indicate that this set of ordered pairs continues without bounds.</p>
+        <div class="informalfigure large block">
+            <img src="section_05/e809a240a72a74e6ff3f7a1c22cee502.png">
+        </div>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s01_p13">The representation of a relation on a rectangular coordinate plane, as illustrated above, is called a <span class="margin_term"><a class="glossterm">graph</a><span class="glossdef">A visual representation of a relation on a rectangular coordinate plane.</span></span>. Any curve graphed on a rectangular coordinate plane represents a set of ordered pairs and thus defines a relation.</p>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s01_p14">The set consisting of all of the first components of a relation, in this case the <em class="emphasis">x</em>-values, is called the <span class="margin_term"><a class="glossterm">domain</a><span class="glossdef">The set consisting of all of the first components of a relation. For relations consisting of points in the plane, the domain is the set of all <em class="emphasis">x</em>-values.</span></span>. And the set consisting of all second components of a relation, in this case the <em class="emphasis">y</em>-values, is called the <span class="margin_term"><a class="glossterm">range</a><span class="glossdef">The set consisting of all of the second components of a relation. For relations consisting of points in the plane, the range is the set of all <em class="emphasis">y</em>-values.</span></span> (or <span class="margin_term"><a class="glossterm">codomain</a><span class="glossdef">Used when referencing the range.</span></span>). Often, we can determine the domain and range of a relation if we are given its graph.</p>
+        <div class="informalfigure large block">
+            <img src="section_05/0e57f99fefa31bd42042a629754b34ef.png">
+        </div>
+        <p class="para block" id="fwk-redden-ch02_s01_s01_p16">Here we can see that the graph of <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0004" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>2</mn></mrow></math></span> has a domain consisting of all real numbers, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0005" display="inline"><mrow><mi>ℝ</mi><mo>=</mo><mrow><mo>(</mo><mrow><mo>−</mo><mi>∞</mi><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow></math></span>, and a range of all <em class="emphasis">y</em>-values greater than or equal to −2, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0006" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>2</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span> The domain of the graph of <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0007" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>|</mo><mi>y</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mrow></math></span> consists of all <em class="emphasis">x</em>-values greater than or equal to 1, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0008" display="inline"><mrow><mrow><mo>[</mo><mrow><mn>1</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow></math></span>, and the range consists of all real numbers, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0009" display="inline"><mrow><mi>ℝ</mi><mo>=</mo><mrow><mo>(</mo><mrow><mo>−</mo><mi>∞</mi><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+        <div class="callout block" id="fwk-redden-ch02_s01_s01_n01">
+            <h3 class="title">Example 1</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s01_p17">Determine the domain and range of the following relation:</p>
+            <div class="informalfigure large">
+                <img src="section_05/8a7ec6522f803a6e89b3d2b29612077d.png">
+            </div>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch02_s01_s01_p19">The minimum <em class="emphasis">x</em>-value represented on the graph is −8 all others are larger. Therefore, the domain consists of all <em class="emphasis">x</em>-values in the interval <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0010" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>8</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span> The minimum <em class="emphasis">y</em>-value represented on the graph is 0; thus, the range is <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0011" display="inline"><mrow><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+            <div class="informalfigure large">
+                <img src="section_05/14d99bcfb006e1d8e005f059688fe883.png">
+            </div>
+            <p class="para" id="fwk-redden-ch02_s01_s01_p21">Answer: Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0012" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>8</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0013" display="inline"><mrow><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow></math></span></p>
+        </div>
+    </div>
+    <div class="section" id="fwk-redden-ch02_s01_s02" version="5.0" lang="en">
+        <h2 class="title editable block">Functions</h2>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s02_p01">Of special interest are relations where every <em class="emphasis">x</em>-value corresponds to exactly one <em class="emphasis">y</em>-value. A relation with this property is called a <span class="margin_term"><a class="glossterm">function</a><span class="glossdef">A relation where each element in the domain corresponds to exactly one element in the range.</span></span>.</p>
+        <div class="callout block" id="fwk-redden-ch02_s01_s02_n01">
+            <h3 class="title">Example 2</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p02">Determine the domain and range of the following relation and state whether it is a function or not: {(−1, 4), (0, 7), (2, 3), (3, 3), (4, −2)}</p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p03">Here we separate the domain (<em class="emphasis">x-values</em>), and the range (<em class="emphasis">y-values</em>), and depict the correspondence between the values with arrows.</p>
+            <div class="informalfigure large">
+                <img src="section_05/fff18399547f4bf4e5def2608adffa09.png">
+            </div>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p05">The relation is a function because each <em class="emphasis">x</em>-value corresponds to exactly one <em class="emphasis">y</em>-value.</p>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p06">Answer: The domain is {−1, 0, 2, 3, 4} and the range is {−2, 3, 4, 7}. The relation is a function.</p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch02_s01_s02_n02">
+            <h3 class="title">Example 3</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p07">Determine the domain and range of the following relation and state whether it is a function or not: {(−4, −3), (−2, 6), (0, 3), (3, 5), (3, 7)}</p>
+            <p class="simpara">Solution:</p>
+            <div class="informalfigure large">
+                <img src="section_05/3da94db02b0396792d46c9cc9146fac2.png">
+            </div>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p09">The given relation is not a function because the <em class="emphasis">x</em>-value 3 corresponds to two <em class="emphasis">y</em>-values. We can also recognize functions as relations where no <em class="emphasis">x</em>-values are repeated.</p>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p10">Answer: The domain is {−4, −2, 0, 3} and the range is {−3, 3, 5, 6, 7}. This relation is not a function.</p>
+        </div>
+        <p class="para block" id="fwk-redden-ch02_s01_s02_p11">Consider the relations consisting of the seven ordered pair solutions to <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0014" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>2</mn></mrow></math></span> and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0015" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>|</mo><mi>y</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mrow><mo>.</mo></math></span> The correspondence between the domain and range of each can be pictured as follows:</p>
+        <div class="informalfigure large block">
+            <img src="section_05/039020d81e4fc0175130a363b6e0e80d.png">
+        </div>
+        <p class="para block" id="fwk-redden-ch02_s01_s02_p13">Notice that every element in the domain of the solution set of <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0016" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>2</mn></mrow></math></span> corresponds to only one element in the range; it is a function. The solutions to <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0017" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>|</mo><mi>y</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mrow></math></span>, on the other hand, have values in the domain that correspond to two elements in the range. In particular, the <em class="emphasis">x</em>-value 4 corresponds to two <em class="emphasis">y</em>-values −3 and 3. Therefore, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0018" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>|</mo><mi>y</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mrow></math></span> does not define a function.</p>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s02_p14">We can visually identify functions by their graphs using the <span class="margin_term"><a class="glossterm">vertical line test</a><span class="glossdef">If any vertical line intersects the graph more than once, then the graph does not represent a function.</span></span>. If any vertical line intersects the graph more than once, then the graph does not represent a function.</p>
+        <div class="informalfigure large block">
+            <img src="section_05/f846af0c136e2aaae1af32a216be8edd.png">
+        </div>
+        <p class="para block" id="fwk-redden-ch02_s01_s02_p16">The vertical line represents a value in the domain, and the number of intersections with the graph represent the number of values to which it corresponds. As we can see, any vertical line will intersect the graph of <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0019" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>2</mn></mrow></math></span> only once; therefore, it is a function. A vertical line can cross the graph of <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0020" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>|</mo><mi>y</mi><mo>|</mo></mrow><mo>+</mo><mn>1</mn></mrow></math></span> more than once; therefore, it is not a function. As pictured, the <em class="emphasis">x</em>-value 3 corresponds to more than one <em class="emphasis">y</em>-value.</p>
+        <div class="callout block" id="fwk-redden-ch02_s01_s02_n03">
+            <h3 class="title">Example 4</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p17">Given the graph, state the domain and range and determine whether or not it represents a function:</p>
+            <div class="informalfigure large">
+                <img src="section_05/1b08e322bcc95c3525202a738dee8bf2.png">
+            </div>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p19">From the graph we can see that the minimum <em class="emphasis">x</em>-value is −1 and the maximum <em class="emphasis">x</em>-value is 5. Hence, the domain consists of all the real numbers in the set from <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0021" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>5</mn></mrow><mo>]</mo></mrow></mrow><mo>.</mo></math></span> The maximum <em class="emphasis">y</em>-value is 3 and the minimum is −3; hence, the range consists of <em class="emphasis">y</em>-values in the interval <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0022" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>3</mn><mo>,</mo><mn>3</mn></mrow><mo>]</mo></mrow></mrow><mo>.</mo></math></span></p>
+            <div class="informalfigure large">
+                <img src="section_05/e9298aeb12c1047f0cfa1e1d3bcc7bbf.png">
+            </div>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p21">In addition, since we can find a vertical line that intersects the graph more than once, we conclude that the graph is not a function. There are many <em class="emphasis">x</em>-values in the domain that correspond to two <em class="emphasis">y</em>-values.</p>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p22">Answer: Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0023" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>5</mn></mrow><mo>]</mo></mrow></mrow></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0024" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>3</mn><mo>,</mo><mn>3</mn></mrow><mo>]</mo></mrow></mrow></math></span>; function: no</p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch02_s01_s02_n03a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p23"><strong class="emphasis bold">Try this!</strong> Given the graph, determine the domain and range and state whether or not it is a function:</p>
+            <div class="informalfigure large">
+                <img src="section_05/5d4b0078d93018b75fec4c10d17a1932.png">
+            </div>
+            <p class="para" id="fwk-redden-ch02_s01_s02_p25">Answer: Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0025" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>∞</mi><mo>,</mo><mn>15</mn></mrow><mo>]</mo></mrow></mrow></math></span>; range:<span class="inlineequation"><math xml:id="fwk-redden-ch02_m0026" display="inline"><mi>ℝ</mi></math></span>; function: no</p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/uEtVDkjVSX8" condition="http://img.youtube.com/vi/uEtVDkjVSX8/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/uEtVDkjVSX8" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+    </div>
+    <div class="section" id="fwk-redden-ch02_s01_s03" version="5.0" lang="en">
+        <h2 class="title editable block">Function Notation</h2>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p01">With the definition of a function comes special notation. If we consider each <em class="emphasis">x</em>-value to be the input that produces exactly one output, then we can use <span class="margin_term"><a class="glossterm">function notation</a><span class="glossdef">The notation <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0027" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mi>y</mi></mrow></math></span>, which reads “<em class="emphasis">f</em> of <em class="emphasis">x</em> is equal to <em class="emphasis">y</em>.” Given a function, <em class="emphasis">y</em> and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0028" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span> can be used interchangeably.</span></span>:</p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p02"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0029" display="block"><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>y</mi></mrow></math></span></p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p03">The notation <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0030" display="inline"><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></math></span> reads, “<em class="emphasis">f of x</em>” and should not be confused with multiplication. Algebra frequently involves functions, and so the notation becomes useful when performing common tasks. Here <em class="emphasis">f</em> is the function name, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0031" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span> denotes the value in the range associated with the value <em class="emphasis">x</em> in the domain. Functions are often named with different letters; some common names for functions are <em class="emphasis">f</em>, <em class="emphasis">g</em>, <em class="emphasis">h</em>, <em class="emphasis">C</em>, and <em class="emphasis">R</em>. We have determined that the set of solutions to <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0032" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>2</mn></mrow></math></span> is a function; therefore, using function notation we can write:</p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p04"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0033" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mo>|</mo><mi>x</mi><mo>|</mo><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mo>↓</mo></mstyle></mtd></mtr><mtr><mtd columnalign="right"><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mo>|</mo><mi>x</mi><mo>|</mo><mo>−</mo><mn>2</mn></mrow></mtd></mtr></mtable></math></span></p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p05">It is important to note that <em class="emphasis">y</em> and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0034" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span> are used interchangeably. This notation is used as follows:</p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p06"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0035" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mtext> </mtext><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mtext> </mtext><mtext> </mtext><mtext> </mtext></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mtext> </mtext><mtext> </mtext><mrow><mo>|</mo><mrow><mtext> </mtext><mi>x</mi><mtext> </mtext></mrow><mo>|</mo><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr><mtd><mo>↓</mo></mtd><mtd></mtd><mtd columnalign="left"><mtext> </mtext><mo>↓</mo></mtd></mtr><mtr><mtd columnalign="right"><mi>f</mi><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>5</mn></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mo>|</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>5</mn></mstyle></mrow><mo>|</mo><mo>−</mo><mn>2</mn><mo>=</mo><mn>5</mn><mo>−</mo><mn>2</mn></mrow><mo>=</mo><mn>3</mn></mtd></mtr></mtable></math></span></p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p07">Here the compact notation <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0036" display="inline"><mrow><mi>f</mi><mo stretchy="false">(</mo><mo>−</mo><mn>5</mn><mo stretchy="false">)</mo><mo>=</mo><mn>3</mn></mrow></math></span> indicates that where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0037" display="inline"><mrow><mi>x</mi><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span> (<em class="emphasis">the input</em>), the function results in <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0038" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>3</mn></mrow></math></span> (<em class="emphasis">the output</em>). In other words, replace the variable with the value given inside the parentheses.</p>
+        <div class="informalfigure large block">
+            <img src="section_05/bb45c04b51f279a3c01a20a26e66bf4f.png">
+        </div>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p09">Functions are compactly defined by an algebraic equation, such as <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0039" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>2</mn></mrow><mo>.</mo></math></span> Given values for <em class="emphasis">x</em> in the domain, we can quickly calculate the corresponding values in the range. As we have seen, functions are also expressed using graphs. In this case, we interpret <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0040" display="inline"><mrow><mi>f</mi><mo stretchy="false">(</mo><mo>−</mo><mn>5</mn><mo stretchy="false">)</mo><mo>=</mo><mn>3</mn></mrow></math></span> as follows:</p>
+        <div class="informalfigure large block">
+            <img src="section_05/b6b5078496551a20fc56eb2acc53bb75.png">
+        </div>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p11">Function notation streamlines the task of evaluating. For example, use the function <em class="emphasis">h</em> defined by <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0041" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>x</mi><mo>−</mo><mn>3</mn></mrow></math></span> to evaluate for <em class="emphasis">x</em>-values in the set {−2, 0, 7}.</p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p12"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0042" display="block"><mrow><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>2</mn></mstyle></mrow><mo>)</mo></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>2</mn></mstyle></mrow><mo>)</mo></mrow><mo>−</mo><mn>3</mn><mo>=</mo><mo>−</mo><mn>1</mn><mo>−</mo><mn>3</mn><mo>=</mo><mo>−</mo><mn>4</mn><mtext> </mtext></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mi>h</mi><mrow><mo>(</mo><mstyle color="#007fbf"><mn>0</mn></mstyle><mo>)</mo></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mstyle color="#007fbf"><mn>0</mn></mstyle><mo>)</mo></mrow><mo>−</mo><mn>3</mn><mo>=</mo><mn>0</mn><mo>−</mo><mn>3</mn><mo>=</mo><mo>−</mo><mn>3</mn></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mi>h</mi><mrow><mo>(</mo><mstyle color="#007fbf"><mn>7</mn></mstyle><mo>)</mo></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mstyle color="#007fbf"><mn>7</mn></mstyle><mo>)</mo></mrow><mo>−</mo><mn>3</mn><mo>=</mo><mfrac><mn>7</mn><mn>2</mn></mfrac><mo>−</mo><mn>3</mn><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></mtd></mtr></mtable></mrow></math></span></p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p13">Given any function defined by <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0043" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>y</mi></mrow></mrow></math></span>, the value <em class="emphasis">x</em> is called the <span class="margin_term"><a class="glossterm">argument of the function</a><span class="glossdef">The value or algebraic expression used as input when using function notation.</span></span>. The argument can be any algebraic expression. For example:</p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p14"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0044" display="block"><mrow><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mrow><mi>h</mi><mrow><mo>(</mo><mstyle color="#007fbf"><mrow><mn>4</mn><msup><mi>a</mi><mn>3</mn></msup></mrow></mstyle><mo>)</mo></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mstyle color="#007fbf"><mrow><mn>4</mn><msup><mi>a</mi><mn>3</mn></msup></mrow></mstyle><mo>)</mo></mrow><mo>−</mo><mn>3</mn><mo>=</mo><mn>2</mn><msup><mi>a</mi><mn>3</mn></msup><mo>−</mo><mn>3</mn></mrow></mtd></mtr><mtr><mtd columnalign="right"><mrow><mi>h</mi><mrow><mo>(</mo><mstyle color="#007fbf"><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mstyle><mo>)</mo></mrow></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mrow><mo>(</mo><mstyle color="#007fbf"><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mstyle><mo>)</mo></mrow><mo>−</mo><mn>3</mn><mo>=</mo><mi>x</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>−</mo><mn>3</mn><mo>=</mo><mi>x</mi><mo>−</mo><mfrac><mn>7</mn><mn>2</mn></mfrac></mrow></mtd></mtr></mtable></mrow></math></span></p>
+        <div class="callout block" id="fwk-redden-ch02_s01_s03_n01">
+            <h3 class="title">Example 5</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p15">Given <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0045" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math></span>, find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0046" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0047" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0048" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p16">Recall that when evaluating, it is a best practice to begin by replacing the variables with parentheses and then substitute the appropriate values. This helps with the order of operations when simplifying expressions.</p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p17"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0049" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>g</mi><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>2</mn></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>2</mn></mstyle></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>4</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>g</mi><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mtd></mtr><mtr><mtd columnalign="right"><mi>g</mi><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mi>x</mi><mo>+</mo><mi>h</mi></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msup><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mi>x</mi><mo>+</mo><mi>h</mi></mstyle></mrow><mo>)</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mi>h</mi><mo>+</mo><msup><mi>h</mi><mn>2</mn></msup></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p18">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0050" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0051" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0052" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mi>h</mi><mo>+</mo><msup><mi>h</mi><mn>2</mn></msup></mrow></math></span></p>
+        </div>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p19">At this point, it is important to note that, in general, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0053" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>≠</mo><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>+</mo><mi>f</mi><mrow><mo>(</mo><mi>h</mi><mo>)</mo></mrow></mrow><mo>.</mo></math></span> The previous example, where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0054" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math></span>, illustrates this nicely.</p>
+        <p class="para block" id="fwk-redden-ch02_s01_s03_p20"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0055" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>g</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow></mtd><mtd><mo>≠</mo></mtd><mtd><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mo>+</mo></mtd><mtd columnalign="left"><mi>g</mi><mrow><mo>(</mo><mi>h</mi><mo>)</mo></mrow></mtd></mtr><mtr><mtd columnalign="right"><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mn>2</mn></msup></mtd><mtd><mo>≠</mo></mtd><mtd><msup><mi>x</mi><mn>2</mn></msup></mtd><mtd><mo>+</mo></mtd><mtd columnalign="left"><msup><mi>h</mi><mn>2</mn></msup></mtd></mtr></mtable></math></span></p>
+        <div class="callout block" id="fwk-redden-ch02_s01_s03_n02">
+            <h3 class="title">Example 6</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p21">Given <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0056" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msqrt><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn></mrow></msqrt></mrow></math></span>, find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0057" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0058" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0059" display="inline"><mrow><mtext> </mtext><mi>f</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p22"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0060" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>f</mi><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>2</mn></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msqrt><mrow><mn>2</mn><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mo>−</mo><mn>2</mn></mstyle></mrow><mo>)</mo></mrow><mo>+</mo><mn>4</mn></mrow></msqrt><mo>=</mo><msqrt><mrow><mo>−</mo><mn>4</mn><mo>+</mo><mn>4</mn></mrow></msqrt><mo>=</mo><msqrt><mn>0</mn></msqrt><mo>=</mo><mn>0</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>f</mi><mrow><mo>(</mo><mstyle color="#007fbf"><mn>0</mn></mstyle><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msqrt><mrow><mn>2</mn><mrow><mo>(</mo><mstyle color="#007fbf"><mn>0</mn></mstyle><mo>)</mo></mrow><mo>+</mo><mn>4</mn></mrow></msqrt><mo>=</mo><msqrt><mrow><mn>0</mn><mo>+</mo><mn>4</mn></mrow></msqrt><mo>=</mo><msqrt><mn>4</mn></msqrt><mo>=</mo><mn>2</mn></mtd></mtr><mtr><mtd columnalign="right"><mi>f</mi><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn></mstyle></mrow><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><msqrt><mrow><mn>2</mn><mrow><mo>(</mo><mrow><mstyle color="#007fbf"><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn></mstyle></mrow><mo>)</mo></mrow><mo>+</mo><mn>4</mn></mrow></msqrt><mo>=</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mo>+</mo><mn>4</mn></mrow></msqrt><mo>=</mo><msqrt><mrow><msup><mi>a</mi><mn>2</mn></msup></mrow></msqrt><mo>=</mo><mrow><mo>|</mo><mi>a</mi><mo>|</mo></mrow></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p23">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0061" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0062" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0063" display="inline"><mrow><mtext> </mtext><mi>f</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>a</mi><mo>|</mo></mrow></mrow></math></span></p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch02_s01_s03_n03">
+            <h3 class="title">Example 7</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p24">Given the graph of <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0064" display="inline"><mrow><mtext> </mtext><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span>, find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0065" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>8</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0066" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0067" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>8</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+            <div class="informalfigure large">
+                <img src="section_05/39ecfeaf07f312d415448a6f0a38a42f.png">
+            </div>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p26">Use the graph to find the corresponding <em class="emphasis">y</em>-values where <em class="emphasis">x</em> = −8, 0, and 8.</p>
+            <div class="informalfigure large">
+                <img src="section_05/2ae1a81b920d840431b3e666ed233a14.png">
+            </div>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p28">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0068" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>8</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>2</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0069" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0070" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>8</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></math></span></p>
+        </div>
+        <p class="para editable block" id="fwk-redden-ch02_s01_s03_p29">Sometimes the output is given and we are asked to find the input.</p>
+        <div class="callout block" id="fwk-redden-ch02_s01_s03_n04">
+            <h3 class="title">Example 8</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p30">Given <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0071" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>7</mn></mrow></math></span>, find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0072" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>27</mn></mrow><mo>.</mo></math></span></p>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p31">In this example, the output is given and we are asked to find the input. Substitute <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0073" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span> with 27 and solve.</p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p32"><span class="informalequation"><math xml:id="fwk-redden-ch02_m0074" display="block"><mtable columnspacing="0.1em"><mtr><mtd columnalign="right"><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn><mi>x</mi><mo>+</mo><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mstyle color="#007fbf"><mo>↓</mo></mstyle></mtd></mtr><mtr><mtd columnalign="right"><mn>27</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn><mi>x</mi><mo>+</mo><mn>7</mn></mtd></mtr><mtr><mtd columnalign="right"><mn>20</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mn>5</mn><mi>x</mi></mtd></mtr><mtr><mtd columnalign="right"><mn>4</mn></mtd><mtd><mo>=</mo></mtd><mtd columnalign="left"><mi>x</mi></mtd></mtr></mtable></math></span></p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p33">Therefore, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0075" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>27</mn></mrow><mo>.</mo></math></span> As a check, we can evaluate <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0076" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>5</mn><mrow><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>+</mo><mn>7</mn><mo>=</mo><mn>27</mn></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p34">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0077" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>4</mn></mrow></math></span></p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch02_s01_s03_n05">
+            <h3 class="title">Example 9</h3>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p35">Given the graph of <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0078" display="inline"><mrow><mi>g</mi><mrow></mrow></mrow></math></span>, find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0079" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow><mo>.</mo></math></span></p>
+            <div class="informalfigure large">
+                <img src="section_05/6b86033755985609d66dbb9504cd2f79.png">
+            </div>
+            <p class="simpara">Solution:</p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p37">Here we are asked to find the <em class="emphasis">x</em>-value given a particular <em class="emphasis">y</em>-value. We begin with 2 on the <em class="emphasis">y</em>-axis and then read the corresponding <em class="emphasis">x</em>-value.</p>
+            <div class="informalfigure large">
+                <img src="section_05/024e4b732542e7342f5d97a54f3da19d.png">
+            </div>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p39">We can see that <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0080" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></math></span> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0081" display="inline"><mrow><mi>x</mi><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span>; in other words, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0082" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow><mo>.</mo></math></span></p>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p40">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0083" display="inline"><mrow><mi>x</mi><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span></p>
+        </div>
+        <div class="callout block" id="fwk-redden-ch02_s01_s03_n05a">
+            <h3 class="title"></h3>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p41"><strong class="emphasis bold">Try this!</strong> Given the graph of <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0084" display="inline"><mtext> </mtext><mi>h</mi></math></span>, find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0085" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>4</mn></mrow><mo>.</mo></math></span></p>
+            <div class="informalfigure large">
+                <img src="section_05/25fb5ffd83b567378cd75e7a4c98c546.png">
+            </div>
+            <p class="para" id="fwk-redden-ch02_s01_s03_p43">Answer: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0086" display="inline"><mrow><mi>x</mi><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span> and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0087" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>15</mn></mrow></math></span></p>
+            <div class="mediaobject">
+                <a data-iframe-code='&lt;iframe src="http://www.youtube.com/v/NtvyMlfPqWs" condition="http://img.youtube.com/vi/NtvyMlfPqWs/0.jpg" vendor="youtube" width="450" height="340" scalefit="1"&gt;&lt;/iframe&gt;' href="http://www.youtube.com/v/NtvyMlfPqWs" class="replaced-iframe" onclick="return replaceIframe(this)">(click to see video)</a>
+            </div>
+        </div>
+        <div class="key_takeaways block" id="fwk-redden-ch02_s01_s03_n06">
+            <h3 class="title">Key Takeaways</h3>
+            <ul class="itemizedlist" id="fwk-redden-ch02_s01_s03_l01" mark="bullet">
+                <li>A relation is any set of ordered pairs. However, in this course, we will be working with sets of ordered pairs (<em class="emphasis">x</em>, <em class="emphasis">y</em>) in the rectangular coordinate system. The set of <em class="emphasis">x</em>-values defines the domain and the set of <em class="emphasis">y</em>-values defines the range.</li>
+                <li>Special relations where every <em class="emphasis">x</em>-value (input) corresponds to exactly one <em class="emphasis">y</em>-value (output) are called functions.</li>
+                <li>We can easily determine whether or not an equation represents a function by performing the vertical line test on its graph. If any vertical line intersects the graph more than once, then the graph does not represent a function.</li>
+                <li>If an algebraic equation defines a function, then we can use the notation <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0088" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mi>y</mi></mrow><mo>.</mo></math></span> The notation <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0089" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span> is read “<em class="emphasis">f</em> of <em class="emphasis">x</em>” and should not be confused with multiplication. When working with functions, it is important to remember that <em class="emphasis">y</em> and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0090" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span> are used interchangeably.</li>
+                <li>If asked to find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0091" display="inline"><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></math></span>, we substitute the argument <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0092" display="inline"><mi>a</mi></math></span> in for the variable and then simplify. The argument could be an algebraic expression.</li>
+                <li>If asked to find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0093" display="inline"><mi>x</mi></math></span> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0094" display="inline"><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>a</mi></mrow></math></span>, we set the function equal to <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0095" display="inline"><mi>a</mi></math></span> and then solve for <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0096" display="inline"><mi>x</mi><mo>.</mo></math></span>
+</li>
+            </ul>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch02_s01_qs01" defaultlabel="number">
+            <h3 class="title">Topic Exercises</h3>
+            <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd01">
+                <h3 class="title">Part A: Relations and Functions</h3>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd01_qd01">
+                    <p class="para" id="fwk-redden-ch02_s01_qs01_p01"><strong class="emphasis bold">Determine the domain and range and state whether the relation is a function or not.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa01">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p02">{(3, 1), (5, 2), (7, 3), (9, 4), (12, 4)}</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa02">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p04">{(2, 0), (4, 3), (6, 6), (8, 6), (10, 9)}</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa03">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p06">{(7, 5), (8, 6), (10, 7), (10, 8), (15, 9)}</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa04">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p08">{(1, 1), (2, 1), (3, 1), (4, 1), (5, 1)}</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa05">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p10">{(5, 0), (5, 2), (5, 4), (5, 6), (5, 8)}</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa06">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p12">{(−3, 1), (−2, 2), (−1, 3), (0, 4), (0, 5)}</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa07">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/7e9cb4af3d74aa6248f6e7f618d27ba6.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa08">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/92ad382da4f767c42c003964410cb9a5.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa09">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/ad6fde9fa792a0fd30c2228d3bc7b507.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa10">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/627cf21a63d182ad352dd09be44dc96e.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa11">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/3fbf45886d7578c5f55916e0fc40a873.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa12">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/c71fc02b36c3b15d57d66d42c17b9da4.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa13">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/122d4d3921ca7292f9dd90c48876ffca.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa14">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/78503cf93e77ab6aa0c81ef863644d45.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa15">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/e9d76779f0573e64a277b870c9ab901c.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa16">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/fabd2435493991a1d9278509649db7d8.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa17">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/5e7b6424a7c064f401088f77e2206f5a.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa18">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/f2d29e1370c6b7d1ee4afb6428d397c7.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa19">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/3d8fe8234da4e62bf13771925eb25b90.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa20">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/ec7f7efb0f3fc750a57e125fa51a20cb.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa21">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/fbe818601db4537d30f6c2155f420f56.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa22">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/1f1b1711a1cff655fa3752a986d89a32.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa23">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/765456991d317220c9f9288ee69f108c.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa24">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/b7321d57ee79c75cae25bc3bbbb162cc.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa25">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/c935b1895995cd14ccec7d8e33d69d5c.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa26">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/57a5fd7bcf0e225b10961c6534cd4545.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa27">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/36cf45f4b635ebdde2ea91bb9b293281.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa28">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/8a7fe26045f834d5457f1e816bba2658.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa29">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/a278a3d5973bae00a32eea7ae2f4d5f7.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa30">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/e23d2e0454b51f833959df209f30446d.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa31">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/76d9431e05bae95b1cc2714902ce677b.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa32">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/6b4bb8eb19b07d461f3271e9b89dd184.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa33">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/bc69f3eeb70d7e69b1a312f9cab1f022.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa34">
+                        <div class="question">
+                            <div class="informalfigure large">
+                                <img src="section_05/1015527ee7521f5506be37aed415547d.png">
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd02">
+                <h3 class="title">Part B: Function Notation</h3>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd02_qd01" start="35">
+                    <p class="para" id="fwk-redden-ch02_s01_qs01_p70"><strong class="emphasis bold">Evaluate.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa35">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p71"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0141" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>|</mo><mrow><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>|</mo></mrow></mrow></math></span> find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0142" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0143" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0144" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>5</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa36">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p73"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0148" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow><mo>−</mo><mn>5</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0149" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0150" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0151" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>5</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa37">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p75"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0155" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mrow><mo>|</mo><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>|</mo></mrow></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0156" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0157" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0158" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa38">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p77"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0162" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn><mo>−</mo><mrow><mo>|</mo><mrow><mn>2</mn><mi>x</mi></mrow><mo>|</mo></mrow></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0163" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0164" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0165" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa39">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p79"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0169" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0170" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0171" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0172" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa40">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p81"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0176" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>5</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0177" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0178" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0179" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa41">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p83"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0183" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0184" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0185" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0186" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mn>9</mn><mi>x</mi><mo>+</mo><mn>6</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa42">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p85"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0190" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><mn>3</mn><mn>4</mn></mfrac><mi>x</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0191" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0192" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0193" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mn>6</mn><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa43">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p87"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0197" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0198" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0199" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><msqrt><mn>3</mn></msqrt></mrow><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0200" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa44">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p89"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0204" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0205" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0206" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><msqrt><mn>6</mn></msqrt></mrow><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0207" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa45">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p91"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0211" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0212" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0213" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0214" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa46">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p93"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0218" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>−</mo><mn>4</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0219" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0220" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0221" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa47">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p95"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0225" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>16</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>32</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0226" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0227" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0228" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>a</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa48">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p97"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0232" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>t</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>16</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>32</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0233" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0234" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><msqrt><mn>2</mn></msqrt></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0235" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>a</mi><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa49">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p99"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0239" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msqrt><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></msqrt><mo>−</mo><mn>2</mn></mrow></math></span> find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0240" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0241" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0242" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa50">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p101"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0246" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msqrt><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow></msqrt><mo>+</mo><mn>1</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0247" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mn>12</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0248" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0249" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa51">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p103"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0253" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msqrt><mrow><mi>x</mi><mo>+</mo><mn>8</mn></mrow></msqrt></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0254" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0255" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>8</mn></mrow><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0256" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>8</mn></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa52">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p105"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0260" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msqrt><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msqrt></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0261" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0262" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mfrac><mn>5</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0263" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa53">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p107"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0267" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>1</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0268" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0269" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0270" display="inline"><mrow><mtext> </mtext><mi>f</mi><mrow><mo>(</mo><mrow><msup><mi>a</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa54">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p109"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0274" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>8</mn></mrow></math></span>; find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0275" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0276" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0277" display="inline"><mrow><mtext> </mtext><mi>f</mi><mrow><mo>(</mo><mrow><msup><mi>a</mi><mn>3</mn></msup></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd02_qd02" start="55">
+                    <p class="para" id="fwk-redden-ch02_s01_qs01_p111"><strong class="emphasis bold">Given the function find</strong> <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0281" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa55">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p112"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0282" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>1</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa56">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p114"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0284" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa57">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p116"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0286" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa58">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p118"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0288" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>1</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa59">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p120"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0290" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa60">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p122"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0292" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mn>1</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd02_qd03" start="61">
+                    <p class="para" id="fwk-redden-ch02_s01_qs01_p124"><strong class="emphasis bold">Find <em class="emphasis">x</em> given the function.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa61">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p125"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0294" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>3</mn></mrow></math></span>; find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0295" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>25</mn></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa62">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p127"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0297" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>7</mn><mo>−</mo><mn>3</mn><mi>x</mi></mrow></math></span>; find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0298" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>27</mn></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa63">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p129"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0300" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow></math></span>; find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0301" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa64">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p131"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0303" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></math></span>; find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0304" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa65">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p133"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0306" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>2</mn></mrow></math></span>; find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0307" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa66">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p135"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0309" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow></math></span>; find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0310" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa67">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p137"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0312" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>2</mn><mn>3</mn></mfrac><mi>x</mi><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math></span>; find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0313" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>6</mn></mfrac></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa68">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p139"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0315" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>5</mn><mn>4</mn></mfrac><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow></math></span>; find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0316" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa69">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p141">The value of a new car in dollars is given by the function <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0318" display="inline"><mrow><mi>V</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mo>−</mo><mn>1,800</mn><mi>t</mi><mo>+</mo><mn>22,000</mn></mrow></math></span> where <em class="emphasis">t</em> represents the age of the car in years. Use the function to determine the value of the car when it is 4 years old. What was the value of the car new?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa70">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p143">The monthly income in dollars of a commissioned car salesperson is given by the function <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0319" display="inline"><mrow><mi>I</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mn>350</mn><mi>n</mi><mo>+</mo><mn>1,450</mn></mrow></math></span> where <em class="emphasis">n</em> represents the number of cars sold in the month. Use the function to determine the salesperson’s income if he sells 3 cars this month. What is his income if he does not sell any cars in one month?</p>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd02_qd04" start="71">
+                    <p class="para" id="fwk-redden-ch02_s01_qs01_p145"><strong class="emphasis bold">Given the graph of the function</strong> <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0320" display="inline"><mi>f</mi></math></span><strong class="emphasis bold">, find the function values.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa71">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p146">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0321" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0322" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0323" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>4</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/80d8bda487b0d869b37f34e3f0a8f2a8.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa72">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p149">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0327" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0328" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0329" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/c935b1895995cd14ccec7d8e33d69d5c.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa73">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p152">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0333" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0334" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0335" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>4</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/991922a06978f60dbe3f2c1fc6523ef6.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa74">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p155">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0339" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0340" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0341" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/af6da4260303a113eddfc1ad654c772e.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa75">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p158">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0345" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0346" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0347" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/70917d96bac98f357ed800b631612ee7.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa76">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p161">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0351" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>6</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0352" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0353" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>6</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/d90346961994f6463806e6bdb6e62443.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa77">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p164">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0357" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0358" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0359" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>7</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/853b5d857b748f8e7845884d421846c7.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa78">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p167">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0363" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0364" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>5</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0365" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>9</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/40d156f6e3e219fb3b8f2a54f7d68519.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa79">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p170">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0369" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mo>−</mo><mn>8</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0370" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0371" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>8</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/cb9262c346775b4296615a85d3a9ffa3.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa80">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p173">Find <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0375" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mo>−</mo><mn>12</mn><mo>)</mo></mrow></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0376" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0377" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>12</mn><mo>)</mo></mrow></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/4753b71644917194808a2265769749f3.png">
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd02_qd05" start="81">
+                    <p class="para" id="fwk-redden-ch02_s01_qs01_p176"><strong class="emphasis bold">Given the graph of a function</strong> <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0381" display="inline"><mi>g</mi></math></span><strong class="emphasis bold">, find the <em class="emphasis">x-</em>values.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa81">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p177">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0382" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0383" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0384" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>2</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/cf8044a6aa1333a7ba91195e7973f472.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa82">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p180">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0388" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0389" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0390" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/23cc1c1364f91072179439d82c8251f1.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa83">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p183">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0394" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0395" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0396" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/00e365f01db6205d20d67cbf18702c45.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa84">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p186">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0400" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0401" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0402" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>15</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/5056c3e6295ec36d3d12d1d06988ab6b.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa85">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p189">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0406" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0407" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>4</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0408" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/d12ec7fce3f108cd33934c44f6fd597e.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa86">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p192">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0412" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0413" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0414" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>3</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/7b778ee5c87fccfeac7b8cc3eed42726.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa87">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p195">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0418" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>4</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0419" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0420" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/36cf45f4b635ebdde2ea91bb9b293281.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa88">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p198">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0424" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0425" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>4</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0426" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/a4f584febcd95dc5ef92bbe2ef80df7c.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa89">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p201">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0430" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>10</mn></mrow></math></span> and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0431" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/6cdb0075b22f64db12ece7038c242bf0.png">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa90">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p204">Find <em class="emphasis">x</em> where <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0434" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow><mo>.</mo></math></span></p>
+                            <div class="informalfigure large">
+                                <img src="section_05/0b917a584a1e559b34e2fb3af5ee962a.png">
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd02_qd06" start="91">
+                    <p class="para" id="fwk-redden-ch02_s01_qs01_p207">The value of a certain automobile in dollars depends on the number of years since it was purchased in 1970 according to the following function:</p>
+                    <div class="informalfigure large">
+                        <img src="section_05/79fbf6ea1482adbfbfbd40b747c3c95f.png">
+                    </div>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa91">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p209">What was the value of the car when it was new in 1970?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa92">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p211">In what year was the value of the car at a minimum?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa93">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p213">What was the value of the car in 2005?</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa94">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p215">In what years was the car valued at $4,000?</p>
+                        </div>
+                    </li>
+                </ol>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd02_qd07" start="95">
+                    <p class="para" id="fwk-redden-ch02_s01_qs01_p217"><strong class="emphasis bold">Given the linear function defined by</strong> <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0438" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>5,</mn></mrow></math></span><strong class="emphasis bold"> simplify the following.</strong></p>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa95">
+                        <div class="question">
+                            <p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0439" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>5</mn><mo>)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo>(</mo><mn>3</mn><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa96">
+                        <div class="question">
+                            <p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0440" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo>(</mo><mn>7</mn><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa97">
+                        <div class="question">
+                            <p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0441" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa98">
+                        <div class="question">
+                            <p class="para"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0443" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>7</mn></mrow><mo>)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo>(</mo><mn>7</mn><mo>)</mo></mrow></mrow></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa99">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch02_m0445" display="block"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa100">
+                        <div class="question">
+                            <span class="informalequation"><math xml:id="fwk-redden-ch02_m0447" display="block"><mrow><mfrac><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mi>h</mi></mfrac></mrow></math></span>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa101">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p230">Simplify <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0448" display="inline"><mtext> </mtext><mrow><mfrac><mrow><mi>c</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>c</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mi>h</mi></mfrac></mrow></math></span> given <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0449" display="inline"><mrow><mi>c</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa102">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p232">Simplify <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0450" display="inline"><mtext> </mtext><mrow><mfrac><mrow><mi>p</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>p</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mi>h</mi></mfrac></mrow></math></span> given <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0451" display="inline"><mrow><mi>p</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mn>7</mn><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa103">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p234">Simplify <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0452" display="inline"><mtext> </mtext><mrow><mfrac><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mi>h</mi></mfrac></mrow></math></span> given <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0453" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mi>m</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa104">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p236">Simplify <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0454" display="inline"><mtext> </mtext><mrow><mfrac><mrow><mi>q</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>−</mo><mi>q</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow><mi>h</mi></mfrac></mrow></math></span> given <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0455" display="inline"><mrow><mi>q</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>=</mo><mi>a</mi><mi>x</mi></mrow><mo>.</mo></math></span></p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+            <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd03">
+                <h3 class="title">Part C: Discussion Board</h3>
+                <ol class="qandadiv" id="fwk-redden-ch02_s01_qs01_qd03_qd01" start="105">
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa105">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p238">Who is credited with the introduction of the notation <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0456" display="inline"><mtext> </mtext><mrow><mi>y</mi><mo>=</mo><mi>f</mi><mrow><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mrow></math></span>? Provide a brief summary of his life and accomplishments.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa106">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p239">Explain to a beginning algebra student what the vertical line test is and why it works.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa107">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p240">Research and discuss the life and contributions of René Descartes.</p>
+                        </div>
+                    </li>
+                    <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa108">
+                        <div class="question">
+                            <p class="para" id="fwk-redden-ch02_s01_qs01_p241">Conduct an Internet search for the vertical line test, functions, and evaluating functions. Share a link to a page that you think others may find useful.</p>
+                        </div>
+                    </li>
+                </ol>
+            </ol>
+        </div>
+        <div class="qandaset block" id="fwk-redden-ch02_s01_qs01_ans" defaultlabel="number">
+            <h3 class="title">Answers</h3>
+            <ol class="qandadiv">
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa01_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p03_ans">Domain: {3, 5, 7, 9, 12}; range: {1, 2, 3, 4}; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa02_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa03_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p07_ans">Domain: {7, 8, 10, 15}; range: {5, 6, 7, 8, 9}; function: no</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa04_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa05_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p11_ans">Domain: {5}; range: {0, 2, 4, 6, 8}; function: no</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa06_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa07_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p15_ans">Domain: {−4, −1, 0, 2, 3}; range: {1, 2, 3}; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa08_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa09_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p19_ans">Domain: {−1, 0, 1, 2}; range: {0, 1, 2, 3, 4}; function: no</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa10_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa11_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p23_ans">Domain: {−2}; range: {−4, −2, 0, 2, 4}; function: no</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa12_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa13_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p27_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0097" display="inline"><mi>ℝ</mi></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0098" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>2</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow></math></span>; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa14_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa15_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p31_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0101" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>∞</mi><mo>,</mo><mo>−</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0102" display="inline"><mi>ℝ</mi></math></span>; function: no</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa16_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa17_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p35_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0105" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>∞</mi><mo>,</mo><mn>0</mn></mrow><mo>]</mo></mrow></mrow></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0106" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mi>∞</mi></mrow><mo>)</mo></mrow></mrow></math></span>; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa18_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa19_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p39_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0109" display="inline"><mi>ℝ</mi></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0110" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi>∞</mi><mo>,</mo><mn>3</mn></mrow><mo>]</mo></mrow></mrow></math></span>; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa20_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa21_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p43_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0113" display="inline"><mi>ℝ</mi></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0114" display="inline"><mi>ℝ</mi></math></span>; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa22_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa23_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p47_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0117" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>5</mn><mo>,</mo><mo>−</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0118" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>2</mn><mo>,</mo><mn>2</mn></mrow><mo>]</mo></mrow></mrow></math></span>; function: no</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa24_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa25_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p51_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0121" display="inline"><mi>ℝ</mi></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0122" display="inline"><mrow><mrow><mo>[</mo><mrow><mn>0</mn><mo>,</mo><mi>∞</mi></mrow><mo>]</mo></mrow></mrow></math></span>; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa26_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa27_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p55_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0125" display="inline"><mi>ℝ</mi></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0126" display="inline"><mi>ℝ</mi></math></span>; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa28_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa29_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p59_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0129" display="inline"><mi>ℝ</mi></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0130" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>1</mn><mo>,</mo><mn>1</mn></mrow><mo>]</mo></mrow></mrow></math></span>; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa30_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa31_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p63_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0133" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>8</mn><mo>,</mo><mn>8</mn></mrow><mo>]</mo></mrow></mrow></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0134" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>3</mn><mo>,</mo><mn>3</mn></mrow><mo>]</mo></mrow></mrow></math></span>; function: no</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa32_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa33_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p67_ans">Domain: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0137" display="inline"><mi>ℝ</mi></math></span>; range: <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0138" display="inline"><mrow><mrow><mo>[</mo><mrow><mo>−</mo><mn>8</mn><mo>,</mo><mo>∞</mo></mrow><mo>]</mo></mrow></mrow></math></span>; function: yes</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa34_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="35">
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa35_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p72_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0145" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0146" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0147" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>5</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa36_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa37_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p76_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0159" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0160" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0161" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa38_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa39_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p80_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0173" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>7</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0174" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0175" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>9</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa40_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa41_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p84_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0187" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>1</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0188" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0189" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mn>9</mn><mi>x</mi><mo>+</mo><mn>6</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa42_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa43_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p88_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0201" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>25</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0202" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><msqrt><mn>3</mn></msqrt></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0203" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>10</mn><mi>x</mi><mo>+</mo><mn>25</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa44_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa45_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p92_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0215" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>2</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0216" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0217" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>x</mi></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa46_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa47_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p96_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0229" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mn>31</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0230" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>)</mo></mrow><mo>=</mo><mn>28</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0231" display="inline"><mrow><mi>h</mi><mrow><mo>(</mo><mrow><mn>2</mn><mi>a</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>64</mn><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mn>64</mn><mi>a</mi><mo>+</mo><mn>16</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa48_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa49_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p100_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0243" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>2</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0244" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>1</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0245" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><msqrt><mi>x</mi></msqrt><mo>−</mo><mn>2</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa50_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa51_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p104_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0257" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn><msqrt><mn>2</mn></msqrt></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0258" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>8</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0259" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><mn>8</mn></mrow><mo>)</mo></mrow><mo>=</mo><mrow><mo>|</mo><mi>a</mi><mo>|</mo></mrow></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa52_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa53_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p108_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0271" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0272" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0273" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><msup><mi>a</mi><mn>2</mn></msup></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>a</mi><mn>6</mn></msup><mo>+</mo><mn>1</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa54_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa55_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p113_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0283" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>h</mi><mo>−</mo><mn>1</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa56_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa57_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch02_m0287" display="block"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mi>h</mi><mo>+</mo><msup><mi>h</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><mi>h</mi><mo>+</mo><mn>1</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa58_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa59_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch02_m0291" display="block"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mi>h</mi></mrow><mo>)</mo></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>3</mn><mi>h</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><msup><mi>h</mi><mn>2</mn></msup><mi>x</mi><mo>+</mo><msup><mi>h</mi><mn>3</mn></msup></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa60_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa61_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch02_m0296" display="block"><mrow><mi>x</mi><mo>=</mo><mn>14</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa62_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa63_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch02_m0302" display="block"><mrow><mi>x</mi><mo>=</mo><mo>−</mo><mfrac><mn>5</mn><mn>2</mn></mfrac></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa64_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa65_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch02_m0308" display="block"><mrow><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa66_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa67_ans">
+                    <div class="answer">
+                        <span class="informalequation"><math xml:id="fwk-redden-ch02_m0314" display="block"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math></span>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa68_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa69_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p142_ans">New: $22,000; 4 yrs old: $14,800</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa70_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa71_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p148_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0324" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0325" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0326" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa72_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa73_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p154_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0336" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0337" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>2</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0338" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>4</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa74_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa75_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p160_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0348" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0349" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0350" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa76_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa77_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p166_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0360" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>1</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0361" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0362" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>7</mn><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa78_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa79_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p172_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0372" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mo>−</mo><mn>8</mn><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0373" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0374" display="inline"><mrow><mi>f</mi><mrow><mo>(</mo><mn>8</mn><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa80_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa81_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p179_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0385" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>4</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0386" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>2</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, and <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0387" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>6</mn><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>2</mn></mrow><mo>.</mo></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa82_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa83_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p185_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0397" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mn>10</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0398" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>5</mn><mo>)</mo></mrow><mo>=</mo><mn>0</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>a</mi><mi>n</mi><mi>d</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>g</mi><mrow><mo>(</mo><mrow><mn>15</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>0</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0399" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>10</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>a</mi><mi>n</mi><mi>d</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>g</mi><mrow><mo>(</mo><mrow><mn>25</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>10</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa84_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa85_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p191_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0409" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>5</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0410" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>3</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>4</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>a</mi><mi>n</mi><mi>d</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>4</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0411" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>4</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>a</mi><mi>n</mi><mi>d</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>g</mi><mrow><mo>(</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa86_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa87_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p197_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0421" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>4</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0422" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>3</mn></mrow></math></span>, <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0423" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mn>4</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa88_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa89_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p203_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0432" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>10</mn></mrow><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>10</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>a</mi><mi>n</mi><mi>d</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>g</mi><mrow><mo>(</mo><mn>5</mn><mo>)</mo></mrow><mo>=</mo><mo>−</mo><mn>10</mn></mrow></math></span>; <span class="inlineequation"><math xml:id="fwk-redden-ch02_m0433" display="inline"><mrow><mi>g</mi><mrow><mo>(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo>)</mo></mrow><mo>=</mo><mn>5</mn><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>a</mi><mi>n</mi><mi>d</mi><mtext> </mtext><mtext> </mtext><mtext> </mtext><mi>g</mi><mrow><mo>(</mo><mn>10</mn><mo>)</mo></mrow><mo>=</mo><mn>5</mn></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa90_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa91_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p210_ans">$5,000</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa92_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa93_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p214_ans">$10,000</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa94_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa95_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p219_ans">4</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa96_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa97_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p223_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0442" display="inline"><mrow><mn>2</mn><mi>x</mi></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa98_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa99_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p227_ans"><span class="inlineequation"><math xml:id="fwk-redden-ch02_m0446" display="inline"><mrow><mn>2</mn><mi>h</mi></mrow></math></span></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa100_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa101_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p231_ans">3</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa102_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa103_ans">
+                    <div class="answer">
+                        <p class="para" id="fwk-redden-ch02_s01_qs01_p235_ans"><em class="emphasis">m</em></p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa104_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+            <ol class="qandadiv" start="105">
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa105_ans">
+                    <div class="answer">
+                        <p class="para">Answer may vary</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa106_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa107_ans">
+                    <div class="answer">
+                        <p class="para">Answer may vary</p>
+                    </div>
+                </li>
+                <li class="qandaentry" id="fwk-redden-ch02_s01_qs01_qa108_ans" audience="instructoronly">
+                    <div class="answer" audience="instructoronly" d="" html="http://www.w3.org/1999/xhtml" mml="http://www.w3.org/1998/Math/MathML" xlink="http://www.w3.org/1999/xlink" xml="http://www.w3.org/XML/1998/namespace">
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+  </div>
+  
+  <div id=navbar-bottom class="navbar">
+    <div class="navbar-part left">
+      
+        <a href="s04-09-review-exercises-and-sample-ex.html"><img src="shared/images/batch-left.png"></a> <a href="s04-09-review-exercises-and-sample-ex.html">Previous Section</a>
+      
+    </div>
+    <div class="navbar-part middle">
+      <a href="index.html"><img src="shared/images/batch-up.png"></a> <a href="index.html">Table of Contents</a>
+    </div>
+    <div class="navbar-part right">
+      
+        <a href="s05-02-linear-functions-and-their-gra.html">Next Section</a> <a href="s05-02-linear-functions-and-their-gra.html"><img src="shared/images/batch-right.png"></a>
+      
+    </div>
+  </div>
+
+  </div>
+  <script type="text/javascript" src="shared/book.js"></script>
+  
+  <script type="text/javascript" src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=MML_HTMLorMML"></script>
+  
+  
+</body>
+</html>
